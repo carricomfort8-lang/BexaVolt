@@ -11,6 +11,11 @@
   padding: 2.5rem;
   border-radius: 12px;
   gap: 2rem;
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .item {

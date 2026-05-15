@@ -40,7 +40,7 @@ const FeaturesBar = ({ data }: FeaturesBarProps) => {
   return (
     <section className={styles.section}>
       <div className="container">
-        <div className={`${styles.bar} glass`}>
+        <div className={styles.bar}>
           {data?.map((feature, index) => (
             <AnimateIn key={index} direction="up" delay={(index + 1) as 1|2|3|4} threshold={0.05}>
               <div className={styles.item}>
