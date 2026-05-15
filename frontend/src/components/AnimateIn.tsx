@@ -1,12 +1,12 @@
 'use client';
-import { useEffect, useRef, ReactNode } from 'react';
+import React, { useEffect, useRef, ReactNode } from 'react';
 
 interface AnimateInProps {
   children: ReactNode;
   direction?: 'up' | 'left' | 'right' | 'scale';
   delay?: number; // 0-6
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
   threshold?: number;
 }
 

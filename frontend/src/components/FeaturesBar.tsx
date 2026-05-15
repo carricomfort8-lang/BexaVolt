@@ -1,3 +1,4 @@
+import React from 'react';
 import AnimateIn from './AnimateIn';
 import styles from './FeaturesBar.module.css';
 
@@ -10,7 +11,7 @@ interface FeaturesBarProps {
   data: Feature[];
 }
 
-const icons: Record<string, JSX.Element> = {
+const icons: Record<string, React.JSX.Element> = {
   'SAVE MORE': (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
