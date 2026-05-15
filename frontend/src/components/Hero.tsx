@@ -20,8 +20,6 @@ const Hero = ({ data }: HeroProps) => {
       {/* Dark gradient overlay so text is readable */}
       <div className={styles.overlay} aria-hidden />
 
-      {/* Lime glow accent */}
-      <div className={styles.limeGlow} aria-hidden />
 
       {/* Content sits on top */}
       <div className={styles.content}>
