@@ -1,0 +1,199 @@
+/* =============================================
+   HERO — Full-bleed background image layout
+   ============================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- Full Bleed Background --- */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/ChatGPT Image May 16, 2026, 02_31_27 AM.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  animation: bgZoom 20s ease-out forwards;
+}
+
+@keyframes bgZoom {
+  0% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* --- Overlay --- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.7) 40%,
+    rgba(10, 10, 10, 0.2) 70%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* --- Lime Glow (simulating LED reflection) --- */
+.limeGlow {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(163, 230, 53, 0.15) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: translateY(-50%) scale(0.95); }
+  100% { opacity: 1; transform: translateY(-50%) scale(1.05); }
+}
+
+/* --- Content Container --- */
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  padding-top: 6rem;
+}
+
+/* --- Typography --- */
+.subheading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  animation: fadeInUp 0.7s ease 0.2s both;
+}
+
+.subLine {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.highlight {
+  color: var(--primary);
+  display: block;
+}
+
+.description {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 450px;
+}
+
+/* --- Buttons --- */
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ctaBtn {
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04rem;
+  padding: 0.9rem 1.8rem !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 25px rgba(163, 230, 53, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 35px rgba(163, 230, 53, 0.55) !important;
+}
+
+.exploreBtn {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04rem;
+  padding: 0.9rem 1.8rem !important;
+  border-radius: 4px !important;
+  transition: all 0.25s ease !important;
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.exploreBtn:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  transform: translateY(-2px);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .overlay {
+    background: linear-gradient(
+      to right,
+      rgba(10, 10, 10, 0.95) 0%,
+      rgba(10, 10, 10, 0.85) 60%,
+      rgba(10, 10, 10, 0.5) 100%
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    background: rgba(10, 10, 10, 0.85);
+  }
+  
+  .content {
+    text-align: center;
+    padding-top: 4rem;
+  }
+  
+  .subheading {
+    justify-content: center;
+  }
+  
+  .description {
+    margin: 0 auto 2.5rem auto;
+  }
+  
+  .actions {
+    justify-content: center;
+  }
+  
+  .limeGlow {
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}

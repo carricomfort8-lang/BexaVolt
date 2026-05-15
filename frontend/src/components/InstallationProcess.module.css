@@ -1,0 +1,124 @@
+.section {
+  padding: 10rem 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(163,230,53,0.04) 0%, transparent 60%);
+}
+
+.label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.titleLine {
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+  margin-bottom: 6rem;
+  animation: lineGrow 0.8s ease 0.3s both;
+}
+
+.stepsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.step {
+  position: relative;
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.iconBox {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(163, 230, 53, 0.3);
+  background: rgba(163, 230, 53, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.step:hover .iconBox {
+  border-color: var(--primary);
+  background: rgba(163, 230, 53, 0.12);
+  box-shadow: 0 0 25px rgba(163, 230, 53, 0.25);
+  transform: scale(1.1);
+}
+
+.stepNumber {
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  margin-left: auto;
+  letter-spacing: -0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.connector {
+  position: absolute;
+  top: 50%;
+  left: 56px;
+  right: -2rem;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(163, 230, 53, 0.4),
+    rgba(163, 230, 53, 0.4) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.step h3 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.step:hover h3 {
+  color: var(--primary);
+}
+
+.step p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 968px) {
+  .stepsContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .connector { display: none; }
+}
+
+@media (max-width: 600px) {
+  .stepsContainer { grid-template-columns: 1fr; }
+}
