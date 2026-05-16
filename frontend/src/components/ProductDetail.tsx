@@ -59,7 +59,7 @@ const ProductDetail = () => {
             <AnimateIn direction="scale" delay={2} className={styles.chargerWrap}>
               <div className={styles.chargerGlow} aria-hidden />
               <img
-                src="/img23.png"
+                src="/img23-removebg-preview.png"
                 alt="BexaVolt Charger"
                 className={styles.chargerImg}
               />
