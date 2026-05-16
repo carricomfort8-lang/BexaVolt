@@ -29,26 +29,10 @@
   text-decoration: none;
 }
 
-.logoAccent {
-  color: var(--primary);
-  font-weight: 800;
-  font-size: 1.55rem;
-  letter-spacing: -0.02em;
-  transition: opacity 0.2s ease;
-}
-
-.logoWhite {
-  color: #fff;
-  font-weight: 800;
-  font-size: 1.55rem;
-  letter-spacing: -0.02em;
-}
-
-.logoTag {
-  font-size: 1rem;
-  margin-left: 0.35rem;
-  animation: float 3s ease-in-out infinite;
-  display: inline-block;
+.logoImg {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .logo:hover .logoAccent {

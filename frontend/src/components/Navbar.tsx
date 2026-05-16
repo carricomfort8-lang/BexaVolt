@@ -18,9 +18,7 @@ const Navbar = () => {
       <div className="container">
         <div className={styles.navContent}>
           <Link href="/" className={styles.logo}>
-            <span className={styles.logoAccent}>Bexa</span>
-            <span className={styles.logoWhite}>Volt</span>
-            <span className={styles.logoTag}>⚡</span>
+            <img src="/logo.png" alt="BexaVolt Logo" className={styles.logoImg} />
           </Link>
 
           <div className={`${styles.links} ${menuOpen ? styles.open : ''}`}>

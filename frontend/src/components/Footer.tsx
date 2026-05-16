@@ -51,8 +51,7 @@ const Footer = () => {
         <div className={styles.footerMain}>
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo}>
-              <span style={{ color: 'var(--primary)', fontWeight: 'bold', fontSize: '1.5rem' }}>Bexa</span>
-              <span style={{ color: '#fff', fontWeight: 'bold', fontSize: '1.5rem' }}>Volt</span>
+              <img src="/logo.png" alt="BexaVolt Logo" className={styles.logoImg} />
             </Link>
             <p className={styles.brandDesc}>Powering the Future of EV Charging.</p>
             <div className={styles.socials}>
