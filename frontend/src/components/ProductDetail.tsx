@@ -17,7 +17,6 @@ const smartFeatures = [
 const ProductDetail = () => {
   return (
     <section className={styles.section} id="chargers">
-      <div className={styles.bgStripe} aria-hidden />
       <div className="container">
         <div className={styles.grid}>
           {/* Left */}
@@ -62,7 +61,7 @@ const ProductDetail = () => {
                 <img
                   src="/img23-removebg-preview.png"
                   alt="BexaVolt Charger"
-                  className={styles.chargerImg}
+                  className={`${styles.chargerImg} float-animation`}
                 />
               </AnimateIn>
             </div>
