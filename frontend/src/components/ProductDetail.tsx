@@ -56,45 +56,49 @@ const ProductDetail = () => {
 
           {/* Right: Charger image + App card */}
           <div className={styles.visuals}>
-            <AnimateIn direction="scale" delay={2} className={styles.chargerWrap}>
-              <div className={styles.chargerGlow} aria-hidden />
-              <img
-                src="/img23-removebg-preview.png"
-                alt="BexaVolt Charger"
-                className={styles.chargerImg}
-              />
-            </AnimateIn>
+            <div className={styles.chargerWrap}>
+              <AnimateIn direction="scale" delay={2}>
+                <div className={styles.chargerGlow} aria-hidden />
+                <img
+                  src="/img23-removebg-preview.png"
+                  alt="BexaVolt Charger"
+                  className={styles.chargerImg}
+                />
+              </AnimateIn>
+            </div>
 
-            <AnimateIn direction="right" delay={3} className={styles.appPreviewWrap}>
-              <div className={`${styles.appCard} glass`}>
-                <p className={styles.appHeader}>SMARTER CHARGING. TOTAL CONTROL.</p>
-                <div className={styles.appCircle}>
-                  <span className={styles.appValue}>7.4<small>kW</small></span>
-                  <span className={styles.appLabel}>Charging Power</span>
-                </div>
-                <div className={styles.appStats}>
-                  <div>
-                    <p>Energy Delivered</p>
-                    <strong>13.6<small>kWh</small></strong>
+            <div className={styles.appPreviewWrap}>
+              <AnimateIn direction="right" delay={3}>
+                <div className={`${styles.appCard} glass`}>
+                  <p className={styles.appHeader}>SMARTER CHARGING. TOTAL CONTROL.</p>
+                  <div className={styles.appCircle}>
+                    <span className={styles.appValue}>7.4<small>kW</small></span>
+                    <span className={styles.appLabel}>Charging Power</span>
                   </div>
-                  <div>
-                    <p>Duration</p>
-                    <strong>02:45:30</strong>
-                  </div>
-                </div>
-                <div className={styles.smartList}>
-                  {smartFeatures.map((sf, i) => (
-                    <div key={i} className={styles.smartItem}>
-                      <span className={styles.smartIcon}>{sf.icon}</span>
-                      <div>
-                        <strong>{sf.title}</strong>
-                        <p>{sf.desc}</p>
-                      </div>
+                  <div className={styles.appStats}>
+                    <div>
+                      <p>Energy Delivered</p>
+                      <strong>13.6<small>kWh</small></strong>
                     </div>
-                  ))}
+                    <div>
+                      <p>Duration</p>
+                      <strong>02:45:30</strong>
+                    </div>
+                  </div>
+                  <div className={styles.smartList}>
+                    {smartFeatures.map((sf, i) => (
+                      <div key={i} className={styles.smartItem}>
+                        <span className={styles.smartIcon}>{sf.icon}</span>
+                        <div>
+                          <strong>{sf.title}</strong>
+                          <p>{sf.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </AnimateIn>
+              </AnimateIn>
+            </div>
           </div>
         </div>
       </div>
