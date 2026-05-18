@@ -48,28 +48,30 @@ const InstallationProcess = () => {
   return (
     <section className={styles.section} id="installation">
       <div className="container">
-        <AnimateIn direction="up" delay={1}>
-          <p className={styles.label}>SIMPLE. FAST. HASSLE-FREE.</p>
-          <h2 className={styles.title}>OUR INSTALLATION PROCESS</h2>
-          <div className={styles.titleLine} />
-        </AnimateIn>
+        <div className={styles.contentWrapper}>
+          <AnimateIn direction="up" delay={1}>
+            <p className={styles.label}>SIMPLE. FAST. HASSLE-FREE.</p>
+            <h2 className={styles.title}>OUR INSTALLATION PROCESS</h2>
+            <div className={styles.titleLine} />
+          </AnimateIn>
 
-        <div className={styles.stepsContainer}>
-          {steps.map((step, index) => (
-            <AnimateIn key={index} direction="up" delay={(index + 2) as 2|3|4|5}>
-              <div className={styles.step}>
-                <div className={styles.stepTop}>
-                  <div className={styles.iconBox}>{step.icon}</div>
-                  <span className={styles.stepNumber}>{step.number}</span>
-                  {index < steps.length - 1 && (
-                    <div className={styles.connector} aria-hidden />
-                  )}
+          <div className={styles.stepsContainer}>
+            {steps.map((step, index) => (
+              <AnimateIn key={index} direction="up" delay={(index + 2) as 2|3|4|5}>
+                <div className={styles.step}>
+                  <div className={styles.stepTop}>
+                    <div className={styles.iconBox}>{step.icon}</div>
+                    <span className={styles.stepNumber}>{step.number}</span>
+                    {index < steps.length - 1 && (
+                      <div className={styles.connector} aria-hidden />
+                    )}
+                  </div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
                 </div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </AnimateIn>
-          ))}
+              </AnimateIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>
