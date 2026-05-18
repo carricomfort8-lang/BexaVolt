@@ -20,9 +20,12 @@ const Footer = () => {
             <div className={styles.ctaActions}>
               <div className={styles.badges}>
                 <div className={styles.badge}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="m9 11 2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                   <div>
-                    <strong>3 YEAR WARRANTY</strong>
+                    <strong>5 YEAR WARRANTY</strong>
                     <span>Peace of mind guaranteed.</span>
                   </div>
                 </div>
@@ -35,12 +38,26 @@ const Footer = () => {
                 </div>
               </div>
               
-              <Link href="#quote" className="btn-primary" style={{ background: '#000', color: 'var(--primary)' }}>
-                GET A FREE QUOTE
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
+              <div className={styles.btnAndTrust}>
+                <Link href="#quote" className="btn-primary">
+                  GET A FREE QUOTE
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+                
+                <div className={styles.trustWrap}>
+                  <div className={styles.avatarGroup}>
+                    <div className={styles.avatar} style={{ backgroundImage: `url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80')` }} />
+                    <div className={styles.avatar} style={{ backgroundImage: `url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80')` }} />
+                    <div className={styles.avatar} style={{ backgroundImage: `url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80')` }} />
+                  </div>
+                  <div className={styles.trustText}>
+                    <span>TRUSTED BY 1000+</span>
+                    <strong>AUSTRALIAN EV OWNERS</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

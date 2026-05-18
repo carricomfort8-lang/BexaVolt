@@ -4,11 +4,8 @@
 }
 
 .ctaBar {
-  background: 
-    linear-gradient(135deg, rgba(163, 230, 53, 0.85) 0%, rgba(132, 204, 22, 0.8) 50%, rgba(101, 163, 13, 0.85) 100%),
-    url('/second_last_sec.png') no-repeat center center / cover;
-  background-blend-mode: multiply;
-  color: #000;
+  background: url('/second_last_sec.png') no-repeat center center / cover;
+  color: #fff;
   padding: 5rem 0;
   margin-bottom: 8rem;
   position: relative;
@@ -51,18 +48,19 @@
 }
 
 .ctaHighlight {
-  opacity: 0.8;
+  color: var(--primary);
+  opacity: 1;
 }
 
 .ctaSub {
   font-weight: 600;
+  color: var(--text-muted);
 }
 
 .ctaActions {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: flex-end;
+  align-items: center;
+  gap: 3rem;
 }
 
 .badges {
@@ -76,15 +74,76 @@
   gap: 1rem;
 }
 
+.badge svg {
+  color: var(--primary);
+}
+
 .badge strong {
   display: block;
   font-size: 0.8rem;
   font-weight: 800;
+  color: #fff;
 }
 
 .badge span {
   font-size: 0.75rem;
-  opacity: 0.8;
+  opacity: 0.7;
+  color: var(--text-muted);
+}
+
+.btnAndTrust {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.trustWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.avatarGroup {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-size: cover;
+  background-position: center;
+  margin-left: -12px;
+  display: inline-block;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.trustText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.trustText span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.trustText strong {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.02em;
 }
 
 .footerMain {
@@ -231,13 +290,20 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .ctaContent {
     flex-direction: column;
     text-align: center;
+    gap: 2.5rem;
   }
   
   .ctaActions {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .btnAndTrust {
     align-items: center;
   }
   
