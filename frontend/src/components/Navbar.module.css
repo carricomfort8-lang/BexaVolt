@@ -166,7 +166,6 @@
   color: var(--primary) !important;
 }
 
-/* Mega Menu Container */
 .megaMenuContainer {
   position: absolute;
   top: calc(100% - 1px);
@@ -176,8 +175,6 @@
   max-width: 1240px;
   background: #070707;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 2.5px solid var(--primary);
-  border-right: 2.5px solid var(--primary);
   border-radius: 24px;
   box-shadow: 
     0 35px 120px rgba(0, 0, 0, 0.95), 
@@ -189,6 +186,17 @@
   z-index: 999;
   text-align: left;
   animation: slideUpMega 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.megaMenuContainer::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  z-index: -1;
 }
 
 @keyframes slideUpMega {
