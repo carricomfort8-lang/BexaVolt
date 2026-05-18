@@ -3,10 +3,128 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 
+const navItems = [
+  {
+    key: 'home',
+    label: 'For Home',
+    href: '/',
+    hasMega: true,
+    megaData: {
+      leftItems: [
+        { name: 'VoltHome S', desc: 'Smart home charging', img: '/img23-removebg-preview.png', href: '#chargers' },
+        { name: 'VoltHome Solar', desc: 'Solar optimized', img: '/img23-removebg-preview.png', href: '#chargers' },
+        { name: 'VoltHome Pro', desc: 'EV ready. Future ready.', img: '/img23-removebg-preview.png', href: '#chargers' },
+        { name: 'VoltHome Max', desc: 'Three-phase power', img: '/img23-removebg-preview.png', href: '#chargers' },
+      ],
+      rightCard: {
+        titlePart1: 'Home',
+        titlePart2: 'charging',
+        tagline: 'Smart. Safe. Sustainable.',
+        sub: 'Power your home, power your future.',
+        btnText: 'Explore Home Chargers',
+        btnHref: '#chargers',
+        img: '/img23-removebg-preview.png'
+      }
+    }
+  },
+  {
+    key: 'business',
+    label: 'Business',
+    href: '#business',
+    hasMega: true,
+    megaData: {
+      leftItems: [
+        { name: 'VoltBusiness Dual', desc: 'Dual-port commercial charging', img: '/img23-removebg-preview.png', href: '#business' },
+        { name: 'VoltBusiness Pro', desc: 'High-capacity commercial station', img: '/img23-removebg-preview.png', href: '#business' },
+        { name: 'VoltBusiness Ultra', desc: 'Ultra-fast DC rapid charging', img: '/img23-removebg-preview.png', href: '#business' },
+        { name: 'VoltBusiness Fleet', desc: 'Smart software management', img: '/img23-removebg-preview.png', href: '#business' },
+      ],
+      rightCard: {
+        titlePart1: 'Commercial',
+        titlePart2: 'charging',
+        tagline: 'Scalable. Profitable. Smart.',
+        sub: 'Future-proof solutions for enterprises.',
+        btnText: 'Explore Commercial Solutions',
+        btnHref: '#business',
+        img: '/img23-removebg-preview.png'
+      }
+    }
+  },
+  {
+    key: 'installers',
+    label: 'Installers',
+    href: '#installers',
+    hasMega: true,
+    megaData: {
+      leftItems: [
+        { name: 'Partner Portal', desc: 'Manage bookings & jobs', img: '/img23-removebg-preview.png', href: '#installers' },
+        { name: 'BexaVolt Academy', desc: 'Certifications & training', img: '/img23-removebg-preview.png', href: '#installers' },
+        { name: 'Technical Support', desc: '24/7 dedicated agent helpline', img: '/img23-removebg-preview.png', href: '#installers' },
+        { name: 'Marketing Kit', desc: 'Brand assets & print materials', img: '/img23-removebg-preview.png', href: '#installers' },
+      ],
+      rightCard: {
+        titlePart1: 'Installer',
+        titlePart2: 'program',
+        tagline: 'Certified. Supported. Scalable.',
+        sub: "Join Australia's leading EV installer network.",
+        btnText: 'Apply to Partner',
+        btnHref: '#installers',
+        img: '/img23-removebg-preview.png'
+      }
+    }
+  },
+  {
+    key: 'support',
+    label: 'Support',
+    href: '#support',
+    hasMega: true,
+    megaData: {
+      leftItems: [
+        { name: 'Support Center', desc: 'Knowledge base & FAQs', img: '/img23-removebg-preview.png', href: '#support' },
+        { name: 'Manuals & Downloads', desc: 'Spec sheets & user guides', img: '/img23-removebg-preview.png', href: '#support' },
+        { name: 'Warranty Portal', desc: 'Online registration & claims', img: '/img23-removebg-preview.png', href: '#support' },
+        { name: 'Book Service', desc: 'Professional maintenance scheduling', img: '/img23-removebg-preview.png', href: '#support' },
+      ],
+      rightCard: {
+        titlePart1: 'BexaVolt',
+        titlePart2: 'support',
+        tagline: 'Responsive. Expert. Ready.',
+        sub: 'Here to help you every step of the way.',
+        btnText: 'Submit a Support Ticket',
+        btnHref: '#support',
+        img: '/img23-removebg-preview.png'
+      }
+    }
+  },
+  {
+    key: 'about',
+    label: 'About Us',
+    href: '#about',
+    hasMega: true,
+    megaData: {
+      leftItems: [
+        { name: 'Our Story', desc: 'Mission, vision & founders', img: '/img23-removebg-preview.png', href: '#about' },
+        { name: 'Our Technology', desc: 'Inside our premium EV engineering', img: '/img23-removebg-preview.png', href: '#about' },
+        { name: 'Media & Press', desc: 'News, articles & resources', img: '/img23-removebg-preview.png', href: '#about' },
+        { name: 'Careers', desc: 'Join the team powering the future', img: '/img23-removebg-preview.png', href: '#about' },
+      ],
+      rightCard: {
+        titlePart1: 'BexaVolt',
+        titlePart2: 'brand',
+        tagline: 'Innovative. Clean. Australian.',
+        sub: 'Redefining electrical vehicle charging technology.',
+        btnText: 'Explore Our Story',
+        btnHref: '#about',
+        img: '/img23-removebg-preview.png'
+      }
+    }
+  }
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
+  const [activeMega, setActiveMega] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -23,117 +141,90 @@ const Navbar = () => {
           </Link>
 
           <div className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
-            {/* For Home with Mega Menu Hover Trigger */}
-            <div
-              className={styles.navItemWithMega}
-              onMouseEnter={() => setMegaOpen(true)}
-              onMouseLeave={() => setMegaOpen(false)}
-            >
-              <Link
-                href="/"
-                className={`${styles.navLink} ${megaOpen ? styles.navLinkActive : ''}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                For Home
-                <svg
-                  className={`${styles.chevron} ${megaOpen ? styles.chevronOpen : ''}`}
-                  width="10"
-                  height="6"
-                  viewBox="0 0 10 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            {navItems.map(item => {
+              const isOpen = activeMega === item.key;
+              return (
+                <div
+                  key={item.key}
+                  className={styles.navItemWithMega}
+                  onMouseEnter={() => setActiveMega(item.key)}
+                  onMouseLeave={() => setActiveMega(null)}
                 >
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <span className={styles.navUnderline} />
-              </Link>
+                  <Link
+                    href={item.href}
+                    className={`${styles.navLink} ${isOpen ? styles.navLinkActive : ''}`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                    {item.hasMega && (
+                      <svg
+                        className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}
+                        width="10"
+                        height="6"
+                        viewBox="0 0 10 6"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    )}
+                    <span className={styles.navUnderline} />
+                  </Link>
 
-              {/* Mega Menu overlay */}
-              {megaOpen && (
-                <div className={styles.megaMenuContainer}>
-                  {/* Left Column: Products */}
-                  <div className={styles.megaLeft}>
-                    {[
-                      { name: 'VoltHome S', desc: 'Smart home charging', img: '/img23-removebg-preview.png' },
-                      { name: 'VoltHome Solar', desc: 'Solar optimized', img: '/img23-removebg-preview.png' },
-                      { name: 'VoltHome Pro', desc: 'EV ready. Future ready.', img: '/img23-removebg-preview.png' },
-                      { name: 'VoltHome Max', desc: 'Three-phase power', img: '/img23-removebg-preview.png' },
-                    ].map(prod => (
-                      <Link href="#chargers" key={prod.name} className={styles.megaProductItem}>
-                        <div className={styles.megaProductContent}>
-                          <div className={styles.megaProductImgWrap}>
-                            <img src={prod.img} alt={prod.name} className={styles.megaProductImg} />
-                          </div>
-                          <div className={styles.megaProductDetails}>
-                            <span className={styles.megaProductName}>{prod.name}</span>
-                            <span className={styles.megaProductDivider} />
-                            <span className={styles.megaProductDesc}>{prod.desc}</span>
-                          </div>
-                        </div>
-                        <span className={styles.megaProductArrow}>
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
-                        </span>
-                      </Link>
-                    ))}
-
-                    <Link href="#chargers" className={styles.megaProductItem}>
-                      <div className={styles.megaProductContent}>
-                        <div className={styles.megaCompareIcon}>
-                          ⚖
-                        </div>
-                        <span className={styles.megaProductName} style={{ marginLeft: '1.5rem' }}>Compare Chargers</span>
+                  {/* Mega Menu overlay */}
+                  {item.hasMega && isOpen && (
+                    <div className={styles.megaMenuContainer}>
+                      {/* Left Column: Products / Links */}
+                      <div className={styles.megaLeft}>
+                        {item.megaData.leftItems.map(prod => (
+                          <Link href={prod.href} key={prod.name} className={styles.megaProductItem}>
+                            <div className={styles.megaProductContent}>
+                              <div className={styles.megaProductImgWrap}>
+                                <img src={prod.img} alt={prod.name} className={styles.megaProductImg} />
+                              </div>
+                              <div className={styles.megaProductDetails}>
+                                <span className={styles.megaProductName}>{prod.name}</span>
+                                <span className={styles.megaProductDivider} />
+                                <span className={styles.megaProductDesc}>{prod.desc}</span>
+                              </div>
+                            </div>
+                            <span className={styles.megaProductArrow}>
+                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                            </span>
+                          </Link>
+                        ))}
                       </div>
-                      <span className={styles.megaProductArrow}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
-                      </span>
-                    </Link>
-                  </div>
 
-                  {/* Right Column: Featured Promo Card */}
-                  <div className={styles.megaRight}>
-                    <div className={styles.megaRightTextCol}>
-                      <div>
-                        <h3 className={styles.megaCardTitle}>
-                          Home <br />
-                          <span className={styles.megaCardTitleHighlight}>charging</span>
-                        </h3>
-                        <div className={styles.megaCardLine} />
-                        <p className={styles.megaCardTag}>Smart. Safe. Sustainable.</p>
-                        <p className={styles.megaCardSub}>Power your home, power your future.</p>
+                      {/* Right Column: Featured Promo Card */}
+                      <div className={styles.megaRight}>
+                        <div className={styles.megaRightTextCol}>
+                          <div>
+                            <h3 className={styles.megaCardTitle}>
+                              {item.megaData.rightCard.titlePart1} <br />
+                              <span className={styles.megaCardTitleHighlight}>{item.megaData.rightCard.titlePart2}</span>
+                            </h3>
+                            <div className={styles.megaCardLine} />
+                            <p className={styles.megaCardTag}>{item.megaData.rightCard.tagline}</p>
+                            <p className={styles.megaCardSub}>{item.megaData.rightCard.sub}</p>
+                          </div>
+                          
+                          <Link href={item.megaData.rightCard.btnHref} className={styles.megaCardBtn}>
+                            {item.megaData.rightCard.btnText}
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                          </Link>
+                        </div>
+
+                        {/* Float mounted charger visual */}
+                        <div className={styles.megaRightChargerWrap}>
+                          <div className={styles.megaRightGlow} />
+                          <img src={item.megaData.rightCard.img} alt="Featured Promo" className={`${styles.megaRightImg} float-animation`} />
+                        </div>
                       </div>
-                      
-                      <Link href="#chargers" className={styles.megaCardBtn}>
-                        Explore Home Chargers
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
-                      </Link>
                     </div>
-
-                    {/* Float mounted charger visual */}
-                    <div className={styles.megaRightChargerWrap}>
-                      <div className={styles.megaRightGlow} />
-                      <img src="/img23-removebg-preview.png" alt="Featured Charger" className={`${styles.megaRightImg} float-animation`} />
-                    </div>
-                  </div>
+                  )}
                 </div>
-              )}
-            </div>
-
-            {[
-              { label: 'Business', href: '#business' },
-              { label: 'Installers', href: '#installers' },
-              { label: 'Support', href: '#support' },
-              { label: 'About Us', href: '#about' },
-            ].map(item => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={styles.navLink}
-                onClick={() => setMenuOpen(false)}
-              >
-                {item.label}
-                <span className={styles.navUnderline} />
-              </Link>
-            ))}
+              );
+            })}
           </div>
 
           <div className={styles.navRight}>
