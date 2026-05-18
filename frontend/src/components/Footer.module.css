@@ -12,18 +12,6 @@
   overflow: hidden;
 }
 
-.ctaBar::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -20%;
-  width: 60%;
-  height: 200%;
-  background: rgba(255,255,255,0.08);
-  transform: skewX(-15deg);
-  pointer-events: none;
-}
-
 .ctaContent {
   display: flex;
   justify-content: space-between;
