@@ -22,14 +22,20 @@ const Navbar = () => {
           </Link>
 
           <div className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
-            {['HOME','ABOUT','CHARGERS','FEATURES','INSTALLATION','CONTACT'].map(item => (
+            {[
+              { label: 'For Home', href: '/' },
+              { label: 'Business', href: '#business' },
+              { label: 'Installers', href: '#installers' },
+              { label: 'Support', href: '#support' },
+              { label: 'About', href: '#about' },
+            ].map(item => (
               <Link
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 className={styles.navLink}
                 onClick={() => setMenuOpen(false)}
               >
-                {item}
+                {item.label}
                 <span className={styles.navUnderline} />
               </Link>
             ))}
