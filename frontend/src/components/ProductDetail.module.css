@@ -1,7 +1,9 @@
 .section {
   padding: 10rem 0;
-  background: #050505;
   position: relative;
+  background: 
+    linear-gradient(135deg, #050505 0%, rgba(5, 5, 5, 0.65) 50%, #050505 100%),
+    url('/second_last_sec.png') no-repeat center center / cover;
   overflow: hidden;
 }
 
