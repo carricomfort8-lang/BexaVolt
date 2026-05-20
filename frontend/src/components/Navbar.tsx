@@ -11,7 +11,7 @@ const navItems = [
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'VoltHome S', desc: 'Smart home charging', img: '/img23-removebg-preview.png', href: '#chargers' },
+        { name: 'Volt Mini', desc: 'Compact everyday charging', img: '/img23-removebg-preview.png', href: '/products/volt-mini' },
         { name: 'VoltHome Solar', desc: 'Solar optimized', img: '/img23-removebg-preview.png', href: '#chargers' },
         { name: 'VoltHome Pro', desc: 'EV ready. Future ready.', img: '/img23-removebg-preview.png', href: '#chargers' },
         { name: 'VoltHome Max', desc: 'Three-phase power', img: '/img23-removebg-preview.png', href: '#chargers' },
@@ -21,8 +21,8 @@ const navItems = [
         titlePart2: 'charging',
         tagline: 'Smart. Safe. Sustainable.',
         sub: 'Power your home, power your future.',
-        btnText: 'Explore Home Chargers',
-        btnHref: '#chargers',
+        btnText: 'Explore Volt Mini',
+        btnHref: '/products/volt-mini',
         img: '/img23-removebg-preview.png'
       }
     }
