@@ -3,7 +3,64 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 
-const navItems = [
+interface MegaData {
+  leftItems?: Array<{ name: string; desc: string; img: string; href: string }>;
+  rightCard?: {
+    titlePart1: string;
+    titlePart2: string;
+    tagline?: string;
+    sub: string;
+    btnText: string;
+    btnHref: string;
+    img: string;
+  };
+  wallMount?: Array<{ name: string; href: string }>;
+  portable?: Array<{ name: string; href: string }>;
+  accessories?: Array<{ name: string; href: string }>;
+}
+
+interface NavItem {
+  key: string;
+  label: string;
+  href: string;
+  hasMega: boolean;
+  isProductsMega?: boolean;
+  megaData: MegaData;
+}
+
+const navItems: NavItem[] = [
+  {
+    key: 'products',
+    label: 'Products',
+    href: '#products',
+    hasMega: true,
+    isProductsMega: true,
+    megaData: {
+      wallMount: [
+        { name: 'Volt Mini', href: '/products/volt-mini' },
+        { name: 'Volt Orbit', href: '#chargers' },
+        { name: 'Volt Smart', href: '#chargers' },
+        { name: 'Volt Pulse', href: '#chargers' },
+        { name: 'Volt Ultra', href: '#chargers' },
+      ],
+      portable: [
+        { name: 'Volt Go', href: '#chargers' },
+        { name: 'Volt Flex', href: '#chargers' },
+        { name: 'Volt Trek Pro', href: '#chargers' },
+      ],
+      accessories: [
+        { name: 'Charging Accessories', href: '#accessories' },
+      ],
+      rightCard: {
+        titlePart1: 'Explore',
+        titlePart2: 'BexaVolt Products',
+        sub: 'Smart charging solutions for every lifestyle.',
+        btnText: 'View All Products',
+        btnHref: '#products',
+        img: '/bexavolt_products_promo.png'
+      }
+    }
+  },
   {
     key: 'home',
     label: 'For Home',
@@ -173,54 +230,142 @@ const Navbar = () => {
 
                   {/* Mega Menu overlay */}
                   {item.hasMega && isOpen && (
-                    <div className={styles.megaMenuContainer}>
-                      {/* Left Column: Products / Links */}
-                      <div className={styles.megaLeft}>
-                        {item.megaData.leftItems.map(prod => (
-                          <Link href={prod.href} key={prod.name} className={styles.megaProductItem}>
-                            <div className={styles.megaProductContent}>
-                              <div className={styles.megaProductImgWrap}>
-                                <img src={prod.img} alt={prod.name} className={styles.megaProductImg} />
-                              </div>
-                              <div className={styles.megaProductDetails}>
-                                <span className={styles.megaProductName}>{prod.name}</span>
-                                <span className={styles.megaProductDivider} />
-                                <span className={styles.megaProductDesc}>{prod.desc}</span>
-                              </div>
-                            </div>
-                            <span className={styles.megaProductArrow}>
-                              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-
-                      {/* Right Column: Featured Promo Card */}
-                      <div className={styles.megaRight}>
-                        <div className={styles.megaRightTextCol}>
-                          <div>
-                            <h3 className={styles.megaCardTitle}>
-                              {item.megaData.rightCard.titlePart1} <br />
-                              <span className={styles.megaCardTitleHighlight}>{item.megaData.rightCard.titlePart2}</span>
-                            </h3>
-                            <div className={styles.megaCardLine} />
-                            <p className={styles.megaCardTag}>{item.megaData.rightCard.tagline}</p>
-                            <p className={styles.megaCardSub}>{item.megaData.rightCard.sub}</p>
+                    item.isProductsMega ? (
+                      <div className={`${styles.megaMenuContainer} ${styles.productsMegaContainer}`}>
+                        {/* Column 1: Wall-Mount Charging */}
+                        <div className={styles.megaCol}>
+                          <div className={styles.megaColHeader}>
+                            WALL-MOUNT CHARGING
+                            <span className={styles.megaColHeaderLine} />
                           </div>
-                          
-                          <Link href={item.megaData.rightCard.btnHref} className={styles.megaCardBtn}>
-                            {item.megaData.rightCard.btnText}
+                          <div className={styles.megaProductList}>
+                            {item.megaData.wallMount?.map(prod => (
+                              <Link href={prod.href} key={prod.name} className={styles.megaSimpleLink}>
+                                <span>{prod.name}</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                              </Link>
+                            ))}
+                          </div>
+                          <Link href="#compare-wall-mount" className={styles.comparePillBtn}>
+                            Compare Wall-Mount Chargers
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
                           </Link>
                         </div>
 
-                        {/* Float mounted charger visual */}
-                        <div className={styles.megaRightChargerWrap}>
-                          <div className={styles.megaRightGlow} />
-                          <img src={item.megaData.rightCard.img} alt="Featured Promo" className={`${styles.megaRightImg} float-animation`} />
+                        {/* Column 2: Portable Charging & Accessories */}
+                        <div className={styles.megaCol}>
+                          <div className={styles.megaColHeader}>
+                            PORTABLE CHARGING
+                            <span className={styles.megaColHeaderLine} />
+                          </div>
+                          <div className={styles.megaProductList}>
+                            {item.megaData.portable?.map(prod => (
+                              <Link href={prod.href} key={prod.name} className={styles.megaSimpleLink}>
+                                <span>{prod.name}</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                              </Link>
+                            ))}
+                          </div>
+                          <Link href="#compare-portable" className={styles.comparePillBtn}>
+                            Compare Portable Chargers
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                          </Link>
+
+                          <div className={`${styles.megaColHeader} ${styles.accessoriesHeader}`}>
+                            ACCESSORIES
+                            <span className={styles.megaColHeaderLine} />
+                          </div>
+                          <div className={styles.megaProductList}>
+                            {item.megaData.accessories?.map(prod => (
+                              <Link href={prod.href} key={prod.name} className={styles.megaSimpleLink}>
+                                <span>{prod.name}</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
+
+                        {/* Column 3: Explore BexaVolt Products (Promo Card) */}
+                        {item.megaData.rightCard && (
+                          <div className={`${styles.megaRight} ${styles.productsMegaRight}`}>
+                            <div className={styles.megaRightTextCol}>
+                              <div>
+                                <h3 className={styles.megaCardTitle}>
+                                  {item.megaData.rightCard.titlePart1} <br />
+                                  <span className={styles.megaCardTitleHighlight}>{item.megaData.rightCard.titlePart2}</span>
+                                </h3>
+                                <div className={styles.megaCardLine} />
+                                <p className={styles.megaCardSub}>{item.megaData.rightCard.sub}</p>
+                              </div>
+                              
+                              <Link href={item.megaData.rightCard.btnHref} className={styles.comparePillBtn}>
+                                {item.megaData.rightCard.btnText}
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                              </Link>
+                            </div>
+
+                            {/* Float mounted charger visual */}
+                            <div className={styles.megaRightChargerWrap}>
+                              <div className={styles.megaRightGlow} />
+                              <img src={item.megaData.rightCard.img} alt="Featured Promo" className={`${styles.megaRightImg} float-animation`} />
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    </div>
+                    ) : (
+                      <div className={styles.megaMenuContainer}>
+                        {/* Left Column: Products / Links */}
+                        <div className={styles.megaLeft}>
+                          {item.megaData.leftItems?.map(prod => (
+                            <Link href={prod.href} key={prod.name} className={styles.megaProductItem}>
+                              <div className={styles.megaProductContent}>
+                                <div className={styles.megaProductImgWrap}>
+                                  <img src={prod.img} alt={prod.name} className={styles.megaProductImg} />
+                                </div>
+                                <div className={styles.megaProductDetails}>
+                                  <span className={styles.megaProductName}>{prod.name}</span>
+                                  <span className={styles.megaProductDivider} />
+                                  <span className={styles.megaProductDesc}>{prod.desc}</span>
+                                </div>
+                              </div>
+                              <span className={styles.megaProductArrow}>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* Right Column: Featured Promo Card */}
+                        {item.megaData.rightCard && (
+                          <div className={styles.megaRight}>
+                            <div className={styles.megaRightTextCol}>
+                              <div>
+                                <h3 className={styles.megaCardTitle}>
+                                  {item.megaData.rightCard.titlePart1} <br />
+                                  <span className={styles.megaCardTitleHighlight}>{item.megaData.rightCard.titlePart2}</span>
+                                </h3>
+                                <div className={styles.megaCardLine} />
+                                {item.megaData.rightCard.tagline && (
+                                  <p className={styles.megaCardTag}>{item.megaData.rightCard.tagline}</p>
+                                )}
+                                <p className={styles.megaCardSub}>{item.megaData.rightCard.sub}</p>
+                              </div>
+                              
+                              <Link href={item.megaData.rightCard.btnHref} className={styles.megaCardBtn}>
+                                {item.megaData.rightCard.btnText}
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
+                              </Link>
+                            </div>
+
+                            {/* Float mounted charger visual */}
+                            <div className={styles.megaRightChargerWrap}>
+                              <div className={styles.megaRightGlow} />
+                              <img src={item.megaData.rightCard.img} alt="Featured Promo" className={`${styles.megaRightImg} float-animation`} />
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )
                   )}
                 </div>
               );
