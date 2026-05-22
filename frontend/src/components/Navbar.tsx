@@ -57,7 +57,7 @@ const navItems: NavItem[] = [
         sub: 'Smart charging solutions for every lifestyle.',
         btnText: 'View All Products',
         btnHref: '#products',
-        img: '/bexavolt_products_promo.png'
+        img: '/img23-removebg-preview.png'
       }
     }
   },
