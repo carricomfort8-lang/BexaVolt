@@ -119,18 +119,6 @@ export default function VoltMiniProductPage() {
               </AnimateIn>
             </div>
 
-            {/* Right Charger Cutout Column */}
-            <div className={styles.heroRight}>
-              <div className={styles.glowBg} />
-              <div className={`${styles.chargerWrapper} ${styles.floatAnimation}`}>
-                <img 
-                  src="/img23-removebg-preview.png" 
-                  alt="Volt Mini Wall Charger" 
-                  className={styles.chargerImg}
-                />
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
