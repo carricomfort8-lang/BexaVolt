@@ -204,21 +204,11 @@ export default function VoltMiniProductPage() {
             
             {/* Visual Column */}
             <div className={styles.imageShowcaseWrap}>
-              <div className={styles.imagePlaceholderBg} />
-              {/* Uses existing transparent charger */}
               <img 
                 src="/2ndimagevoltmini.png" 
                 alt="Volt Mini In Action" 
                 className={styles.showcaseStaticCharger}
               />
-              <div className={styles.actionOverlay}>
-                <button className={styles.playIconBtn} aria-label="Play video">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                  </svg>
-                </button>
-                <span>See Volt Mini in action</span>
-              </div>
             </div>
 
             {/* Text Column */}
