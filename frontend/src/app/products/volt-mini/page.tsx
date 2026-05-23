@@ -571,24 +571,14 @@ export default function VoltMiniProductPage() {
       </section>
 
       {/* 8. WARRANTY BANNER SECTION */}
-      <section className={styles.sectionPadding}>
-        <div className="container">
-          <div className={styles.warrantyBanner}>
-            
-            {/* Warranty Badge Emblem */}
-            <div className={styles.badgeColumn}>
-              <div className={styles.warrantyCircle}>
-                <div className={styles.warrantyCircleInner}>
-                  <span className={styles.warrantyNumber}>4</span>
-                  <span className={styles.warrantyText}>Year<br />Warranty</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Description Text Column */}
-            <div className={styles.warrantyDescColumn}>
-              <h3>Peace of mind, guaranteed.</h3>
-              <p>
+      <section className={styles.warrantySection}>
+        <div className={styles.warrantyBgImage}>
+          <div className={styles.warrantyOverlay} />
+          <div className="container">
+            <div className={styles.warrantyContent}>
+              <h3 className={styles.warrantyEyebrow}>4-YEAR WARRANTY</h3>
+              <h2 className={styles.warrantyHeading}>Peace of mind, guaranteed.</h2>
+              <p className={styles.warrantyDesc}>
                 Volt Mini comes backed standard with an industry-leading 4-year warranty. 
                 Enjoy comprehensive coverage and local assistance from BexaVolt's expert engineers.
               </p>
@@ -599,19 +589,6 @@ export default function VoltMiniProductPage() {
                 </svg>
               </a>
             </div>
-
-            {/* Outdoor Charger visual placeholder */}
-            <div className={styles.warrantyVisualColumn}>
-              <div className={styles.warrantyVisualCard}>
-                <div className={styles.warrantyLeafGlow} />
-                <img 
-                  src="/img23-removebg-preview.png" 
-                  alt="Volt Mini Waterproof Spec" 
-                  className={styles.warrantyStaticCharger}
-                />
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
