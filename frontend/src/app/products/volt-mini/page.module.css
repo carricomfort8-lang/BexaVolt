@@ -686,61 +686,84 @@
   opacity: 0.8;
 }
 
-/* 6. Technical Specifications Section */
+/* 6. Technical Specifications - Reference Style */
 .specsSection {
   background-color: #050505;
 }
 
-.specsTitleBlock {
-  margin-bottom: 4rem;
+.specsBanner {
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2.5rem 0 2rem;
 }
 
-.specsTitle {
-  font-size: 2.2rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.specsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 5rem;
-}
-
-.specRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: background-color 0.2s ease, padding-left 0.2s ease;
-}
-
-.specRow:hover {
-  background-color: rgba(255, 255, 255, 0.01);
-  padding-left: 0.5rem;
-}
-
-.specLabel {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #71717a;
-}
-
-.specVal {
-  font-size: 1rem;
-  font-weight: 600;
+.specsBannerTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
   color: #ffffff;
-  text-align: right;
-  max-width: 60%;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
 }
 
-.specRowActive {
-  border-bottom-color: rgba(163, 230, 53, 0.3);
+.specsBannerLine {
+  width: 40px;
+  height: 3px;
+  background: #A3E635;
+  border-radius: 2px;
 }
 
-.specRowActive .specVal {
+.specsTableWrap {
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.specsTable {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+}
+
+.specsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2.5rem;
+}
+
+.specsCol:first-child {
+  padding-left: 0;
+}
+
+.specsCol:last-child {
+  padding-right: 0;
+}
+
+.specsColDivider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  align-self: stretch;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.specItemLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
   color: #A3E635;
+  letter-spacing: 0.01em;
+}
+
+.specItemVal {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #d4d4d8;
+  line-height: 1.5;
 }
 
 /* 7. Value Pillars Grid */

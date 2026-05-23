@@ -425,68 +425,86 @@ export default function VoltMiniProductPage() {
         </div>
       </section>
 
-      {/* 6. TECHNICAL SPECIFICATIONS GRID */}
-      <section className={`${styles.sectionPadding} ${styles.specsSection}`}>
-        <div className="container">
-          <div className={styles.specsTitleBlock}>
-            <h3 className={styles.sectionTag}>ENGINEERING DATA</h3>
-            <h2 className={styles.specsTitle}>Technical Specifications</h2>
+
+      {/* 6. TECHNICAL SPECIFICATIONS - Reference Style */}
+      <section className={styles.specsSection}>
+        <div className={styles.specsBanner}>
+          <div className="container">
+            <h2 className={styles.specsBannerTitle}>TECHNICAL SPECIFICATIONS</h2>
+            <div className={styles.specsBannerLine} />
           </div>
+        </div>
 
-          <div className={styles.specsGrid}>
-            <div className={`${styles.specRow} ${styles.specRowActive}`}>
-              <span className={styles.specLabel}>Charging Power</span>
-              <span className={styles.specVal}>Up to {power} ({phase === 'single' ? '32A' : '32A'})</span>
-            </div>
+        <div className={styles.specsTableWrap}>
+          <div className="container">
+            <div className={styles.specsTable}>
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Cable Length</span>
-              <span className={styles.specVal}>5m (Integrated Tethered)</span>
-            </div>
+              {/* Column 1 */}
+              <div className={styles.specsCol}>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Charging Power</span>
+                  <span className={styles.specItemVal}>Up to {power} (32A)</span>
+                </div>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Input / Output Voltage</span>
+                  <span className={styles.specItemVal}>{phase === 'single' ? '230V AC, 50Hz' : '400V AC, 50Hz'}</span>
+                </div>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Connector Type</span>
+                  <span className={styles.specItemVal}>Type 2 (IEC 62196-2)</span>
+                </div>
+              </div>
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Input / Output Voltage</span>
-              <span className={styles.specVal}>{phase === 'single' ? '230V AC, 50Hz' : '400V AC, 50Hz'}</span>
-            </div>
+              <div className={styles.specsColDivider} />
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Connectivity</span>
-              <span className={styles.specVal}>Wi-Fi (2.4GHz) & Bluetooth</span>
-            </div>
+              {/* Column 2 */}
+              <div className={styles.specsCol}>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Cable Length</span>
+                  <span className={styles.specItemVal}>5m (Integrated)</span>
+                </div>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Connectivity</span>
+                  <span className={styles.specItemVal}>Wi-Fi (2.4GHz) &amp; Bluetooth</span>
+                </div>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>App Compatibility</span>
+                  <span className={styles.specItemVal}>iOS &amp; Android</span>
+                </div>
+              </div>
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Connector Type</span>
-              <span className={styles.specVal}>Type 2 (IEC 62196-2)</span>
-            </div>
+              <div className={styles.specsColDivider} />
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>App Compatibility</span>
-              <span className={styles.specVal}>iOS & Android</span>
-            </div>
+              {/* Column 3 */}
+              <div className={styles.specsCol}>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Safety Features</span>
+                  <span className={styles.specItemVal}>Overvoltage, Undervoltage,<br />Overcurrent, Overheat,<br />Leakage Protection</span>
+                </div>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Protection Rating</span>
+                  <span className={styles.specItemVal}>IP65 (Indoor &amp; Outdoor)</span>
+                </div>
+              </div>
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Safety Features</span>
-              <span className={styles.specVal}>Overvoltage, Undervoltage, Leakage Protection</span>
-            </div>
+              <div className={styles.specsColDivider} />
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Protection Rating</span>
-              <span className={styles.specVal}>IP65 (Indoor & Outdoor rated)</span>
-            </div>
+              {/* Column 4 */}
+              <div className={styles.specsCol}>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Operating Temperature</span>
+                  <span className={styles.specItemVal}>-25°C to 55°C</span>
+                </div>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Dimensions (H x W x D)</span>
+                  <span className={styles.specItemVal}>272 x 172 x 90 mm</span>
+                </div>
+                <div className={styles.specItem}>
+                  <span className={styles.specItemLabel}>Weight</span>
+                  <span className={styles.specItemVal}>{phase === 'single' ? '2.6 kg' : '3.2 kg'}</span>
+                </div>
+              </div>
 
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Operating Temperature</span>
-              <span className={styles.specVal}>-25°C to 55°C</span>
-            </div>
-
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Dimensions (H x W x D)</span>
-              <span className={styles.specVal}>272 x 172 x 90 mm</span>
-            </div>
-
-            <div className={styles.specRow}>
-              <span className={styles.specLabel}>Weight</span>
-              <span className={styles.specVal}>{phase === 'single' ? '2.6 kg' : '3.2 kg'}</span>
             </div>
           </div>
         </div>
