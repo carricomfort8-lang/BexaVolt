@@ -148,7 +148,6 @@
 .navItemWithMega {
   display: inline-flex;
   align-items: center;
-  position: relative;
 }
 
 .chevron {
