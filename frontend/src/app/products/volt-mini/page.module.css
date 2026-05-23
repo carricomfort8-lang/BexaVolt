@@ -1057,9 +1057,21 @@
     order: 2;
   }
   
-  .specsGrid {
+  .specsTable {
     grid-template-columns: 1fr;
-    gap: 0;
+  }
+  
+  .specsColDivider {
+    display: none;
+  }
+  
+  .specsCol {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .specsCol:last-child {
+    border-bottom: none;
   }
   
   .warrantyBanner {
@@ -1074,6 +1086,9 @@
 }
 
 @media (max-width: 768px) {
+  .specsTable {
+    grid-template-columns: 1fr 1fr;
+  }
   .sectionPadding {
     padding: 5rem 0;
   }
