@@ -207,7 +207,7 @@ export default function VoltMiniProductPage() {
               <div className={styles.imagePlaceholderBg} />
               {/* Uses existing transparent charger */}
               <img 
-                src="/img23-removebg-preview.png" 
+                src="/2ndimagevoltmini.png" 
                 alt="Volt Mini In Action" 
                 className={styles.showcaseStaticCharger}
               />
