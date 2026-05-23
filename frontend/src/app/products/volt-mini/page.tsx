@@ -572,9 +572,9 @@ export default function VoltMiniProductPage() {
 
       {/* 8. WARRANTY BANNER SECTION */}
       <section className={styles.warrantySection}>
-        <div className={styles.warrantyBgImage}>
-          <div className={styles.warrantyOverlay} />
-          <div className="container">
+        <div className="container">
+          <div className={styles.warrantyBanner}>
+            <div className={styles.warrantyOverlay} />
             <div className={styles.warrantyContent}>
               <h3 className={styles.warrantyEyebrow}>4-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Peace of mind, guaranteed.</h2>

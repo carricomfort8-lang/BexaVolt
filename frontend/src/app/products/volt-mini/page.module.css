@@ -825,15 +825,16 @@
   flex-grow: 1;
 }
 
-/* 8. Warranty Section - Full Background Image */
+/* 8. Warranty Section - Inner Card with Background Image */
 .warrantySection {
-  position: relative;
-  overflow: hidden;
+  padding: 6rem 0;
 }
 
-.warrantyBgImage {
+.warrantyBanner {
   position: relative;
-  min-height: 420px;
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 380px;
   background-image: url('/2ndimagevoltmini.png');
   background-size: cover;
   background-position: center;
@@ -847,8 +848,8 @@
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.92) 0%,
-    rgba(0, 0, 0, 0.75) 50%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.78) 45%,
+    rgba(0, 0, 0, 0.25) 100%
   );
   z-index: 1;
 }
@@ -856,32 +857,32 @@
 .warrantyContent {
   position: relative;
   z-index: 2;
-  padding: 5rem 0;
+  padding: 4rem 4rem;
   max-width: 560px;
 }
 
 .warrantyEyebrow {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   color: #A3E635;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .warrantyHeading {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 800;
   color: #ffffff;
   line-height: 1.15;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
 }
 
 .warrantyDesc {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #a1a1aa;
   line-height: 1.65;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.6rem;
 }
 
 .warrantyLink {
@@ -1020,12 +1021,14 @@
     border-bottom: none;
   }
   
-  .warrantyBgImage {
+  .warrantyBanner {
     background-position: right center;
+    border-radius: 12px;
   }
   
   .warrantyContent {
     max-width: 100%;
+    padding: 3rem 2rem;
   }
 }
 
