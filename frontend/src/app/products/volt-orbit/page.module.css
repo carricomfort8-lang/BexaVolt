@@ -1,0 +1,999 @@
+.page {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Common Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
+.floatAnimation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Sections General */
+.sectionPadding {
+  padding: 8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+/* 1. Hero Section */
+.heroSection {
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/volitmini_hero.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.7) 45%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 700px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.labelTag {
+  color: #c084fc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.heroTitle {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.titleHighlight {
+  color: #c084fc;
+  background: linear-gradient(135deg, #c084fc 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin-bottom: 2rem;
+  max-width: 580px;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1rem;
+  color: #d4d4d8;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(192, 132, 252, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c084fc;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Options Switcher */
+.optionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.phaseContainer {
+  margin-bottom: 0;
+}
+
+.selectorLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #71717a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.phaseSelector {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.phaseBtn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.phaseBtn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.phaseBtnActive {
+  background: rgba(192, 132, 252, 0.05);
+  border-color: #c084fc;
+  color: #c084fc;
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.15);
+}
+
+.priceLabel {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.priceLabel span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #71717a;
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btnPrimary {
+  background-color: #c084fc;
+  color: #000000;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btnPrimary:hover {
+  background-color: #d8b4fe;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(192, 132, 252, 0.3);
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btnSecondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.heroRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.glowBg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.chargerWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.chargerImg {
+  max-width: 100%;
+  height: auto;
+  max-height: 550px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
+}
+
+/* 2. Specs Bar / Ribbon */
+.specsBarSection {
+  background-color: rgba(255, 255, 255, 0.01);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem 0;
+}
+
+.specsBarGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.specsBarItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.specsBarIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(192, 132, 252, 0.05);
+  border: 1px solid rgba(192, 132, 252, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c084fc;
+}
+
+.specsBarText h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.specsBarText p {
+  font-size: 0.85rem;
+  color: #71717a;
+  margin-top: 0.1rem;
+}
+
+/* Split Showcase Template */
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.splitTextCol h3.sectionTag {
+  color: #c084fc;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.splitTextCol h2.sectionTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.splitTextCol p.sectionDesc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin-bottom: 2.5rem;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.featureRow {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.featureRowIcon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(192, 132, 252, 0.05);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  color: #c084fc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.featureRowText h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.featureRowText p {
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+}
+
+/* 3. Image Showcase specific */
+.imageShowcaseWrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #050505;
+}
+
+.showcaseStaticCharger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.imageShowcaseWrap:hover .showcaseStaticCharger {
+  transform: scale(1.04);
+}
+
+/* 5. Phone App Section */
+.appShowcaseCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.appMockupPhone {
+  width: 320px;
+  height: 640px;
+  border-radius: 40px;
+  background-color: #080808;
+  border: 8px solid #1a1a1a;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 
+              0 0 40px rgba(192, 132, 252, 0.08);
+  position: relative;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.phoneNotch {
+  width: 140px;
+  height: 24px;
+  background-color: #1a1a1a;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 5;
+}
+
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.appName {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #c084fc;
+}
+
+.appStatus {
+  font-size: 0.75rem;
+  color: #71717a;
+}
+
+.appCircleProgress {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.03);
+  border-top-color: #c084fc;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.08);
+}
+
+.appCircleProgress::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-left-color: #22d3ee;
+  transform: rotate(45deg);
+}
+
+.appCircleVal {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.appCircleLabel {
+  font-size: 0.75rem;
+  color: #c084fc;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+
+.appStatRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background-color: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.appStatItem {
+  text-align: center;
+}
+
+.appStatItem span {
+  font-size: 0.7rem;
+  color: #71717a;
+  text-transform: uppercase;
+  display: block;
+}
+
+.appStatItem strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.appChartBlock {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.appChartBars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 90px;
+  gap: 0.4rem;
+}
+
+.appChartBar {
+  flex-grow: 1;
+  background-color: rgba(192, 132, 252, 0.2);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  min-height: 10px;
+  transition: all 0.3s ease;
+}
+
+.appChartBarActive {
+  background: linear-gradient(to top, #c084fc, #22d3ee);
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
+}
+
+.appChartLabel {
+  font-size: 0.65rem;
+  color: #71717a;
+  margin-top: 0.6rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.badgeWrapper {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* 6. Technical Specifications */
+.specsSection {
+  background-color: #050505;
+}
+
+.specsBanner {
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2.5rem 0 2rem;
+}
+
+.specsBannerTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.specsBannerLine {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #c084fc, #22d3ee);
+  border-radius: 2px;
+}
+
+.specsTableWrap {
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.specsTable {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+}
+
+.specsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2.5rem;
+}
+
+.specsCol:first-child {
+  padding-left: 0;
+}
+
+.specsCol:last-child {
+  padding-right: 0;
+}
+
+.specsColDivider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  align-self: stretch;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.specItemLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c084fc;
+  letter-spacing: 0.01em;
+}
+
+.specItemVal {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #d4d4d8;
+  line-height: 1.5;
+}
+
+/* 7. Value Pillars Grid */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.pillarCard {
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillarCard:hover {
+  transform: translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(192, 132, 252, 0.35);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6), 
+              0 0 20px rgba(192, 132, 252, 0.05);
+}
+
+.pillarIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: rgba(192, 132, 252, 0.03);
+  border: 1px solid rgba(192, 132, 252, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c084fc;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.pillarCard:hover .pillarIcon {
+  background-color: #c084fc;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.pillarCard h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.pillarCard p {
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* 8. Warranty Section */
+.warrantySection {
+  padding: 6rem 0;
+}
+
+.warrantyBanner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 420px;
+  background-image: url('/c.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warrantyOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+.warrantyContent {
+  position: relative;
+  z-index: 2;
+  padding: 4rem;
+  max-width: 540px;
+  text-align: center;
+}
+
+.warrantyEyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #c084fc;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.warrantyHeading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 1.1rem;
+}
+
+.warrantyDesc {
+  font-size: 1rem;
+  color: #a1a1aa;
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
+}
+
+.warrantyLink {
+  color: #c084fc;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.warrantyLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* 9. Bottom Footer CTA section */
+.bottomCtaSection {
+  background: linear-gradient(to top, #0f051c 0%, #000000 100%);
+  padding: 8rem 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.bottomCtaSection h3 {
+  color: #c084fc;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.bottomCtaSection h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.bottomCtaSection p {
+  font-size: 1.15rem;
+  color: #a1a1aa;
+  margin-bottom: 2.5rem;
+}
+
+.bottomCtaActions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 3.8rem;
+  }
+  
+  .splitGrid {
+    gap: 4rem;
+  }
+  
+  .pillarsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .checklist {
+    align-items: center;
+  }
+  
+  .phaseContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .priceLabel {
+    justify-content: center;
+  }
+  
+  .heroActions {
+    justify-content: center;
+  }
+  
+  .specsBarGrid {
+    justify-content: center;
+  }
+  
+  .splitGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .imageShowcaseWrap {
+    order: 2;
+  }
+  
+  .appShowcaseCol {
+    order: 2;
+  }
+  
+  .specsTable {
+    grid-template-columns: 1fr;
+  }
+  
+  .specsColDivider {
+    display: none;
+  }
+  
+  .specsCol {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .specsCol:last-child {
+    border-bottom: none;
+  }
+  
+  .warrantyBanner {
+    background-position: right center;
+    border-radius: 12px;
+  }
+  
+  .warrantyContent {
+    max-width: 100%;
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .specsTable {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sectionPadding {
+    padding: 5rem 0;
+  }
+  
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  
+  .tagline {
+    font-size: 1.4rem;
+  }
+  
+  .splitTextCol h2.sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bottomCtaSection h2 {
+    font-size: 2.5rem;
+  }
+  
+  .bottomCtaActions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btnPrimary, .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2.4rem;
+  }
+  
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+}

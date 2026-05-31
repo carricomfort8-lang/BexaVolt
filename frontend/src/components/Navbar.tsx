@@ -38,7 +38,7 @@ const navItems: NavItem[] = [
     megaData: {
       wallMount: [
         { name: 'Volt Mini', href: '/products/volt-mini' },
-        { name: 'Volt Orbit', href: '#chargers' },
+        { name: 'Volt Orbit', href: '/products/volt-orbit' },
         { name: 'Volt Smart', href: '#chargers' },
         { name: 'Volt Pulse', href: '#chargers' },
         { name: 'Volt Ultra', href: '#chargers' },
