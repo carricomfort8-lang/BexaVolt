@@ -40,8 +40,8 @@ const navItems: NavItem[] = [
         { name: 'Volt Mini', href: '/products/volt-mini' },
         { name: 'Volt Orbit', href: '/products/volt-orbit' },
         { name: 'Volt Smart', href: '/products/volt-smart' },
-        { name: 'Volt Pulse', href: '#chargers' },
-        { name: 'Volt Ultra', href: '#chargers' },
+        { name: 'Volt Pulse', href: '/products/volt-pulse' },
+        { name: 'Volt Ultra', href: '/products/volt-ultra' },
       ],
       portable: [
         { name: 'Volt Go', href: '#chargers' },
