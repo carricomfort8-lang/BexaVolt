@@ -39,7 +39,7 @@ const navItems: NavItem[] = [
       wallMount: [
         { name: 'Volt Mini', href: '/products/volt-mini' },
         { name: 'Volt Orbit', href: '/products/volt-orbit' },
-        { name: 'Volt Smart', href: '#chargers' },
+        { name: 'Volt Smart', href: '/products/volt-smart' },
         { name: 'Volt Pulse', href: '#chargers' },
         { name: 'Volt Ultra', href: '#chargers' },
       ],
