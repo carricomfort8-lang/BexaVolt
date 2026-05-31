@@ -433,7 +433,7 @@ export default function VoltOrbitProductPage() {
 
                 <svg width="120" height="40" viewBox="0 0 120 40" style={{ cursor: 'pointer', borderRadius: '5px' }}>
                   <rect width="120" height="40" fill="#000" rx="6" stroke="#222" />
-                  <polygon points="12,10 12,30 25,20" fill="#c084fc" />
+                  <polygon points="12,10 12,30 25,20" fill="#A3E635" />
                   <text x="35" y="18" fill="#fff" fontSize="7" fontWeight="600" fontFamily="sans-serif">GET IT ON</text>
                   <text x="35" y="30" fill="#fff" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Google Play</text>
                 </svg>

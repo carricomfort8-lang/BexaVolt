@@ -48,7 +48,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .heroSection::after {
@@ -57,8 +57,8 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.94) 0%,
-    rgba(0, 0, 0, 0.7) 45%,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.65) 45%,
     rgba(0, 0, 0, 0.2) 75%,
     rgba(0, 0, 0, 0.5) 100%
   );
@@ -75,7 +75,7 @@
 }
 
 .labelTag {
-  color: #c084fc;
+  color: #A3E635;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -93,10 +93,7 @@
 }
 
 .titleHighlight {
-  color: #c084fc;
-  background: linear-gradient(135deg, #c084fc 0%, #22d3ee 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #A3E635;
 }
 
 .tagline {
@@ -132,12 +129,12 @@
 .checkIcon {
   width: 20px;
   height: 20px;
-  background-color: rgba(192, 132, 252, 0.15);
+  background-color: rgba(163, 230, 53, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c084fc;
+  color: #A3E635;
   font-size: 0.75rem;
   font-weight: bold;
 }
@@ -188,10 +185,10 @@
 }
 
 .phaseBtnActive {
-  background: rgba(192, 132, 252, 0.05);
-  border-color: #c084fc;
-  color: #c084fc;
-  box-shadow: 0 0 15px rgba(192, 132, 252, 0.15);
+  background: rgba(163, 230, 53, 0.05);
+  border-color: #A3E635;
+  color: #A3E635;
+  box-shadow: 0 0 15px rgba(163, 230, 53, 0.1);
 }
 
 .priceLabel {
@@ -216,7 +213,7 @@
 }
 
 .btnPrimary {
-  background-color: #c084fc;
+  background-color: #A3E635;
   color: #000000;
   padding: 1rem 2rem;
   border-radius: 4px;
@@ -231,9 +228,9 @@
 }
 
 .btnPrimary:hover {
-  background-color: #d8b4fe;
+  background-color: #b4f24c;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(192, 132, 252, 0.3);
+  box-shadow: 0 5px 15px rgba(163, 230, 53, 0.2);
 }
 
 .btnSecondary {
@@ -268,7 +265,7 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(163, 230, 53, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
   z-index: 1;
   pointer-events: none;
   animation: pulse-glow 8s ease-in-out infinite;
@@ -313,12 +310,12 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: rgba(192, 132, 252, 0.05);
-  border: 1px solid rgba(192, 132, 252, 0.15);
+  background-color: rgba(163, 230, 53, 0.05);
+  border: 1px solid rgba(163, 230, 53, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c084fc;
+  color: #A3E635;
 }
 
 .specsBarText h4 {
@@ -342,7 +339,7 @@
 }
 
 .splitTextCol h3.sectionTag {
-  color: #c084fc;
+  color: #A3E635;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -378,9 +375,9 @@
 .featureRowIcon {
   width: 40px;
   height: 40px;
-  background-color: rgba(192, 132, 252, 0.05);
-  border: 1px solid rgba(192, 132, 252, 0.2);
-  color: #c084fc;
+  background-color: rgba(163, 230, 53, 0.05);
+  border: 1px solid rgba(163, 230, 53, 0.15);
+  color: #A3E635;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -443,7 +440,7 @@
   background-color: #080808;
   border: 8px solid #1a1a1a;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 
-              0 0 40px rgba(192, 132, 252, 0.08);
+              0 0 40px rgba(163, 230, 53, 0.05);
   position: relative;
   padding: 1.5rem;
   display: flex;
@@ -475,7 +472,7 @@
 .appName {
   font-size: 0.9rem;
   font-weight: 800;
-  color: #c084fc;
+  color: #A3E635;
 }
 
 .appStatus {
@@ -488,7 +485,7 @@
   height: 180px;
   border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.03);
-  border-top-color: #c084fc;
+  border-top-color: #A3E635;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -496,7 +493,7 @@
   justify-content: center;
   position: relative;
   margin-bottom: 2rem;
-  box-shadow: 0 0 20px rgba(192, 132, 252, 0.08);
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.05);
 }
 
 .appCircleProgress::before {
@@ -505,7 +502,7 @@
   top: -4px; left: -4px; right: -4px; bottom: -4px;
   border-radius: 50%;
   border: 4px solid transparent;
-  border-left-color: #22d3ee;
+  border-left-color: #A3E635;
   transform: rotate(45deg);
 }
 
@@ -517,7 +514,7 @@
 
 .appCircleLabel {
   font-size: 0.75rem;
-  color: #c084fc;
+  color: #A3E635;
   font-weight: 700;
   letter-spacing: 0.05em;
   margin-top: 0.2rem;
@@ -570,7 +567,7 @@
 
 .appChartBar {
   flex-grow: 1;
-  background-color: rgba(192, 132, 252, 0.2);
+  background-color: rgba(163, 230, 53, 0.2);
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   min-height: 10px;
@@ -578,8 +575,8 @@
 }
 
 .appChartBarActive {
-  background: linear-gradient(to top, #c084fc, #22d3ee);
-  box-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
+  background: #A3E635;
+  box-shadow: 0 0 10px rgba(163, 230, 53, 0.4);
 }
 
 .appChartLabel {
@@ -620,7 +617,7 @@
 .specsBannerLine {
   width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #c084fc, #22d3ee);
+  background: #A3E635;
   border-radius: 2px;
 }
 
@@ -665,7 +662,7 @@
 .specItemLabel {
   font-size: 0.8rem;
   font-weight: 700;
-  color: #c084fc;
+  color: #A3E635;
   letter-spacing: 0.01em;
 }
 
@@ -696,27 +693,27 @@
 .pillarCard:hover {
   transform: translateY(-8px);
   background-color: rgba(255, 255, 255, 0.03);
-  border-color: rgba(192, 132, 252, 0.35);
+  border-color: rgba(163, 230, 53, 0.3);
   box-shadow: 0 15px 30px rgba(0,0,0,0.6), 
-              0 0 20px rgba(192, 132, 252, 0.05);
+              0 0 20px rgba(163, 230, 53, 0.02);
 }
 
 .pillarIcon {
   width: 44px;
   height: 44px;
   border-radius: 8px;
-  background-color: rgba(192, 132, 252, 0.03);
-  border: 1px solid rgba(192, 132, 252, 0.15);
+  background-color: rgba(163, 230, 53, 0.03);
+  border: 1px solid rgba(163, 230, 53, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #c084fc;
+  color: #A3E635;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .pillarCard:hover .pillarIcon {
-  background-color: #c084fc;
+  background-color: #A3E635;
   color: #000000;
   transform: scale(1.05);
 }
@@ -758,8 +755,8 @@
   inset: 0;
   background: radial-gradient(
     circle at center,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.65) 60%,
     rgba(0, 0, 0, 0.3) 100%
   );
   z-index: 1;
@@ -777,7 +774,7 @@
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.2em;
-  color: #c084fc;
+  color: #A3E635;
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }
@@ -798,7 +795,7 @@
 }
 
 .warrantyLink {
-  color: #c084fc;
+  color: #A3E635;
   font-size: 0.95rem;
   font-weight: 700;
   display: inline-flex;
@@ -815,14 +812,14 @@
 
 /* 9. Bottom Footer CTA section */
 .bottomCtaSection {
-  background: linear-gradient(to top, #0f051c 0%, #000000 100%);
+  background: linear-gradient(to top, #050b00 0%, #000000 100%);
   padding: 8rem 0;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .bottomCtaSection h3 {
-  color: #c084fc;
+  color: #A3E635;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.05em;
