@@ -426,6 +426,28 @@
 }
 
 /* 5. Phone App Section */
+.phoneImageWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.phoneImageFull {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.phoneImageWrap:hover .phoneImageFull {
+  transform: scale(1.03);
+}
+
+
 .appShowcaseCol {
   display: flex;
   justify-content: center;

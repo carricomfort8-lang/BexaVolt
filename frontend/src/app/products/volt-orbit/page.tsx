@@ -346,11 +346,11 @@ export default function VoltOrbitProductPage() {
           <div className={styles.splitGrid}>
             
             {/* Left Phone App Image */}
-            <div className={styles.imageShowcaseWrap}>
+            <div className={styles.phoneImageWrap}>
               <img
                 src="/02_45_09AM.png"
                 alt="Solar data visualised from your phone"
-                className={styles.showcaseStaticCharger}
+                className={styles.phoneImageFull}
               />
             </div>
 
