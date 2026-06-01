@@ -345,46 +345,13 @@ export default function VoltOrbitProductPage() {
         <div className="container">
           <div className={styles.splitGrid}>
             
-            {/* Left Phone App Mockup */}
-            <div className={styles.appShowcaseCol}>
-              <div className={styles.appMockupPhone}>
-                <div className={styles.phoneNotch} />
-                
-                <div className={styles.appHeader}>
-                  <span className={styles.appName}>BEXAVOLT</span>
-                  <span className={styles.appStatus}>● Solar Mode</span>
-                </div>
-
-                <div className={styles.appCircleProgress}>
-                  <span className={styles.appCircleVal}>{power}</span>
-                  <span className={styles.appCircleLabel}>SOLAR CHARGING</span>
-                </div>
-
-                <div className={styles.appStatRow}>
-                  <div className={styles.appStatItem}>
-                    <span>Solar Match</span>
-                    <strong>94.2% Eco</strong>
-                  </div>
-                  <div className={styles.appStatItem}>
-                    <span>Saved Today</span>
-                    <strong>$14.80 AUD</strong>
-                  </div>
-                </div>
-
-                {/* Energy Chart Mockup */}
-                <div className={styles.appChartBlock}>
-                  <div className={styles.appChartBars}>
-                    <div className={styles.appChartBar} style={{ height: '20%' }} />
-                    <div className={styles.appChartBar} style={{ height: '35%' }} />
-                    <div className={styles.appChartBar} style={{ height: '65%' }} />
-                    <div className={styles.appChartBar} style={{ height: '85%' }} />
-                    <div className={styles.appChartBar} style={{ height: '90%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '95%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '100%' }} />
-                  </div>
-                  <span className={styles.appChartLabel}>Real-time Solar Integration Curve</span>
-                </div>
-              </div>
+            {/* Left Phone App Image */}
+            <div className={styles.imageShowcaseWrap}>
+              <img
+                src="/02_45_09AM.png"
+                alt="Solar data visualised from your phone"
+                className={styles.showcaseStaticCharger}
+              />
             </div>
 
             {/* Right Text Column */}
