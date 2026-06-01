@@ -330,8 +330,8 @@ export default function VoltOrbitProductPage() {
             {/* Ambient Card Visual Column - reusing Volt Mini static image as requested */}
             <div className={styles.imageShowcaseWrap}>
               <img 
-                src="/3rdsec.png" 
-                alt="Volt Orbit Charging" 
+                src="/02_33_29AM.png" 
+                alt="Volt Orbit Grid Independence" 
                 className={styles.showcaseStaticCharger}
               />
             </div>
