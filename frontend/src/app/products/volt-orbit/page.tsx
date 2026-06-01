@@ -224,8 +224,8 @@ export default function VoltOrbitProductPage() {
             {/* Visual Column - reusing Volt Mini static image as requested */}
             <div className={styles.imageShowcaseWrap}>
               <img 
-                src="/2ndimagevoltmini.png" 
-                alt="Volt Orbit In Action" 
+                src="/02_20_22AM.png" 
+                alt="Volt Orbit Smarter Charging" 
                 className={styles.showcaseStaticCharger}
               />
             </div>
