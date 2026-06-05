@@ -278,38 +278,8 @@ export default function VoltUltraProductPage() {
         <div className="container">
           <div className={styles.splitGrid}>
             <div className={styles.appShowcaseCol}>
-              <div className={styles.appMockupPhone}>
-                <div className={styles.phoneNotch} />
-                <div className={styles.appHeader}>
-                  <span className={styles.appName}>BEXAVOLT</span>
-                  <span className={styles.appStatus}>● Ultra Mode</span>
-                </div>
-                <div className={styles.appCircleProgress}>
-                  <span className={styles.appCircleVal}>{power}</span>
-                  <span className={styles.appCircleLabel}>ULTRA CHARGING</span>
-                </div>
-                <div className={styles.appStatRow}>
-                  <div className={styles.appStatItem}>
-                    <span>Solar Match</span>
-                    <strong>97.8% Eco+</strong>
-                  </div>
-                  <div className={styles.appStatItem}>
-                    <span>Saved Today</span>
-                    <strong>$21.40 AUD</strong>
-                  </div>
-                </div>
-                <div className={styles.appChartBlock}>
-                  <div className={styles.appChartBars}>
-                    <div className={styles.appChartBar} style={{ height: '30%' }} />
-                    <div className={styles.appChartBar} style={{ height: '50%' }} />
-                    <div className={styles.appChartBar} style={{ height: '70%' }} />
-                    <div className={styles.appChartBar} style={{ height: '88%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '95%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '98%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '100%' }} />
-                  </div>
-                  <span className={styles.appChartLabel}>Flagship Solar + Speed Curve</span>
-                </div>
+              <div className={styles.imageShowcaseWrap}>
+                <img src="/ultra4.png" alt="Volt Ultra App" className={styles.showcaseStaticCharger} />
               </div>
             </div>
             <div className={styles.splitTextCol}>
