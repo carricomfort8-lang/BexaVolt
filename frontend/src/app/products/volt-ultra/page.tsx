@@ -187,7 +187,7 @@ export default function VoltUltraProductPage() {
         <div className="container">
           <div className={styles.splitGrid}>
             <div className={styles.imageShowcaseWrap}>
-              <img src="/2ndimagevoltmini.png" alt="Volt Ultra In Action" className={styles.showcaseStaticCharger} />
+              <img src="/ultra2.png" alt="Volt Ultra In Action" className={styles.showcaseStaticCharger} />
             </div>
             <div className={styles.splitTextCol}>
               <h3 className={styles.sectionTag}>EVERY PREMIUM FEATURE. ONE UNIT.</h3>
