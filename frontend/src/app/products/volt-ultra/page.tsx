@@ -278,9 +278,7 @@ export default function VoltUltraProductPage() {
         <div className="container">
           <div className={styles.splitGrid}>
             <div className={styles.appShowcaseCol}>
-              <div className={styles.imageShowcaseWrap}>
-                <img src="/ultra4.png" alt="Volt Ultra App" className={styles.showcaseStaticCharger} />
-              </div>
+              <img src="/ultra4.png" alt="Volt Ultra App" className={styles.appShowcaseImage} />
             </div>
             <div className={styles.splitTextCol}>
               <h3 className={styles.sectionTag}>FULL SYSTEM VISIBILITY</h3>
