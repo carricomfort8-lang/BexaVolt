@@ -267,7 +267,7 @@ export default function VoltUltraProductPage() {
               </div>
             </div>
             <div className={styles.imageShowcaseWrap}>
-              <img src="/3rdsec.png" alt="Volt Ultra Charging" className={styles.showcaseStaticCharger} />
+              <img src="/ultra3.png" alt="Volt Ultra Charging" className={styles.showcaseStaticCharger} />
             </div>
           </div>
         </div>
