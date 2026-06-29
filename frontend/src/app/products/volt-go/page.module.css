@@ -43,7 +43,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/volitmini_hero.png');
+  background-image: url('/portable1.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -67,8 +67,8 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  max-width: 700px;
   align-items: center;
   position: relative;
   z-index: 2;

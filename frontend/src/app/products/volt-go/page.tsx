@@ -119,16 +119,6 @@ export default function VoltGoProductPage() {
               </AnimateIn>
             </div>
 
-            {/* Right Image Column */}
-            <div className={styles.heroRight}>
-              <div className={styles.glowBg}></div>
-              <AnimateIn direction="right" delay={3}>
-                <div className={styles.chargerWrapper}>
-                  <img src="/portable1.png" alt="Volt Go Portable Charger" className={styles.chargerImg} />
-                </div>
-              </AnimateIn>
-            </div>
-
           </div>
         </div>
       </section>
