@@ -291,24 +291,28 @@ export default function VoltGoProductPage() {
                 <div className={styles.featureRow}>
                   <div className={styles.featureRowIcon}>✓</div>
                   <div className={styles.featureRowText}>
-                    <h4>Standard Australian Plug</h4>
-                    <p>Plugs straight into any standard 10A home socket without specialized electrical work.</p>
+                    <h4>Home Charging</h4>
                   </div>
                 </div>
 
                 <div className={styles.featureRow}>
                   <div className={styles.featureRowIcon}>✓</div>
                   <div className={styles.featureRowText}>
-                    <h4>Up to 25km range per hour</h4>
-                    <p>The 15A plug configuration delivers steady, consistent power to add valuable range during hotel or camping stays.</p>
+                    <h4>Travel</h4>
                   </div>
                 </div>
 
                 <div className={styles.featureRow}>
                   <div className={styles.featureRowIcon}>✓</div>
                   <div className={styles.featureRowText}>
-                    <h4>Premium travel bag included</h4>
-                    <p>Heavy-duty, waterproof zip-up storage bag keeps your charger organized and clean.</p>
+                    <h4>Workplace Charging</h4>
+                  </div>
+                </div>
+
+                <div className={styles.featureRow}>
+                  <div className={styles.featureRowIcon}>✓</div>
+                  <div className={styles.featureRowText}>
+                    <h4>Outdoor Adventures</h4>
                   </div>
                 </div>
               </div>
