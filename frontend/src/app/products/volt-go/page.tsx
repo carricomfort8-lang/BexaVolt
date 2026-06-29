@@ -289,30 +289,50 @@ export default function VoltGoProductPage() {
 
               <div className={styles.featuresList}>
                 <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>✓</div>
+                  <div className={styles.featureRowIcon}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                  </div>
                   <div className={styles.featureRowText}>
                     <h4>Home Charging</h4>
+                    <p>Plug into any standard domestic outlet for convenient overnight charging.</p>
                   </div>
                 </div>
 
                 <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>✓</div>
+                  <div className={styles.featureRowIcon}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                  </div>
                   <div className={styles.featureRowText}>
                     <h4>Travel</h4>
+                    <p>Compact and lightweight design makes it easy to store in your boot.</p>
                   </div>
                 </div>
 
                 <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>✓</div>
+                  <div className={styles.featureRowIcon}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/>
+                    </svg>
+                  </div>
                   <div className={styles.featureRowText}>
                     <h4>Workplace Charging</h4>
+                    <p>Top up your battery while you work from any available 10A socket.</p>
                   </div>
                 </div>
 
                 <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>✓</div>
+                  <div className={styles.featureRowIcon}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                    </svg>
+                  </div>
                   <div className={styles.featureRowText}>
                     <h4>Outdoor Adventures</h4>
+                    <p>IP66 waterproof rating ensures safe charging in all weather conditions.</p>
                   </div>
                 </div>
               </div>
