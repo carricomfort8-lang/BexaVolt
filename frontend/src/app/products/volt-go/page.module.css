@@ -287,8 +287,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  flex-wrap: nowrap;
+  gap: 1rem;
 }
 
 .specsBarItem {
@@ -987,6 +987,8 @@
   
   .specsBarGrid {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
   }
   
   .splitGrid {
