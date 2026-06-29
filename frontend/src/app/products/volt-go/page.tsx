@@ -135,8 +135,8 @@ export default function VoltGoProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>Up to {power}</h4>
-                <p>Flexible mobile charging</p>
+                <h4>Up to 32A Fast Charging</h4>
+                <p>Adjustable current up to 32A for efficient and reliable charging.</p>
               </div>
             </div>
 
@@ -150,8 +150,8 @@ export default function VoltGoProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>5m cable</h4>
-                <p>High-flex durability</p>
+                <h4>Integrated CPU</h4>
+                <p>Advanced control chip for stable performance and multiple protection.</p>
               </div>
             </div>
 
@@ -163,8 +163,8 @@ export default function VoltGoProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>LED Display</h4>
-                <p>Live current & temp tracking</p>
+                <h4>Smart Temperature Control</h4>
+                <p>Real-time monitoring and protection to ensure safe charging.</p>
               </div>
             </div>
 
@@ -175,8 +175,8 @@ export default function VoltGoProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>Lightweight</h4>
-                <p>Only 1.9 kg net weight</p>
+                <h4>5-Level Current Adjustment</h4>
+                <p>Easily adjust charging current via the display to match your needs.</p>
               </div>
             </div>
 
@@ -187,8 +187,8 @@ export default function VoltGoProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>IP66 weatherproof</h4>
-                <p>Charge outdoors safely</p>
+                <h4>Grounding Mode Switchable</h4>
+                <p>Switch grounding detection on or off to suit different environments.</p>
               </div>
             </div>
           </div>
