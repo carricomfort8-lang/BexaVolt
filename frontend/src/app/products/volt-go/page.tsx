@@ -520,57 +520,74 @@ export default function VoltGoProductPage() {
       {/* 7. BOTTOM PILLARS GRID */}
       <section className={styles.sectionPadding}>
         <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className={styles.sectionTitle}>SAFETY PROTECTIONS</h2>
+          </div>
           <div className={styles.pillarsGrid}>
             
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
-              <h4>Charge Anywhere</h4>
-              <p>Plug into standard domestic or caravan outlets across Australia without needing a wall station.</p>
+              <h4>Over Current Protection</h4>
+              <p>Automatically cuts off power if current exceeds the safe threshold, preventing wire damage.</p>
             </div>
 
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                 </svg>
               </div>
-              <h4>OLED Display</h4>
-              <p>Monitor exact charging current, voltage, temperature, and total kWh delivered on the unit.</p>
+              <h4>Over Voltage Protection</h4>
+              <p>Shields your vehicle's battery from sudden spikes in grid voltage.</p>
             </div>
 
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 5.64l1.42-1.42M23 22H1L12 12z"/>
+                  <rect x="1" y="6" width="18" height="12" rx="2" ry="2"/>
+                  <line x1="23" y1="13" x2="23" y2="11"/>
                 </svg>
               </div>
-              <h4>All-Weather Protection</h4>
-              <p>IP66 certified structure protects the unit against heavy rain, dust, and outdoor conditions.</p>
+              <h4>Under Voltage Protection</h4>
+              <p>Ensures charging stops if the voltage drops too low, maintaining stable delivery.</p>
             </div>
 
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
                 </svg>
               </div>
-              <h4>Thermal Safety</h4>
-              <p>Integrated temperature monitors dynamically regulate the current to protect domestic wall sockets.</p>
+              <h4>Over Temperature Protection</h4>
+              <p>Built-in thermal sensors reduce or stop current if the unit overheats.</p>
             </div>
 
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
               </div>
-              <h4>Expert Local Support</h4>
-              <p>Backed standard by BexaVolt's dedicated, technical Australian help desk team nationwide.</p>
+              <h4>Leakage Protection</h4>
+              <p>Instantly disconnects power if earth leakage is detected, keeping you safe from shocks.</p>
+            </div>
+
+            <div className={styles.pillarCard}>
+              <div className={styles.pillarIcon}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="2" y1="12" x2="22" y2="12"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <h4>Grounding Protection</h4>
+              <p>Monitors the ground connection continuously for maximum electrical safety.</p>
             </div>
 
           </div>
