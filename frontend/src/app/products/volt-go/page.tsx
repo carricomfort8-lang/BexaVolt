@@ -136,7 +136,7 @@ export default function VoltGoProductPage() {
               </div>
               <div className={styles.specsBarText}>
                 <h4>Up to 32A Fast Charging</h4>
-                <p>Adjustable current up to 32A for efficient and reliable charging.</p>
+                <p>Adjustable current up to 32A</p>
               </div>
             </div>
 
@@ -151,7 +151,7 @@ export default function VoltGoProductPage() {
               </div>
               <div className={styles.specsBarText}>
                 <h4>Integrated CPU</h4>
-                <p>Advanced control chip for stable performance and multiple protection.</p>
+                <p>Advanced control chip for stable performance</p>
               </div>
             </div>
 
@@ -164,7 +164,7 @@ export default function VoltGoProductPage() {
               </div>
               <div className={styles.specsBarText}>
                 <h4>Smart Temperature Control</h4>
-                <p>Real-time monitoring and protection to ensure safe charging.</p>
+                <p>Real-time monitoring</p>
               </div>
             </div>
 
@@ -176,7 +176,7 @@ export default function VoltGoProductPage() {
               </div>
               <div className={styles.specsBarText}>
                 <h4>5-Level Current Adjustment</h4>
-                <p>Easily adjust charging current via the display to match your needs.</p>
+                <p>Easily adjust charging current</p>
               </div>
             </div>
 
@@ -188,7 +188,7 @@ export default function VoltGoProductPage() {
               </div>
               <div className={styles.specsBarText}>
                 <h4>Grounding Mode Switchable</h4>
-                <p>Switch grounding detection on or off to suit different environments.</p>
+                <p>Switch grounding detection</p>
               </div>
             </div>
           </div>
