@@ -55,23 +55,23 @@ export default function VoltGoProductPage() {
                 <div className={styles.checklist}>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Up to {power} charging power</span>
+                    <span>Up to 32A Fast Charging</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>5m high-flex heavy-duty cable</span>
+                    <span>Integrated CPU</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Digital LED status & temperature display</span>
+                    <span>Smart Temperature Control</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Built-in smart temperature controls</span>
+                    <span>5-Level Current Adjustment</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>IP66 waterproof rated for all-weather outdoor use</span>
+                    <span>Grounding Mode Switchable</span>
                   </div>
                 </div>
               </AnimateIn>
