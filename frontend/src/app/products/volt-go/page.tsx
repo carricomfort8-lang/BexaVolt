@@ -34,18 +34,19 @@ export default function VoltGoProductPage() {
 
               <AnimateIn direction="left" delay={2}>
                 <h1 className={styles.heroTitle}>
-                  Volt <span className={styles.titleHighlight}>Go</span>
+                  Portable <span className={styles.titleHighlight}>EV Charger</span>
                 </h1>
               </AnimateIn>
 
               <AnimateIn direction="left" delay={3}>
-                <p className={styles.tagline}>Power anywhere. Drive everywhere.</p>
+                <p className={styles.tagline}>Power Anywhere, Charge Everywhere</p>
               </AnimateIn>
 
               <AnimateIn direction="left" delay={4}>
                 <p className={styles.description}>
-                  The Volt Go is our ultra-compact, travel-ready portable EV charger. Designed to fit in
-                  your boot, it lets you charge from any standard domestic or caravan outlet wherever your journey takes you.
+                  The BexaVolt portable EV charger delivers fast, safe and reliable charging for your electric vehicle.
+                  <br /><br />
+                  Designed for performance and convenience, it's the perfect companion at home, on the road or wherever you go.
                 </p>
               </AnimateIn>
 
