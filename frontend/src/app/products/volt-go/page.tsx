@@ -453,16 +453,16 @@ export default function VoltGoProductPage() {
               {/* Column 1 */}
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Charging Power</span>
-                  <span className={styles.specItemVal}>Up to {power} ({current === '8A' ? '8A' : '15A'})</span>
+                  <span className={styles.specItemLabel}>Model</span>
+                  <span className={styles.specItemVal}>ST-T550</span>
                 </div>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Input / Output Voltage</span>
-                  <span className={styles.specItemVal}>230V AC, 50Hz</span>
+                  <span className={styles.specItemLabel}>Input Voltage</span>
+                  <span className={styles.specItemVal}>220V AC</span>
                 </div>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Connector Type</span>
-                  <span className={styles.specItemVal}>Type 2 (IEC 62196-2)</span>
+                  <span className={styles.specItemLabel}>Max. Current</span>
+                  <span className={styles.specItemVal}>32A</span>
                 </div>
               </div>
 
@@ -471,16 +471,16 @@ export default function VoltGoProductPage() {
               {/* Column 2 */}
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Cable Length</span>
-                  <span className={styles.specItemVal}>5m (Integrated)</span>
+                  <span className={styles.specItemLabel}>Power Output</span>
+                  <span className={styles.specItemVal}>Up to 7.0kW</span>
                 </div>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Display Type</span>
-                  <span className={styles.specItemVal}>Digital LED status screen</span>
+                  <span className={styles.specItemLabel}>Connector (Car Side)</span>
+                  <span className={styles.specItemVal}>IEC 62196-2 Type 2</span>
                 </div>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>App Integration</span>
-                  <span className={styles.specItemVal}>Standalone (No app required)</span>
+                  <span className={styles.specItemLabel}>Input Plug (Wall Side)</span>
+                  <span className={styles.specItemVal}>Australian Plug (AS/NZS 3112)</span>
                 </div>
               </div>
 
@@ -489,12 +489,12 @@ export default function VoltGoProductPage() {
               {/* Column 3 */}
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Safety Features</span>
-                  <span className={styles.specItemVal}>Over-temp sensor, Leakage, Overcurrent, Overvoltage, RCD protection</span>
+                  <span className={styles.specItemLabel}>Operating Temperature</span>
+                  <span className={styles.specItemVal}>-30°C ~ +50°C</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Protection Rating</span>
-                  <span className={styles.specItemVal}>IP66 Weatherproof / IK08 Impact</span>
+                  <span className={styles.specItemVal}>IP55 (mated)</span>
                 </div>
               </div>
 
@@ -503,16 +503,12 @@ export default function VoltGoProductPage() {
               {/* Column 4 */}
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Operating Temperature</span>
-                  <span className={styles.specItemVal}>-30°C to 50°C</span>
+                  <span className={styles.specItemLabel}>Cable Length</span>
+                  <span className={styles.specItemVal}>5m (customizable)</span>
                 </div>
                 <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Dimensions (H x W x D)</span>
-                  <span className={styles.specItemVal}>210 x 95 x 55 mm</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Net Weight</span>
-                  <span className={styles.specItemVal}>1.9 kg</span>
+                  <span className={styles.specItemLabel}>Certification</span>
+                  <span className={styles.specItemVal}>CE / RoHS / FCC</span>
                 </div>
               </div>
 
