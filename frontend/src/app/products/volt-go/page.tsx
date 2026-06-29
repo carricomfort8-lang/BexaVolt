@@ -212,7 +212,7 @@ export default function VoltGoProductPage() {
             {/* Text Column */}
             <div className={styles.splitTextCol}>
               <h3 className={styles.sectionTag}>COMPACT, VERSATILE, TRAVEL READY</h3>
-              <h2 className={styles.sectionTitle}>Charging on the move.<br />Zero hassle.</h2>
+              <h2 className={styles.sectionTitle}>POWERFUL FEATURES</h2>
               <p className={styles.sectionDesc}>
                 Volt Go fits neatly into its carrying bag, ready to rescue you in remote areas or top you up overnight while away from home.
               </p>
