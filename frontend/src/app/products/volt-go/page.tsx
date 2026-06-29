@@ -223,8 +223,8 @@ export default function VoltGoProductPage() {
                     <span>01</span>
                   </div>
                   <div className={styles.featureRowText}>
-                    <h4>Fits in the boot</h4>
-                    <p>Designed with a compact housing structure and flexible cabling that packs away in seconds.</p>
+                    <h4>Integrated CPU</h4>
+                    <p>Advanced control chip for stable performance, precision and safety.</p>
                   </div>
                 </div>
 
@@ -233,8 +233,8 @@ export default function VoltGoProductPage() {
                     <span>02</span>
                   </div>
                   <div className={styles.featureRowText}>
-                    <h4>Temperature control</h4>
-                    <p>Built-in thermal sensors reduce current automatically if the plug or control unit gets warm.</p>
+                    <h4>Smart Temperature Control</h4>
+                    <p>Real-time monitoring to prevent overheating and ensure safety.</p>
                   </div>
                 </div>
 
@@ -243,8 +243,8 @@ export default function VoltGoProductPage() {
                     <span>03</span>
                   </div>
                   <div className={styles.featureRowText}>
-                    <h4>Robust LCD screen</h4>
-                    <p>Get real-time feedback on your charging current, voltage, temperature, and total kWh delivered.</p>
+                    <h4>5-Level Adjustment</h4>
+                    <p>Quickly adjust the charging current (8A/13A/16A/24A/32A) to match your needs.</p>
                   </div>
                 </div>
 
@@ -253,8 +253,18 @@ export default function VoltGoProductPage() {
                     <span>04</span>
                   </div>
                   <div className={styles.featureRowText}>
-                    <h4>Australian caravan ready</h4>
-                    <p>Choose the 15A option to tap into high-current power poles at any caravan site across the country.</p>
+                    <h4>Grounding Mode Switchable</h4>
+                    <p>Support grounding detection ON/OFF for enhanced compatibility.</p>
+                  </div>
+                </div>
+
+                <div className={styles.featureRow}>
+                  <div className={styles.featureRowIcon}>
+                    <span>05</span>
+                  </div>
+                  <div className={styles.featureRowText}>
+                    <h4>Ergonomic Design</h4>
+                    <p>Comfortable grip, durable materials and IP55 waterproof protection.</p>
                   </div>
                 </div>
               </div>
