@@ -203,7 +203,7 @@ export default function VoltGoProductPage() {
             {/* Visual Column */}
             <div className={styles.imageShowcaseWrap}>
               <img 
-                src="/2ndimagevoltmini.png" 
+                src="/portable2.png" 
                 alt="Volt Go In Action" 
                 className={styles.showcaseStaticCharger}
               />
