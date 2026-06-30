@@ -356,46 +356,13 @@ export default function VoltGoProductPage() {
         <div className="container">
           <div className={styles.splitGrid}>
             
-            {/* Left Phone App Mockup */}
-            <div className={styles.appShowcaseCol}>
-              <div className={styles.appMockupPhone}>
-                <div className={styles.phoneNotch} />
-                
-                <div className={styles.appHeader}>
-                  <span className={styles.appName}>BEXAVOLT</span>
-                  <span className={styles.appStatus}>● Portable Mode</span>
-                </div>
-
-                <div className={styles.appCircleProgress}>
-                  <span className={styles.appCircleVal}>{power}</span>
-                  <span className={styles.appCircleLabel}>MOBILE CHARGING</span>
-                </div>
-
-                <div className={styles.appStatRow}>
-                  <div className={styles.appStatItem}>
-                    <span>Current Draw</span>
-                    <strong>{current}</strong>
-                  </div>
-                  <div className={styles.appStatItem}>
-                    <span>Temp</span>
-                    <strong>34°C</strong>
-                  </div>
-                </div>
-
-                {/* Energy Chart Mockup */}
-                <div className={styles.appChartBlock}>
-                  <div className={styles.appChartBars}>
-                    <div className={styles.appChartBar} style={{ height: '20%' }} />
-                    <div className={styles.appChartBar} style={{ height: '30%' }} />
-                    <div className={styles.appChartBar} style={{ height: '40%' }} />
-                    <div className={styles.appChartBar} style={{ height: '60%' }} />
-                    <div className={styles.appChartBar} style={{ height: '70%' }} />
-                    <div className={styles.appChartBar} style={{ height: '80%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '100%' }} />
-                  </div>
-                  <span className={styles.appChartLabel}>Real-time Power Curve</span>
-                </div>
-              </div>
+            {/* Visual Column */}
+            <div className={styles.imageShowcaseWrap}>
+              <img 
+                src="/portable5.png" 
+                alt="Volt Go Status Monitor" 
+                className={styles.showcaseStaticCharger}
+              />
             </div>
 
             {/* Right Text Column */}
