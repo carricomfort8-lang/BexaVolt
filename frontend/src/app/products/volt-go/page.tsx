@@ -341,7 +341,7 @@ export default function VoltGoProductPage() {
             {/* Ambient Card Visual Column */}
             <div className={styles.imageShowcaseWrap}>
               <img 
-                src="/3rdsec.png" 
+                src="/portable4.png" 
                 alt="Volt Go Travel Kit" 
                 className={styles.showcaseStaticCharger}
               />
