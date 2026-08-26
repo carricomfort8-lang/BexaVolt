@@ -34,7 +34,7 @@ export default function VoltPulseProductPage() {
               </AnimateIn>
               <AnimateIn direction="left" delay={4}>
                 <p className={styles.description}>
-                  The Volt Pulse delivers high-output, ultra-reliable home EV charging with a premium 
+                  The VoltHome Pro delivers high-output, ultra-reliable home EV charging with a premium 
                   brushed enclosure, dynamic load management, and comprehensive safety systems. 
                   Engineered for drivers who demand the fastest possible home top-up speed.
                 </p>
@@ -165,13 +165,13 @@ export default function VoltPulseProductPage() {
         <div className="container">
           <div className={styles.splitGrid}>
             <div className={styles.imageShowcaseWrap}>
-              <img src="/2ndimagevoltmini.png" alt="Volt Pulse In Action" className={styles.showcaseStaticCharger} />
+              <img src="/2ndimagevoltmini.png" alt="VoltHome Pro In Action" className={styles.showcaseStaticCharger} />
             </div>
             <div className={styles.splitTextCol}>
               <h3 className={styles.sectionTag}>MAXIMUM OUTPUT PERFORMANCE</h3>
               <h2 className={styles.sectionTitle}>Built for speed.<br />Engineered to last.</h2>
               <p className={styles.sectionDesc}>
-                Volt Pulse is BexaVolt's fastest dedicated home charger. Combining maximum power delivery 
+                VoltHome Pro is BexaVolt's fastest dedicated home charger. Combining maximum power delivery 
                 with intelligent dynamic load management, it's engineered for daily high-speed top-ups.
               </p>
               <div className={styles.featuresList}>
@@ -217,7 +217,7 @@ export default function VoltPulseProductPage() {
               <h3 className={styles.sectionTag}>FULL-SPEED CHARGING</h3>
               <h2 className={styles.sectionTitle}>The fastest way<br />to power your EV.</h2>
               <p className={styles.sectionDesc}>
-                Volt Pulse delivers an unmatched combination of speed and safety — topping up most 
+                VoltHome Pro delivers an unmatched combination of speed and safety — topping up most 
                 EVs overnight and getting you road-ready every single morning.
               </p>
               <div className={styles.featuresList}>
@@ -225,7 +225,7 @@ export default function VoltPulseProductPage() {
                   <div className={styles.featureRowIcon}>✓</div>
                   <div className={styles.featureRowText}>
                     <h4>Up to 100km range per hour</h4>
-                    <p>On three-phase, Volt Pulse at 22kW delivers up to 100km of range for every hour of charging.</p>
+                    <p>On three-phase, VoltHome Pro at 22kW delivers up to 100km of range for every hour of charging.</p>
                   </div>
                 </div>
                 <div className={styles.featureRow}>
@@ -245,7 +245,7 @@ export default function VoltPulseProductPage() {
               </div>
             </div>
             <div className={styles.imageShowcaseWrap}>
-              <img src="/3rdsec.png" alt="Volt Pulse Charging" className={styles.showcaseStaticCharger} />
+              <img src="/3rdsec.png" alt="VoltHome Pro Charging" className={styles.showcaseStaticCharger} />
             </div>
           </div>
         </div>
@@ -462,7 +462,7 @@ export default function VoltPulseProductPage() {
               <h3 className={styles.warrantyEyebrow}>4-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Built to last, backed to prove it.</h2>
               <p className={styles.warrantyDesc}>
-                Volt Pulse is covered by our comprehensive 4-year replacement warranty — giving you 
+                VoltHome Pro is covered by our comprehensive 4-year replacement warranty — giving you 
                 complete confidence in your home charging investment.
               </p>
               <a href="#warranty-details" className={styles.warrantyLink}>
@@ -479,7 +479,7 @@ export default function VoltPulseProductPage() {
         <div className="container">
           <h3>POWER YOUR EV AT FULL SPEED</h3>
           <h2>Ready to go full Pulse?</h2>
-          <p>Get a standalone Volt Pulse or book a complete professional home installation today.</p>
+          <p>Get a standalone VoltHome Pro or book a complete professional home installation today.</p>
           <div className={styles.bottomCtaActions}>
             <button className={styles.btnPrimary}>
               Buy Charger Only
