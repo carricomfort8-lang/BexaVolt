@@ -68,8 +68,6 @@ const navItems: NavItem[] = [
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'Volt Mini', desc: 'Compact everyday charging', img: '/img23-removebg-preview.png', href: '/products/volt-mini' },
-        { name: 'VoltHome Solar', desc: 'Solar optimized', img: '/img23-removebg-preview.png', href: '#chargers' },
         { name: 'VoltHome Pro', desc: 'EV ready. Future ready.', img: '/img23-removebg-preview.png', href: '#chargers' },
         { name: 'VoltHome Max', desc: 'Three-phase power', img: '/img23-removebg-preview.png', href: '#chargers' },
       ],
