@@ -69,7 +69,7 @@ const navItems: NavItem[] = [
     megaData: {
       leftItems: [
         { name: 'VoltHome Pro', desc: 'EV ready. Future ready.', img: '/img23-removebg-preview.png', href: '/products/volt-home-pro' },
-        { name: 'VoltHome Max', desc: 'Three-phase power', img: '/img23-removebg-preview.png', href: '#chargers' },
+        { name: 'VoltHome Max', desc: 'Three-phase power', img: '/img23-removebg-preview.png', href: '/products/volt-home-max' },
       ],
       rightCard: {
         titlePart1: 'Home',
