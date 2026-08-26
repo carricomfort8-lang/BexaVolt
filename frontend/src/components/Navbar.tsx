@@ -42,8 +42,6 @@ const navItems: NavItem[] = [
       ],
       portable: [
         { name: 'Volt Go', href: '/products/volt-go' },
-        { name: 'Volt Flex', href: '/products/volt-flex' },
-        { name: 'Volt Trek Pro', href: '/products/volt-trek-pro' },
       ],
       accessories: [
         { name: 'Charging Accessories', href: '#accessories' },
