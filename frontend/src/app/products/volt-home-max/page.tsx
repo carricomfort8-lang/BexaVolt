@@ -50,11 +50,7 @@ export default function VoltUltraProductPage() {
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Built-in 3.5" colour touchscreen display</span>
-                  </div>
-                  <div className={styles.checkItem}>
-                    <span className={styles.checkIcon}>✓</span>
-                    <span>Solar integration with Eco/Eco+/Fast modes</span>
+                    <span>Built-in 4.3" colour touchscreen display</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
@@ -62,7 +58,7 @@ export default function VoltUltraProductPage() {
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>IP67 &amp; IK10 aerospace-grade aluminum enclosure</span>
+                    <span>IP65 &amp; IK10 aerospace-grade aluminum enclosure</span>
                   </div>
                 </div>
               </AnimateIn>
