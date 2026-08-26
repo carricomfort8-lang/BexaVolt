@@ -84,8 +84,6 @@ const navItems: NavItem[] = [
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'VoltBusiness Dual', desc: 'Dual-port commercial charging', img: '/img23-removebg-preview.png', href: '#business' },
-        { name: 'VoltBusiness Pro', desc: 'High-capacity commercial station', img: '/img23-removebg-preview.png', href: '#business' },
         { name: 'VoltBusiness Ultra', desc: 'Ultra-fast DC rapid charging', img: '/img23-removebg-preview.png', href: '#business' },
         { name: 'VoltBusiness Fleet', desc: 'Smart software management', img: '/img23-removebg-preview.png', href: '#business' },
       ],
