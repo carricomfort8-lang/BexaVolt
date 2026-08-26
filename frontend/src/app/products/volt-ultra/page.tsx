@@ -92,7 +92,7 @@ export default function VoltUltraProductPage() {
                         onClick={() => setConnector('tethered')}
                         className={`${styles.phaseBtn} ${connector === 'tethered' ? styles.phaseBtnActive : ''}`}
                       >
-                        Tethered (7m Cable)
+                        Tethered (6m Cable)
                       </button>
                       <button
                         onClick={() => setConnector('socket')}
