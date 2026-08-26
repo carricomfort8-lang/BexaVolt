@@ -43,7 +43,7 @@ export default function VoltPulseProductPage() {
                 <div className={styles.checklist}>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Up to {power} maximum output charging</span>
+                    <span>Up to 22kW maximum output charging</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
@@ -51,7 +51,7 @@ export default function VoltPulseProductPage() {
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Built-in CT clamp dynamic load balancing</span>
+                    <span>Built-in CT clamp dynamic load balancing (Upgradable options)</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
