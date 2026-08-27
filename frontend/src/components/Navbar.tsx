@@ -32,7 +32,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     key: 'products',
-    label: 'Products',
+    label: 'Chargers',
     href: '#products',
     hasMega: true,
     isProductsMega: true,
