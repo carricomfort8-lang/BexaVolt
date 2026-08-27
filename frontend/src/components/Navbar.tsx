@@ -146,8 +146,6 @@ const navItems: NavItem[] = [
       leftItems: [
         { name: 'Our Story', desc: 'Mission, vision & founders', img: '/img23-removebg-preview.png', href: '#about' },
         { name: 'Our Technology', desc: 'Inside our premium EV engineering', img: '/img23-removebg-preview.png', href: '#about' },
-        { name: 'Media & Press', desc: 'News, articles & resources', img: '/img23-removebg-preview.png', href: '#about' },
-        { name: 'Careers', desc: 'Join the team powering the future', img: '/img23-removebg-preview.png', href: '#about' },
       ],
       rightCard: {
         titlePart1: 'BexaVolt',
