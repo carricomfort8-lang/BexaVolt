@@ -125,9 +125,6 @@ const navItems: NavItem[] = [
     megaData: {
       leftItems: [
         { name: 'Support Center', desc: 'Knowledge base & FAQs', img: '/img23-removebg-preview.png', href: '#support' },
-        { name: 'Manuals & Downloads', desc: 'Spec sheets & user guides', img: '/img23-removebg-preview.png', href: '#support' },
-        { name: 'Warranty Portal', desc: 'Online registration & claims', img: '/img23-removebg-preview.png', href: '#support' },
-        { name: 'Book Service', desc: 'Professional maintenance scheduling', img: '/img23-removebg-preview.png', href: '#support' },
       ],
       rightCard: {
         titlePart1: 'BexaVolt',
