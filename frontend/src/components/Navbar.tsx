@@ -38,8 +38,8 @@ const navItems: NavItem[] = [
     isProductsMega: true,
     megaData: {
       wallMount: [
-        { name: 'Volt Pulse', href: '/products/volt-pulse' },
         { name: 'Volt Ultra', href: '/products/volt-ultra' },
+        { name: 'Volt Pulse', href: '/products/volt-pulse' },
       ],
       portable: [
         { name: 'Volt Go', href: '/products/volt-go' },
