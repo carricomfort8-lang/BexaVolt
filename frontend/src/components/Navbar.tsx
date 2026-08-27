@@ -105,9 +105,6 @@ const navItems: NavItem[] = [
     megaData: {
       leftItems: [
         { name: 'Partner Portal', desc: 'Manage bookings & jobs', img: '/img23-removebg-preview.png', href: '#installers' },
-        { name: 'BexaVolt Academy', desc: 'Certifications & training', img: '/img23-removebg-preview.png', href: '#installers' },
-        { name: 'Technical Support', desc: '24/7 dedicated agent helpline', img: '/img23-removebg-preview.png', href: '#installers' },
-        { name: 'Marketing Kit', desc: 'Brand assets & print materials', img: '/img23-removebg-preview.png', href: '#installers' },
       ],
       rightCard: {
         titlePart1: 'Installer',
