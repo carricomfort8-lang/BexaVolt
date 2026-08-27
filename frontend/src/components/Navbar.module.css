@@ -216,6 +216,26 @@
   gap: 0.5rem;
 }
 
+.megaGridLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+  padding: 1.2rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.megaGridLink {
+  color: var(--foreground, #fff);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.megaGridLink:hover {
+  color: #7FE123;
+}
+
 .megaProductItem {
   display: flex;
   align-items: center;

@@ -5,6 +5,7 @@ import styles from './Navbar.module.css';
 
 interface MegaData {
   leftItems?: Array<{ name: string; desc: string; img: string; href: string }>;
+  gridLinks?: Array<{ name: string; href: string }>;
   rightCard?: {
     titlePart1: string;
     titlePart2: string;
@@ -124,7 +125,15 @@ const navItems: NavItem[] = [
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'Support Center', desc: 'Knowledge base & FAQs', img: '/img23-removebg-preview.png', href: '#support' },
+        { name: 'Technical support', desc: '24/7 Dedicated agent helpline', img: '/img23-removebg-preview.png', href: '#support' },
+      ],
+      gridLinks: [
+        { name: 'Contact support', href: '#support' },
+        { name: 'FAQs', href: '#support' },
+        { name: 'System status', href: '#support' },
+        { name: 'Knowledge hub', href: '#support' },
+        { name: 'Contact sales', href: '#support' },
+        { name: 'Community forum', href: '#support' }
       ],
       rightCard: {
         titlePart1: 'BexaVolt',
@@ -315,6 +324,15 @@ const Navbar = () => {
                               </span>
                             </Link>
                           ))}
+                          {item.megaData.gridLinks && (
+                            <div className={styles.megaGridLinks}>
+                              {item.megaData.gridLinks.map(link => (
+                                <Link href={link.href} key={link.name} className={styles.megaGridLink}>
+                                  {link.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </div>
 
                         {/* Right Column: Featured Promo Card */}
