@@ -84,7 +84,7 @@ const navItems: NavItem[] = [
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'VoltBusiness Ultra', desc: 'Ultra-fast DC rapid charging', img: '/img23-removebg-preview.png', href: '#business' },
+        { name: 'VoltBusiness Ultra', desc: 'Ultra-fast DC rapid charging', img: '/img23-removebg-preview.png', href: '/products/volt-business-ultra' },
       ],
       rightCard: {
         titlePart1: 'Commercial',
