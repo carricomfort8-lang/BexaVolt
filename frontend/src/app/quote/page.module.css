@@ -160,6 +160,11 @@
   border-color: #7FE123;
 }
 
+.select option {
+  background-color: #0a0f14;
+  color: white;
+}
+
 .cardsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
