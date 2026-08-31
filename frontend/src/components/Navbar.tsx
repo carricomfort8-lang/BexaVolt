@@ -374,7 +374,7 @@ const Navbar = () => {
 
           <div className={styles.navRight}>
             {/* Get a Quote Button */}
-            <Link href="#quote" className={`btn-primary ${styles.ctaNav}`}>
+            <Link href="/quote" className={`btn-primary ${styles.ctaNav}`}>
               Get a Quote
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18L15 12L9 6"/>
