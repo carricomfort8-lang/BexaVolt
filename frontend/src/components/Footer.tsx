@@ -101,6 +101,16 @@ const Footer = () => {
             </div>
           </div>
 
+          
+            <div className={styles.linkCol}>
+              <h4>CONTACT</h4>
+              <a href="mailto:Sales@BexaVolt.com.au">Sales@BexaVolt.com.au</a>
+              <a href="mailto:Support@BexaVolt.com.au">Support@BexaVolt.com.au</a>
+              <a href="mailto:Info@BexaVolt.com.au">Info@BexaVolt.com.au</a>
+              <a href="mailto:Accounts@BexaVolt.com.au">Accounts@BexaVolt.com.au</a>
+              <a href="tel:+61272415565">+61 2 7241 5565</a>
+            </div>
+
           <div className={styles.newsletter}>
             <h4>STAY UPDATED</h4>
             <p>Subscribe to get the latest news and offers from BexaVolt.</p>
