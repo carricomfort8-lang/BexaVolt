@@ -1,0 +1,422 @@
+
+.quotePage {
+  min-height: 100vh;
+  background-color: var(--background, #000);
+  color: var(--foreground, #fff);
+  padding-top: 100px;
+  padding-bottom: 6rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Stepper */
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.stepActive {
+  color: var(--foreground, #fff);
+}
+
+.stepCompleted {
+  color: #7FE123;
+}
+
+.stepIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.stepActive .stepIcon {
+  background: #7FE123;
+  color: #000;
+}
+
+.stepCompleted .stepIcon {
+  background: rgba(127, 225, 35, 0.2);
+  color: #7FE123;
+}
+
+.stepDivider {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 1rem;
+}
+
+/* Guide Content */
+.guideContent {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.guideContent h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #7FE123;
+}
+
+.guideContent h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.guideContent p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.guideContent ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.guideContent li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.guideContent li::before {
+  content: "•";
+  color: #7FE123;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Step 2: Configuration */
+.configLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.configSection {
+  margin-bottom: 2.5rem;
+}
+
+.configSection h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.required {
+  color: #ff4d4f;
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  appearance: none;
+  outline: none;
+}
+
+.select:focus {
+  border-color: #7FE123;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.chargerCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chargerCard:hover {
+  border-color: rgba(127, 225, 35, 0.5);
+}
+
+.chargerCardActive {
+  border-color: #7FE123;
+  background: rgba(127, 225, 35, 0.05);
+}
+
+.chargerCard h4 {
+  color: #7FE123;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.chargerCard p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.featureList li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.featureIcon {
+  color: #7FE123;
+}
+
+.optionCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.optionCardActive {
+  border-color: #7FE123;
+  background: rgba(127, 225, 35, 0.05);
+}
+
+.optionCard h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.optionCard p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.previewImageWrap {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  background-color: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewImage {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+/* Form Styles */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-color: #7FE123;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.checkboxGroup input[type="checkbox"] {
+  margin-top: 0.25rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: #7FE123;
+}
+
+.checkboxGroup label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.checkboxGroup a {
+  color: #7FE123;
+  text-decoration: none;
+}
+
+/* Buttons */
+.btnPrimary {
+  background: #7FE123;
+  color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background: #6bc21c;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-content: flex-end;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+/* Estimate Banner */
+.estimateBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 15, 20, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.estimatePrice {
+  display: flex;
+  flex-direction: column;
+}
+
+.estimateLabel {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.estimateValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7FE123;
+}
+
+@media (max-width: 992px) {
+  .configLayout {
+    grid-template-columns: 1fr;
+  }
+  .previewImageWrap {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .formGrid, .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+  .stepper {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .stepDivider {
+    display: none;
+  }
+  .estimateBanner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
