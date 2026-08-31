@@ -1,85 +1,206 @@
 
 .main {
   min-height: 100vh;
-  background-color: var(--background, #000);
-  color: var(--foreground, #fff);
+  background-color: #f8f9fa; /* Light grey background outside the form */
+  padding-top: 100px;
 }
 
-.header {
-  padding: 120px 0 60px;
-  background: rgba(255, 255, 255, 0.02);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  text-align: center;
-  margin-bottom: 4rem;
+.contactWrapper {
+  max-width: 1100px;
+  margin: 4rem auto 6rem;
+  padding: 0 1.5rem;
+}
+
+.contactContainer {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Left Panel */
+.leftPanel {
+  flex: 1;
+  background-color: #0B1120; /* Dark blue background */
+  color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.logoWrap {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  height: 30px;
+  object-fit: contain;
 }
 
 .title {
-  font-size: 3rem;
-  color: #7FE123;
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contactGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 6rem;
-}
-
-.contactCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.contactCard:hover {
-  border-color: rgba(127, 225, 35, 0.5);
-  transform: translateY(-5px);
-}
-
-.fullWidth {
-  grid-column: 1 / -1;
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.icon {
   font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
-.contactCard h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.contactCard p {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1.5rem;
+.description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
-.link {
-  display: inline-block;
+.infoBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.infoIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.infoValue {
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #7FE123;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
 }
 
-.link:hover {
+.infoValueLight {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.carImageWrap {
+  margin-top: auto;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.carImage {
+  max-width: 100%;
+  height: auto;
   opacity: 0.8;
+}
+
+/* Right Panel */
+.rightPanel {
+  flex: 1.2;
+  padding: 3rem;
+  background-color: white;
+  color: #333;
+}
+
+.formTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.formSubtitle {
+  color: #666;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.required {
+  color: #ff4d4f;
+}
+
+.formGroup input, 
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: #fcfcfc;
+}
+
+.formGroup input:focus, 
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: #7FE123;
+}
+
+.formGroup select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 0.65rem auto;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #B1D124; /* Yellow-green button color */
+  color: #000;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .contactContainer {
+    flex-direction: column;
+  }
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
