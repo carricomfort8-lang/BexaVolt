@@ -4,9 +4,14 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function QuotePage() {
-  const [step, setStep] = useState(1);
+function QuoteWizard() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const stepParam = searchParams.get("step");
+  const step = stepParam ? parseInt(stepParam, 10) : 1;
   const [brand, setBrand] = useState("");
   const [charger, setCharger] = useState("pulse");
   const [power, setPower] = useState("7kw");
@@ -29,8 +34,8 @@ export default function QuotePage() {
   const installPrice = installer === "bexavolt" ? 500 : 0;
   const estimate = basePrice + installPrice;
 
-  const handleNext = () => setStep(step + 1);
-  const handlePrev = () => setStep(step - 1);
+  const handleNext = () => router.push(`?step=${step + 1}`);
+  const handlePrev = () => router.push(`?step=${step - 1}`);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -350,3 +355,12 @@ export default function QuotePage() {
     </main>
   );
 }
+
+export default function QuotePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <QuoteWizard />
+    </Suspense>
+  );
+}
+
