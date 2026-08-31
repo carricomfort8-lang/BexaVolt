@@ -37,10 +37,32 @@ function QuoteWizard() {
   const handleNext = () => router.push(`?step=${step + 1}`);
   const handlePrev = () => router.push(`?step=${step - 1}`);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Submitted:", { brand, charger, power, installer, ...formData, estimate });
-    alert("Thank you! Your quote request has been submitted.");
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ brand, charger, power, installer, ...formData, estimate }),
+      });
+
+      if (response.ok) {
+        alert("Thank you! Your quote request has been submitted.");
+      } else {
+        alert("There was a problem submitting your request. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("There was an error connecting to the server.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -332,7 +354,7 @@ function QuoteWizard() {
 
                 <div className={`${styles.actionButtons} ${styles.spaceBetween}`}>
                   <button type="button" onClick={handlePrev} className={styles.btnSecondary}>Previous</button>
-                  <button type="submit" className={styles.btnPrimary}>Submit quote request</button>
+                  <button type="submit" className={styles.btnPrimary} disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Submit quote request"}</button>
                 </div>
               </form>
             </div>
@@ -347,8 +369,8 @@ function QuoteWizard() {
             <span className={styles.estimateLabel}>Estimated Price</span>
             <span className={styles.estimateValue}>${estimate.toLocaleString()}</span>
           </div>
-          <button className={styles.btnPrimary} onClick={step === 2 ? handleNext : () => document.getElementById("quote-form")?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))}>
-            {step === 2 ? "Continue to Details" : "Submit Quote"}
+          <button className={styles.btnPrimary} onClick={step === 2 ? handleNext : () => document.getElementById("quote-form")?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))} disabled={step === 3 && isSubmitting}>
+            {step === 2 ? "Continue to Details" : isSubmitting ? "Sending..." : "Submit Quote"}
           </button>
         </div>
       )}
