@@ -128,12 +128,9 @@ const navItems: NavItem[] = [
         { name: 'Technical support', desc: '24/7 Dedicated agent helpline', img: '/img23-removebg-preview.png', href: '#support' },
       ],
       gridLinks: [
-        { name: 'Contact support', href: '#support' },
-        { name: 'FAQs', href: '#support' },
-        { name: 'System status', href: '#support' },
-        { name: 'Knowledge hub', href: '#support' },
-        { name: 'Contact sales', href: '#support' },
-        { name: 'Community forum', href: '#support' }
+        { name: 'Contact support', href: '/contact' },
+        { name: 'Contact sales', href: '/quote' },
+        { name: 'FAQs', href: '/faq' }
       ],
       rightCard: {
         titlePart1: 'BexaVolt',
