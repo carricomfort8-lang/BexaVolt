@@ -1,0 +1,91 @@
+
+.main {
+  min-height: 100vh;
+  background-color: var(--background, #000);
+  color: var(--foreground, #fff);
+}
+
+.header {
+  padding: 120px 0 60px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: #7FE123;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.faqContent {
+  max-width: 800px;
+  margin: 0 auto 6rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.faqItem {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.faqItem h3 {
+  color: #7FE123;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.faqItem p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.faqItem ul {
+  margin: 0 0 1.5rem 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.faqItem li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.infoBox {
+  background: rgba(127, 225, 35, 0.1);
+  border-left: 4px solid #7FE123;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
