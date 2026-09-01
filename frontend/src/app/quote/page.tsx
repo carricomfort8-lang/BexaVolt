@@ -7,6 +7,60 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
+
+const CAR_BRANDS = ["Alfa Romeo", "Audi", "BMW", "BYD", "Cadillac", "Chery", "Cupra", "Deepal", "Denza", "Farizon", "Fiat", "Firefly", "Ford", "GAC", "Geely", "Genesis", "GWM Great Wall Motors", "Holden", "Honda", "Hyundai", "Jaecoo", "Jaguar", "Jeep", "KIA", "KGM", "LDV", "Leapmotor", "Lexus", "Lotus", "Mazda", "Mercedes", "MG", "Mini Cooper", "Mitsubishi", "Nissan", "Peugeot", "Polestar", "Porsche", "Range Rover", "Renault", "Smart", "Subaru", "Suzuki", "Tesla", "Toyota", "Volkswagen", "Volvo", "XPeng", "Zeekr"];
+
+function SearchableSelect({ value, onChange }: { value: string, onChange: (val: string) => void }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  
+  const filtered = CAR_BRANDS.filter(b => b.toLowerCase().includes(search.toLowerCase()));
+
+  return (
+    <div className={styles.searchableSelect} onClick={() => setIsOpen(true)}>
+      <div className={styles.selectTrigger}>
+        {value || "Select EV Brand"}
+        <span className={styles.selectArrow}>▼</span>
+      </div>
+      
+      {isOpen && (
+        <div className={styles.selectDropdown}>
+          <div className={styles.selectSearchWrap}>
+            <input 
+              type="text" 
+              autoFocus 
+              placeholder="Search brand..." 
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              className={styles.selectSearch}
+              onClick={e => e.stopPropagation()}
+            />
+          </div>
+          <div className={styles.selectOptions}>
+            {filtered.map(b => (
+              <div 
+                key={b} 
+                className={styles.selectOption}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onChange(b);
+                  setIsOpen(false);
+                  setSearch("");
+                }}
+              >
+                {b}
+              </div>
+            ))}
+            {filtered.length === 0 && <div className={styles.noResults}>No brands found</div>}
+          </div>
+          
+          <div className={styles.closeBackdrop} onClick={(e) => { e.stopPropagation(); setIsOpen(false); }} />
+        </div>
+      )}
+    </div>
+  );
+}
+
 function QuoteWizard() {
   const router = useRouter();
   const searchParams = useSearchParams();

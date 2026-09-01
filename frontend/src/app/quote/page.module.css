@@ -425,3 +425,90 @@
     text-align: center;
   }
 }
+
+.searchableSelect {
+  position: relative;
+  width: 100%;
+}
+
+.selectTrigger {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--foreground);
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selectArrow {
+  font-size: 0.8rem;
+  color: #7FE123;
+}
+
+.selectDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: #1a1a1a;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  z-index: 100;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.selectSearchWrap {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.selectSearch {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.selectSearch:focus {
+  border-color: #7FE123;
+}
+
+.selectOptions {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.selectOption {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  color: rgba(255,255,255,0.8);
+  transition: background 0.2s;
+}
+
+.selectOption:hover {
+  background-color: rgba(127,225,35,0.1);
+  color: white;
+}
+
+.noResults {
+  padding: 1rem;
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+}
+
+.closeBackdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+}
