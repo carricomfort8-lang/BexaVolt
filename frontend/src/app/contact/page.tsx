@@ -6,7 +6,7 @@ import styles from './page.module.css';
 export default function ContactPage() {
   return (
     <main className={styles.main}>
-      <Navbar />
+      <div className={styles.navWrapper}><Navbar /></div>
       
       <div className={styles.contactWrapper}>
         <div className={styles.contactContainer}>
