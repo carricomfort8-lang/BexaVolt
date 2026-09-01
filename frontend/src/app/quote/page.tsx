@@ -192,19 +192,7 @@ function QuoteWizard() {
                 <div className={styles.configSection}>
                   <h3>Select Car Brand <span className={styles.required}>*</span></h3>
                   <div className={styles.selectWrapper}>
-                    <select 
-                      className={styles.select}
-                      value={brand}
-                      onChange={(e) => setBrand(e.target.value)}
-                    >
-                      <option value="">Select a Brand</option>
-                      <option value="tesla">Tesla</option>
-                      <option value="byd">BYD</option>
-                      <option value="polestar">Polestar</option>
-                      <option value="mg">MG</option>
-                      <option value="kia">Kia</option>
-                      <option value="hyundai">Hyundai</option>
-                    </select>
+                    <SearchableSelect value={brand} onChange={setBrand} />
                   </div>
                 </div>
 
