@@ -317,7 +317,7 @@ function QuoteWizard() {
           <div>
             <div className={styles.guideContent}>
               <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>Get your customised quote</h2>
-              <p style={{ textAlign: "center", marginBottom: "3rem" }}>Provide your contact details and we\'ll confirm your charging requirements and prepare a personalised quote for your EV charger and installation.</p>
+              <p style={{ textAlign: "center", marginBottom: "3rem" }}>Provide your contact details and we'll confirm your charging requirements and prepare a personalised quote for your EV charger and installation.</p>
               
               <form onSubmit={handleSubmit} id="quote-form">
                 <div className={styles.formGrid}>
@@ -390,7 +390,7 @@ function QuoteWizard() {
                       <option>Within 1 week</option>
                       <option>Within 2-3 weeks</option>
                       <option>Within 1-2 months</option>
-                      <option>I\'m flexible / No rush</option>
+                      <option>I'm flexible / No rush</option>
                     </select>
                   </div>
                   
@@ -415,7 +415,7 @@ function QuoteWizard() {
                     checked={formData.updates}
                     onChange={(e) => setFormData({...formData, updates: e.target.checked})}
                   />
-                  <label htmlFor="updates">I\'d like to receive occasional BexaVolt product and service updates.</label>
+                  <label htmlFor="updates">I'd like to receive occasional BexaVolt product and service updates.</label>
                 </div>
 
                 <div className={styles.checkboxGroup}>
@@ -426,7 +426,7 @@ function QuoteWizard() {
                     checked={formData.policy}
                     onChange={(e) => setFormData({...formData, policy: e.target.checked})}
                   />
-                  <label htmlFor="policy">I have read and agree to BexaVolt\'s <Link href="#">Privacy Policy</Link>.</label>
+                  <label htmlFor="policy">I have read and agree to BexaVolt's <Link href="#">Privacy Policy</Link>.</label>
                 </div>
 
                 <div className={`${styles.actionButtons} ${styles.spaceBetween}`}>
