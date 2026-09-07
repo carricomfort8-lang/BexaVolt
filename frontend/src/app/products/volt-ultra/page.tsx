@@ -453,10 +453,10 @@ export default function VoltUltraProductPage() {
           <div className={styles.warrantyBanner}>
             <div className={styles.warrantyOverlay} />
             <div className={styles.warrantyContent}>
-              <h3 className={styles.warrantyEyebrow}>5-YEAR WARRANTY</h3>
+              <h3 className={styles.warrantyEyebrow}>3-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Our best charger. Our best warranty.</h2>
               <p className={styles.warrantyDesc}>
-                Volt Ultra comes standard with our exclusive 5-year comprehensive warranty — the longest 
+                Volt Ultra comes standard with our exclusive 3-year comprehensive warranty — the longest 
                 coverage in the BexaVolt lineup, including priority support and next-business-day swap.
               </p>
               <a href="#warranty-details" className={styles.warrantyLink}>

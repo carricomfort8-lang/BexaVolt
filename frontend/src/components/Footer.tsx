@@ -25,7 +25,7 @@ const Footer = () => {
                     <path d="m9 11 2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   <div>
-                    <strong>5 YEAR WARRANTY</strong>
+                    <strong>3 YEAR WARRANTY</strong>
                     <span>Peace of mind guaranteed.</span>
                   </div>
                 </div>

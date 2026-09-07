@@ -565,10 +565,10 @@ export default function VoltOrbitProductPage() {
           <div className={styles.warrantyBanner}>
             <div className={styles.warrantyOverlay} />
             <div className={styles.warrantyContent}>
-              <h3 className={styles.warrantyEyebrow}>5-YEAR WARRANTY</h3>
+              <h3 className={styles.warrantyEyebrow}>3-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Premium reliability, guaranteed.</h2>
               <p className={styles.warrantyDesc}>
-                Volt Orbit comes standard with our comprehensive, market-leading 5-year warranty. 
+                Volt Orbit comes standard with our comprehensive, market-leading 3-year warranty. 
                 Enjoy long-term support and rapid unit swaps from BexaVolt's local engineering team.
               </p>
               <a href="#warranty-details" className={styles.warrantyLink}>
