@@ -426,7 +426,7 @@ function QuoteWizard() {
                     checked={formData.policy}
                     onChange={(e) => setFormData({...formData, policy: e.target.checked})}
                   />
-                  <label htmlFor="policy">I have read and agree to BexaVolt's <Link href="#">Privacy Policy</Link>.</label>
+                  <label htmlFor="policy">I have read and agree to BexaVolt&apos;s <Link href="/terms">Terms &amp; Conditions</Link> and <Link href="/privacy">Privacy Policy</Link>.</label>
                 </div>
 
                 <div className={`${styles.actionButtons} ${styles.spaceBetween}`}>
