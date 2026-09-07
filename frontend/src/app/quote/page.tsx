@@ -63,9 +63,8 @@ function SearchableSelect({ value, onChange }: { value: string, onChange: (val: 
 
 function QuoteWizard() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const stepParam = searchParams.get("step");
-  const step = stepParam ? parseInt(stepParam, 10) : 1;
+  // We'll use local state for the step so it instantly updates without routing delays.
+  const [step, setStep] = useState(1);
   const [brand, setBrand] = useState("");
   const [charger, setCharger] = useState("pulse");
   const [power, setPower] = useState("7kw");
@@ -78,7 +77,7 @@ function QuoteWizard() {
     phone: "",
     state: "NSW",
     installTime: "As soon as possible",
-    callTime: "Early / mid-morning",
+    callTime: "Early / Mid Morning",
     updates: false,
     policy: false,
   });
@@ -93,11 +92,11 @@ function QuoteWizard() {
       alert("Please select a car brand to continue.");
       return;
     }
-    router.push(`/quote?step=${step + 1}`);
+    setStep(step + 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const handlePrev = () => {
-    router.push(`/quote?step=${step - 1}`);
+    setStep(step - 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
