@@ -248,20 +248,46 @@ function QuoteWizard() {
 
                 <div className={styles.configSection}>
                   <h3>Do you need an installer? <span className={styles.required}>*</span></h3>
-                  <div className={styles.cardsGrid}>
-                    <div 
-                      className={`${styles.optionCard} ${installer === "own" ? styles.optionCardActive : ""}`}
-                      onClick={() => setInstaller("own")}
-                    >
-                      <h4>I have my own licensed electrician</h4>
+                    <div className={styles.cardsGrid}>
+                      <div 
+                        className={`${styles.optionCard} ${styles.installerCard} ${installer === "own" ? styles.optionCardActive : ""}`}
+                        onClick={() => setInstaller("own")}
+                      >
+                        <div className={styles.installerIconWrap}>
+                          <svg width="60" height="60" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#F0F7FB"/>
+                            <path d="M52 56H28V46L33 41H47L52 46V56Z" fill="#1A3B4D"/>
+                            <circle cx="40" cy="30" r="9" fill="#1A3B4D"/>
+                            <path d="M33 26 C 33 21, 47 21, 47 26" fill="#1A3B4D" stroke="white" strokeWidth="1"/>
+                            <path d="M33 30 C 33 35, 47 35, 47 30" fill="#fff" />
+                            <rect x="33" y="47" width="14" height="15" rx="1" fill="white"/>
+                            <path d="M39.5 49L37.5 54H40.5L39.5 60L43.5 53H40.5L42 49H39.5Z" fill="#1A3B4D"/>
+                            <circle cx="58" cy="58" r="11" fill="#D32F2F" stroke="#000" strokeWidth="2"/>
+                            <path d="M54 54L62 62M62 54L54 62" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                          </svg>
+                        </div>
+                        <h4>No, I have my own licensed electrician</h4>
+                      </div>
+                      <div 
+                        className={`${styles.optionCard} ${styles.installerCard} ${installer === "bexavolt" ? styles.optionCardActive : ""}`}
+                        onClick={() => setInstaller("bexavolt")}
+                      >
+                        <div className={styles.installerIconWrap}>
+                          <svg width="60" height="60" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="40" r="36" fill="#F0F7FB"/>
+                            <path d="M52 56H28V46L33 41H47L52 46V56Z" fill="#1A3B4D"/>
+                            <circle cx="40" cy="30" r="9" fill="#1A3B4D"/>
+                            <path d="M33 26 C 33 21, 47 21, 47 26" fill="#1A3B4D" stroke="white" strokeWidth="1"/>
+                            <path d="M33 30 C 33 35, 47 35, 47 30" fill="#fff" />
+                            <rect x="33" y="47" width="14" height="15" rx="1" fill="white"/>
+                            <path d="M39.5 49L37.5 54H40.5L39.5 60L43.5 53H40.5L42 49H39.5Z" fill="#1A3B4D"/>
+                            <circle cx="58" cy="58" r="11" fill="#7FE123" stroke="#000" strokeWidth="2"/>
+                            <path d="M53 58L57 62L64 54" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <h4>Yes, I'd like to use your installer</h4>
+                      </div>
                     </div>
-                    <div 
-                      className={`${styles.optionCard} ${installer === "bexavolt" ? styles.optionCardActive : ""}`}
-                      onClick={() => setInstaller("bexavolt")}
-                    >
-                      <h4>I'd like BexaVolt to arrange an installer</h4>
-                    </div>
-                  </div>
                 </div>
               </div>
 
