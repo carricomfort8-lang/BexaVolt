@@ -88,8 +88,18 @@ function QuoteWizard() {
   const installPrice = installer === "bexavolt" ? 500 : 0;
   const estimate = basePrice + installPrice;
 
-  const handleNext = () => router.push(`?step=${step + 1}`);
-  const handlePrev = () => router.push(`?step=${step - 1}`);
+  const handleNext = () => {
+    if (step === 2 && !brand) {
+      alert("Please select a car brand to continue.");
+      return;
+    }
+    router.push(`/quote?step=${step + 1}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const handlePrev = () => {
+    router.push(`/quote?step=${step - 1}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
