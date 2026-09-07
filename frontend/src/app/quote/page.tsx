@@ -259,7 +259,7 @@ function QuoteWizard() {
                       className={`${styles.optionCard} ${installer === "bexavolt" ? styles.optionCardActive : ""}`}
                       onClick={() => setInstaller("bexavolt")}
                     >
-                      <h4>I\'d like BexaVolt to arrange an installer</h4>
+                      <h4>I'd like BexaVolt to arrange an installer</h4>
                     </div>
                   </div>
                 </div>
