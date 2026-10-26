@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimateIn from '@/components/AnimateIn';
@@ -124,19 +125,19 @@ export default function VoltOrbitProductPage() {
                   {priceDisplay}<span>AUD</span>
                 </div>
                 <div className={styles.heroActions}>
-                  <button className={styles.btnPrimary}>
+                  <Link href="/quote" className={styles.btnPrimary}>
                     Buy Orbit Only
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                  </button>
-                  <button className={styles.btnSecondary}>
+                  </Link>
+                  <Link href="/quote" className={styles.btnSecondary}>
                     Get Fully-Installed Quote
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </AnimateIn>
             </div>
@@ -565,10 +566,10 @@ export default function VoltOrbitProductPage() {
           <div className={styles.warrantyBanner}>
             <div className={styles.warrantyOverlay} />
             <div className={styles.warrantyContent}>
-              <h3 className={styles.warrantyEyebrow}>3-YEAR WARRANTY</h3>
+              <h3 className={styles.warrantyEyebrow}>2-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Premium reliability, guaranteed.</h2>
               <p className={styles.warrantyDesc}>
-                Volt Orbit comes standard with our comprehensive, market-leading 3-year warranty. 
+                Volt Orbit comes standard with our comprehensive, market-leading 2-year warranty. 
                 Enjoy long-term support and rapid unit swaps from BexaVolt's local engineering team.
               </p>
               <a href="#warranty-details" className={styles.warrantyLink}>
@@ -589,19 +590,19 @@ export default function VoltOrbitProductPage() {
           <h2>Ready to capture the sun?</h2>
           <p>Get a clean Volt Orbit charger unit or complete professional installer setup today.</p>
           <div className={styles.bottomCtaActions}>
-            <button className={styles.btnPrimary}>
+            <Link href="/quote" className={styles.btnPrimary}>
               Buy Orbit Only
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </button>
-            <button className={styles.btnSecondary}>
+            </Link>
+            <Link href="/quote" className={styles.btnSecondary}>
               Get Fully-Installed Quote
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

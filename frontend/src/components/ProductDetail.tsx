@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import AnimateIn from './AnimateIn';
 import styles from './ProductDetail.module.css';
 
@@ -44,12 +45,12 @@ const ProductDetail = () => {
               </ul>
             </AnimateIn>
             <AnimateIn direction="left" delay={5}>
-              <button className={`btn-secondary ${styles.discoverBtn}`}>
+              <Link href="/products/volt-ultra" className={`btn-secondary ${styles.discoverBtn}`}>
                 DISCOVER MORE
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                   <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
+              </Link>
             </AnimateIn>
           </div>
 

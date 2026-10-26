@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimateIn from '@/components/AnimateIn';
@@ -99,19 +100,19 @@ export default function VoltFlexProductPage() {
                   {price}<span>AUD</span>
                 </div>
                 <div className={styles.heroActions}>
-                  <button className={styles.btnPrimary}>
+                  <Link href="/quote" className={styles.btnPrimary}>
                     Buy Volt Flex
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                  </button>
-                  <button className={styles.btnSecondary}>
+                  </Link>
+                  <Link href="/quote" className={styles.btnSecondary}>
                     Get Fully-Installed Quote
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </AnimateIn>
             </div>
@@ -536,7 +537,7 @@ export default function VoltFlexProductPage() {
                 </svg>
               </div>
               <h4>Warranty Backed</h4>
-              <p>Comes backed standard with our comprehensive 4-year local replacement warranty.</p>
+              <p>Comes backed standard with our comprehensive 2-year local replacement warranty.</p>
             </div>
 
           </div>
@@ -549,10 +550,10 @@ export default function VoltFlexProductPage() {
           <div className={styles.warrantyBanner}>
             <div className={styles.warrantyOverlay} />
             <div className={styles.warrantyContent}>
-              <h3 className={styles.warrantyEyebrow}>4-YEAR WARRANTY</h3>
+              <h3 className={styles.warrantyEyebrow}>2-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Flexible power, solid warranty.</h2>
               <p className={styles.warrantyDesc}>
-                Volt Flex is covered standard under our 4-year replacement warranty, with dedicated customer service based in Australia.
+                Volt Flex is covered standard under our 2-year replacement warranty, with dedicated customer service based in Australia.
               </p>
               <a href="#warranty-details" className={styles.warrantyLink}>
                 Learn about the Flex warranty
@@ -572,19 +573,19 @@ export default function VoltFlexProductPage() {
           <h2>Ready to upgrade your travel setup?</h2>
           <p>Order the Volt Flex standalone unit or standard multi-tail bundle package today.</p>
           <div className={styles.bottomCtaActions}>
-            <button className={styles.btnPrimary}>
+            <Link href="/quote" className={styles.btnPrimary}>
               Buy Volt Flex
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </button>
-            <button className={styles.btnSecondary}>
+            </Link>
+            <Link href="/quote" className={styles.btnSecondary}>
               Customize Tail Kits
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

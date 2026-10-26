@@ -166,7 +166,7 @@ export default function FAQPage() {
           </>} />
 
           <FAQItem question="What warranty does BexaVolt provide?" answer={<>
-            <p>BexaVolt chargers come with a three-year product warranty for residential and commercial installations. Installations arranged through BexaVolt also include a One-year installation warranty, with the option to purchase an additional two years of coverage.</p>
+            <p>BexaVolt chargers come with a two-year product warranty for residential and commercial installations. Installations arranged through BexaVolt also include a One-year installation warranty, with the option to purchase an additional two years of coverage.</p>
             <p>Warranty coverage is subject to the applicable terms and conditions, correct installation, and proper use. Contact BexaVolt to confirm current warranty details or submit a warranty enquiry.</p>
           </>} />
 

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimateIn from '@/components/AnimateIn';
@@ -102,19 +103,19 @@ export default function VoltTrekProProductPage() {
                   {price}<span>AUD</span>
                 </div>
                 <div className={styles.heroActions}>
-                  <button className={styles.btnPrimary}>
+                  <Link href="/quote" className={styles.btnPrimary}>
                     Buy Trek Pro
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                  </button>
-                  <button className={styles.btnSecondary}>
+                  </Link>
+                  <Link href="/quote" className={styles.btnSecondary}>
                     Explore Solar Kits
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </AnimateIn>
             </div>
@@ -538,8 +539,8 @@ export default function VoltTrekProProductPage() {
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                 </svg>
               </div>
-              <h4>4-Year warranty</h4>
-              <p>Covered by our robust 4-year overland warranty program with support depots nationwide.</p>
+              <h4>2-Year warranty</h4>
+              <p>Covered by our robust 2-year overland warranty program with support depots nationwide.</p>
             </div>
 
           </div>
@@ -552,10 +553,10 @@ export default function VoltTrekProProductPage() {
           <div className={styles.warrantyBanner}>
             <div className={styles.warrantyOverlay} />
             <div className={styles.warrantyContent}>
-              <h3 className={styles.warrantyEyebrow}>4-YEAR WARRANTY</h3>
+              <h3 className={styles.warrantyEyebrow}>2-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Built for the wild, covered for years.</h2>
               <p className={styles.warrantyDesc}>
-                Volt Trek Pro is backed standard by our comprehensive 4-year adventure warranty, built to handle remote use conditions.
+                Volt Trek Pro is backed standard by our comprehensive 2-year adventure warranty, built to handle remote use conditions.
               </p>
               <a href="#warranty-details" className={styles.warrantyLink}>
                 Learn about the Trek warranty
@@ -575,19 +576,19 @@ export default function VoltTrekProProductPage() {
           <h2>Ready to trek off-grid?</h2>
           <p>Get a standalone Volt Trek Pro adventure kit or order with BexaVolt folding solar blankets today.</p>
           <div className={styles.bottomCtaActions}>
-            <button className={styles.btnPrimary}>
+            <Link href="/quote" className={styles.btnPrimary}>
               Buy Volt Trek Pro
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </button>
-            <button className={styles.btnSecondary}>
+            </Link>
+            <Link href="/quote" className={styles.btnSecondary}>
               Explore Solar Bundles
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

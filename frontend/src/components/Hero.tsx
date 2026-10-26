@@ -45,15 +45,15 @@ const Hero = ({ data }: HeroProps) => {
 
         <AnimateIn direction="up" delay={4}>
           <div className={styles.actions}>
-            <button className={`btn-primary ${styles.ctaBtn}`}>
+            <Link href="/quote" className={`btn-primary ${styles.ctaBtn}`}>
               {data?.primaryCTA}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </button>
-            <button className={`btn-secondary ${styles.exploreBtn}`}>
+            </Link>
+            <Link href="#chargers" className={`btn-secondary ${styles.exploreBtn}`}>
               {data?.secondaryCTA}
-            </button>
+            </Link>
           </div>
         </AnimateIn>
       </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimateIn from '@/components/AnimateIn';
@@ -87,19 +88,19 @@ export default function VoltPulseProductPage() {
                   {price}<span>AUD</span>
                 </div>
                 <div className={styles.heroActions}>
-                  <button className={styles.btnPrimary}>
+                  <Link href="/quote" className={styles.btnPrimary}>
                     Buy Charger Only
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                  </button>
-                  <button className={styles.btnSecondary}>
+                  </Link>
+                  <Link href="/quote" className={styles.btnSecondary}>
                     Get Fully-Installed Quote
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </AnimateIn>
             </div>
@@ -459,10 +460,10 @@ export default function VoltPulseProductPage() {
           <div className={styles.warrantyBanner}>
             <div className={styles.warrantyOverlay} />
             <div className={styles.warrantyContent}>
-              <h3 className={styles.warrantyEyebrow}>4-YEAR WARRANTY</h3>
+              <h3 className={styles.warrantyEyebrow}>2-YEAR WARRANTY</h3>
               <h2 className={styles.warrantyHeading}>Built to last, backed to prove it.</h2>
               <p className={styles.warrantyDesc}>
-                Volt Pulse is covered by our comprehensive 4-year replacement warranty — giving you 
+                Volt Pulse is covered by our comprehensive 2-year replacement warranty — giving you 
                 complete confidence in your home charging investment.
               </p>
               <a href="#warranty-details" className={styles.warrantyLink}>
@@ -481,19 +482,19 @@ export default function VoltPulseProductPage() {
           <h2>Ready to go full Pulse?</h2>
           <p>Get a standalone Volt Pulse or book a complete professional home installation today.</p>
           <div className={styles.bottomCtaActions}>
-            <button className={styles.btnPrimary}>
+            <Link href="/quote" className={styles.btnPrimary}>
               Buy Charger Only
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </button>
-            <button className={styles.btnSecondary}>
+            </Link>
+            <Link href="/quote" className={styles.btnSecondary}>
               Get Fully-Installed Quote
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
