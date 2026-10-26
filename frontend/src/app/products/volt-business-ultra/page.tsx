@@ -249,7 +249,7 @@ export default function VoltUltraProductPage() {
                 <div className={styles.featureRow}>
                   <div className={styles.featureRowIcon}>✓</div>
                   <div className={styles.featureRowText}>
-                    <h4>7m Ultra-Flex Tethered Cable</h4>
+                    <h4>5m Ultra-Flex Tethered Cable</h4>
                     <p>The longest standard tethered cable in the range, reaching even the furthest EV charge port position.</p>
                   </div>
                 </div>
@@ -347,7 +347,7 @@ export default function VoltUltraProductPage() {
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Connector Type</span>
-                  <span className={styles.specItemVal}>{connector === 'tethered' ? 'Type 2 Tethered (7m)' : 'Type 2 Universal Socket'}</span>
+                  <span className={styles.specItemVal}>{connector === 'tethered' ? 'Type 2 Tethered (5m)' : 'Type 2 Universal Socket'}</span>
                 </div>
               </div>
               <div className={styles.specsColDivider} />
