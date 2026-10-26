@@ -88,7 +88,7 @@ export default function VoltUltraProductPage() {
                         onClick={() => setConnector('tethered')}
                         className={`${styles.phaseBtn} ${connector === 'tethered' ? styles.phaseBtnActive : ''}`}
                       >
-                        Tethered (6m Cable)
+                        Tethered (5m Cable)
                       </button>
                       <button
                         onClick={() => setConnector('socket')}
@@ -347,7 +347,7 @@ export default function VoltUltraProductPage() {
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Connector Type</span>
-                  <span className={styles.specItemVal}>{connector === 'tethered' ? 'Type 2 Tethered (5m)' : 'Type 2 Universal Socket'}</span>
+                  <span className={styles.specItemVal}>{connector === 'tethered' ? '5m Ultra-Flex Tethered Cable' : 'Type 2 Universal Socket'}</span>
                 </div>
               </div>
               <div className={styles.specsColDivider} />
