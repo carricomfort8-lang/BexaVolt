@@ -179,13 +179,39 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-      <div className="container">
-        <div className={styles.navContent}>
-          <Link href="/" className={styles.logo}>
-            <img src="/logo.png" alt="BexaVolt Logo" className={styles.logoImg} />
-          </Link>
+      {/* Top Sales & Support Bar */}
+      <div className={styles.topBar}>
+        <div className="container">
+          <div className={styles.topBarContent}>
+            <div className={styles.topBarLeft}>
+              <span className={styles.topBarPulse} />
+              <span>AUSTRALIA-WIDE EV CHARGING SPECIALISTS</span>
+            </div>
+            <a href="tel:0272415565" className={styles.topBarPhone} title="Call Sales: 02 7241 5565">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>SALES CALL: <strong className={styles.topBarPhoneBold}>02 7241 5565</strong></span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-          <div className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
+      <div className={styles.navMain}>
+        <div className="container">
+          <div className={styles.navContent}>
+            <Link href="/" className={styles.logo}>
+              <img src="/logo.png" alt="BexaVolt Logo" className={styles.logoImg} />
+            </Link>
+
+            <div className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
+              {/* Mobile Call Sales Banner */}
+              <a href="tel:0272415565" className={styles.mobileSalesCall} onClick={() => setMenuOpen(false)}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>CALL SALES: <strong>02 7241 5565</strong></span>
+              </a>
             {navItems.map(item => {
               const isOpen = activeMega === item.key;
               return (
@@ -370,6 +396,19 @@ const Navbar = () => {
           </div>
 
           <div className={styles.navRight}>
+            {/* Sales Call Number in Big Bold */}
+            <a href="tel:0272415565" className={styles.navSalesCallBtn} title="Call Sales: 02 7241 5565">
+              <span className={styles.navSalesIconPulse}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
+              <span className={styles.navSalesTextGroup}>
+                <span className={styles.navSalesSmall}>SALES CALL</span>
+                <strong className={styles.navSalesBig}>02 7241 5565</strong>
+              </span>
+            </a>
+
             {/* Get a Quote Button */}
             <Link href="/quote" className={`btn-primary ${styles.ctaNav}`}>
               Get a Quote
@@ -407,6 +446,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </nav>
   );

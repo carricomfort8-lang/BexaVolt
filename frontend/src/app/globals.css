@@ -95,6 +95,49 @@ button {
   background: rgba(255, 255, 255, 0.05);
 }
 
+/* Global Sales Call Banner */
+.sales-call-banner {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 0.85rem 1.8rem;
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 999px;
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.sales-call-banner:hover {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: #00E5FF;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+}
+
+.sales-call-banner a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.sales-call-banner a svg {
+  color: #00E5FF;
+}
+
+.sales-call-banner strong {
+  color: #00E5FF;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-left: 0.35rem;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 1.5rem;

@@ -28,8 +28,10 @@ export default function ContactPage() {
             <div className={styles.infoBlock}>
               <div className={styles.infoIcon}>📞</div>
               <div className={styles.infoText}>
-                <span className={styles.infoLabel}>Call our team</span>
-                <span className={styles.infoValue}>+61 2 7241 5565</span>
+                <span className={styles.infoLabel}>SALES & SUPPORT HOTLINE</span>
+                <a href="tel:0272415565" className={styles.infoValueSales}>
+                  <strong>02 7241 5565</strong>
+                </a>
               </div>
             </div>
             

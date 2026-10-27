@@ -86,6 +86,21 @@
   color: #7FE123;
 }
 
+.infoValueSales {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #00E5FF;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.infoValueSales:hover {
+  transform: translateX(4px);
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+}
+
 .infoValueLight {
   font-size: 1rem;
   font-weight: 500;

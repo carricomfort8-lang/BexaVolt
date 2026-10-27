@@ -86,6 +86,83 @@
   gap: 1rem;
 }
 
+.ctaButtonGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.btnCallSales {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1.5px solid #00E5FF;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btnCallSales:hover {
+  background: rgba(0, 229, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.btnCallSales strong {
+  color: #00E5FF;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.btnCallSales svg {
+  color: #00E5FF;
+}
+
+/* Contact Column Sales Highlight */
+.footerSalesHighlight {
+  display: flex !important;
+  flex-direction: column;
+  background: rgba(0, 229, 255, 0.07);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 1rem !important;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footerSalesHighlight:hover {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: #00E5FF;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+  transform: translateX(3px) !important;
+}
+
+.footerSalesLabel {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #00E5FF;
+  text-transform: uppercase;
+}
+
+.footerSalesNum {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
 .trustWrap {
   display: flex;
   align-items: center;
@@ -279,6 +356,9 @@
 }
 
 @media (max-width: 968px) {
+  .ctaButtonGroup {
+    justify-content: center;
+  }
   .ctaContent {
     flex-direction: column;
     text-align: center;
