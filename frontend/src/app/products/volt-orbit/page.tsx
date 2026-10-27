@@ -18,7 +18,7 @@ export default function VoltOrbitProductPage() {
   const priceDisplay = `$${finalPrice.toLocaleString()}`;
   const power = phase === 'single' ? '7.4kW' : '22kW';
   const phaseLabel = phase === 'single' ? 'Single Phase' : 'Three Phase';
-  const connectorLabel = connector === 'tethered' ? 'Tethered (6.5m Cable)' : 'Universal Socket';
+  const connectorLabel = connector === 'tethered' ? 'Tethered (5m Cable)' : 'Universal Socket';
 
   return (
     <div className={styles.page}>
@@ -106,7 +106,7 @@ export default function VoltOrbitProductPage() {
                         onClick={() => setConnector('tethered')}
                         className={`${styles.phaseBtn} ${connector === 'tethered' ? styles.phaseBtnActive : ''}`}
                       >
-                        Tethered (6.5m Cable)
+                        Tethered (5m Cable)
                       </button>
                       <button 
                         onClick={() => setConnector('socket')}
@@ -172,7 +172,7 @@ export default function VoltOrbitProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>{connector === 'tethered' ? '6.5m Cable' : 'Universal Socket'}</h4>
+                <h4>{connector === 'tethered' ? '5m Cable' : 'Universal Socket'}</h4>
                 <p>Premium connection design</p>
               </div>
             </div>
@@ -447,7 +447,7 @@ export default function VoltOrbitProductPage() {
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Cable Design</span>
-                  <span className={styles.specItemVal}>{connector === 'tethered' ? '6.5m Heavy Duty (Integrated)' : 'No Cable (Socket Only)'}</span>
+                  <span className={styles.specItemVal}>{connector === 'tethered' ? '5m Heavy Duty (Integrated)' : 'No Cable (Socket Only)'}</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Connectivity</span>

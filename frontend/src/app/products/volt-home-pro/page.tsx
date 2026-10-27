@@ -48,7 +48,7 @@ export default function VoltPulseProductPage() {
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>6m heavy-duty integrated Type 2 cable</span>
+                    <span>5m heavy-duty integrated Type 2 cable</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
@@ -126,7 +126,7 @@ export default function VoltPulseProductPage() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>6m cable</h4>
+                <h4>5m cable</h4>
                 <p>Heavy-duty Type 2</p>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function VoltPulseProductPage() {
                 <div className={styles.featureRow}>
                   <div className={styles.featureRowIcon}><span>02</span></div>
                   <div className={styles.featureRowText}>
-                    <h4>6m Heavy-Duty Tethered Cable</h4>
+                    <h4>5m Heavy-Duty Tethered Cable</h4>
                     <p>Longer premium cable ensures you can charge from anywhere in your garage or driveway.</p>
                   </div>
                 </div>
@@ -369,7 +369,7 @@ export default function VoltPulseProductPage() {
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Cable Length</span>
-                  <span className={styles.specItemVal}>6m Heavy-Duty (Integrated)</span>
+                  <span className={styles.specItemVal}>5m Heavy-Duty (Integrated)</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Connectivity</span>
