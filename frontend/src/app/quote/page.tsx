@@ -85,7 +85,9 @@ function QuoteWizard() {
   });
 
   // Basic pricing logic for demonstration
-  const basePrice = charger === "ultra" ? 1570 : 1070;
+  const basePrice = charger === "ultra" 
+    ? (power === "22kw" ? 969 : 899) 
+    : (power === "22kw" ? 1499 : 1099);
   const installPrice = installer === "bexavolt" ? 500 : 0;
   const estimate = basePrice + installPrice;
 

@@ -11,8 +11,8 @@ export default function VoltUltraProductPage() {
   const [phase, setPhase] = useState<'single' | 'three'>('single');
   const [connector, setConnector] = useState<'tethered' | 'socket'>('tethered');
 
-  const basePrice = phase === 'single' ? 1799 : 2299;
-  const finalPrice = connector === 'tethered' ? basePrice : basePrice - 100;
+  const basePrice = phase === 'single' ? 899 : 969;
+  const finalPrice = basePrice;
   const priceDisplay = `$${finalPrice.toLocaleString()}`;
   const power = phase === 'single' ? '7.4kW' : '22kW';
 
