@@ -146,20 +146,20 @@ const navItems: NavItem[] = [
   {
     key: 'about',
     label: 'About Us',
-    href: '#about',
+    href: '/about',
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'Our Story', desc: 'Mission, vision & founders', img: '/img23-removebg-preview.png', href: '#about' },
-        { name: 'Our Technology', desc: 'Inside our premium EV engineering', img: '/img23-removebg-preview.png', href: '#about' },
+        { name: 'Our Story', desc: 'Mission, vision & values', img: '/img23-removebg-preview.png', href: '/about' },
+        { name: 'Our Mission', desc: 'Home charging that feels like second nature', img: '/img23-removebg-preview.png', href: '/about#mission' },
       ],
       rightCard: {
         titlePart1: 'BexaVolt',
         titlePart2: 'brand',
         tagline: 'Innovative. Clean. Australian.',
-        sub: 'Redefining electrical vehicle charging technology.',
+        sub: 'Redefining electric vehicle charging technology.',
         btnText: 'Explore Our Story',
-        btnHref: '#about',
+        btnHref: '/about',
         img: '/img23-removebg-preview.png'
       }
     }
