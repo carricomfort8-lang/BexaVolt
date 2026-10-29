@@ -47,7 +47,7 @@ export default function VoltGoProductPage() {
                 <p className={styles.description}>
                   The BexaVolt portable EV charger delivers fast, safe and reliable charging for your electric vehicle.
                   <br /><br />
-                  Designed for performance and convenience, it's the perfect companion at home, on the road or wherever you go.
+                  Designed for performance and convenience, it's the perfect companion at home, on the road or wherever you go. Available in 1.8kW (8A Domestic Plug) and 3.6kW (15A Caravan Plug) configurations.
                 </p>
               </AnimateIn>
 
@@ -56,23 +56,23 @@ export default function VoltGoProductPage() {
                 <div className={styles.checklist}>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Up to 32A Fast Charging</span>
+                    <span>{power} Output ({current === '8A' ? '8A Domestic Plug' : '15A Caravan Plug'})</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Integrated CPU</span>
+                    <span>5M Heavy-Duty Cable</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Smart Temperature Control</span>
+                    <span>Smart Temperature Control &amp; Integrated CPU</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>5-Level Current Adjustment</span>
+                    <span>Safe Automatic Current Regulation</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Grounding Mode Switchable</span>
+                    <span>Grounding Mode Switchable &amp; IP55 Weatherproof</span>
                   </div>
                 </div>
               </AnimateIn>
@@ -95,6 +95,9 @@ export default function VoltGoProductPage() {
                       3.6kW - 15A Caravan Plug
                     </button>
                   </div>
+                  <p style={{ marginTop: '0.85rem', fontSize: '0.875rem', color: '#a1a1aa', lineHeight: 1.5 }}>
+                    {currentDesc}
+                  </p>
                 </div>
               </AnimateIn>
 
@@ -105,7 +108,7 @@ export default function VoltGoProductPage() {
                 </div>
                 <div className={styles.heroActions}>
                   <Link href="/quote" className={styles.btnPrimary}>
-                    Buy Volt Go
+                    Buy Portable EV Charger
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
@@ -136,8 +139,8 @@ export default function VoltGoProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>Up to 32A Fast Charging</h4>
-                <p>Adjustable current up to 32A</p>
+                <h4>{power} Charging</h4>
+                <p>{current === '8A' ? '8A Domestic Plug' : '15A Caravan Plug'}</p>
               </div>
             </div>
 
@@ -176,8 +179,8 @@ export default function VoltGoProductPage() {
                 </svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>5-Level Current Adjustment</h4>
-                <p>Easily adjust charging current</p>
+                <h4>Smart Regulation</h4>
+                <p>Safe current delivery</p>
               </div>
             </div>
 
@@ -244,8 +247,8 @@ export default function VoltGoProductPage() {
                     <span>03</span>
                   </div>
                   <div className={styles.featureRowText}>
-                    <h4>5-Level Adjustment</h4>
-                    <p>Quickly adjust the charging current (8A/13A/16A/24A/32A) to match your needs.</p>
+                    <h4>Dual Plug Configurations</h4>
+                    <p>Available in 1.8kW 8A standard domestic plug ($499) and 3.6kW 15A caravan plug ($599) to match your setup.</p>
                   </div>
                 </div>
 
@@ -422,15 +425,15 @@ export default function VoltGoProductPage() {
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Model</span>
-                  <span className={styles.specItemVal}>ST-T550</span>
+                  <span className={styles.specItemVal}>Volt Go (ST-T550)</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Input Voltage</span>
-                  <span className={styles.specItemVal}>220V AC</span>
+                  <span className={styles.specItemVal}>220V – 240V AC</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Max. Current</span>
-                  <span className={styles.specItemVal}>32A</span>
+                  <span className={styles.specItemVal}>{current === '8A' ? '8A (Domestic)' : '15A (Caravan)'}</span>
                 </div>
               </div>
 
@@ -440,7 +443,7 @@ export default function VoltGoProductPage() {
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Power Output</span>
-                  <span className={styles.specItemVal}>Up to 7.0kW</span>
+                  <span className={styles.specItemVal}>{power} ({current === '8A' ? '1.8kW @ 8A' : '3.6kW @ 15A'})</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Connector (Car Side)</span>
@@ -448,7 +451,7 @@ export default function VoltGoProductPage() {
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Input Plug (Wall Side)</span>
-                  <span className={styles.specItemVal}>Australian Plug (AS/NZS 3112)</span>
+                  <span className={styles.specItemVal}>{current === '8A' ? '8A Domestic Standard Plug (AS/NZS 3112)' : '15A Caravan Plug (AS/NZS 3112)'}</span>
                 </div>
               </div>
 
@@ -472,7 +475,7 @@ export default function VoltGoProductPage() {
               <div className={styles.specsCol}>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Cable Length</span>
-                  <span className={styles.specItemVal}>5m (customizable)</span>
+                  <span className={styles.specItemVal}>5M</span>
                 </div>
                 <div className={styles.specItem}>
                   <span className={styles.specItemLabel}>Certification</span>
@@ -588,11 +591,11 @@ export default function VoltGoProductPage() {
       <section className={styles.bottomCtaSection}>
         <div className="container">
           <h3>TAKE CHARGING POWER EVERYWHERE</h3>
-          <h2>Ready to pack the Volt Go?</h2>
-          <p>Get a standalone Volt Go charger kit with a premium travel carry bag today.</p>
+          <h2>Ready to pack the Portable EV Charger?</h2>
+          <p>Get a standalone Portable EV Charger kit (1.8kW 8A Domestic Plug at $499 or 3.6kW 15A Caravan Plug at $599) with 5M cable and premium travel carry bag today.</p>
           <div className={styles.bottomCtaActions}>
             <Link href="/quote" className={styles.btnPrimary}>
-              Buy Volt Go
+              Buy Portable EV Charger
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
