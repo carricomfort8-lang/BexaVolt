@@ -92,6 +92,7 @@ const Footer = () => {
             <div className={styles.linkCol}>
               <h4>COMPANY</h4>
               <Link href="/about">About Us</Link>
+              <Link href="/our-story">Our Story</Link>
               <Link href="/mission">Our Mission</Link>
               <Link href="/chargers">Our Chargers</Link>
               <Link href="/careers">Careers</Link>

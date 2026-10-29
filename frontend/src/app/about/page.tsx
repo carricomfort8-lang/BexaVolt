@@ -6,8 +6,8 @@ import AnimateIn from '@/components/AnimateIn';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'Our Story & Mission — BexaVolt | Smart Australian EV Charging',
-  description: "BexaVolt’s story centres on a simple idea: make home EV charging easier to understand and easier to fit into everyday Australian life.",
+  title: 'About BexaVolt — Charge at home. Go places.',
+  description: 'At BexaVolt, we help Australians make home EV charging part of everyday life, with smart technology, distinctive design and straightforward guidance.',
 };
 
 export default function AboutPage() {
@@ -21,227 +21,34 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles.heroContent}>
             <AnimateIn direction="up" delay={1}>
-              <span className={styles.heroEyebrow}>ABOUT BEXAVOLT</span>
+              <span className={styles.heroEyebrow}>AUSTRALIAN EV CHARGING</span>
             </AnimateIn>
 
             <AnimateIn direction="up" delay={2}>
               <h1 className={styles.heroTitle}>
-                Our <span className={styles.titleHighlight}>Story</span>
+                About <span className={styles.titleHighlight}>BexaVolt</span>
               </h1>
             </AnimateIn>
 
             <AnimateIn direction="up" delay={3}>
               <p className={styles.heroTagline}>
-                A better charging experience starts at home.
-              </p>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. THE STORY NARRATIVE */}
-      <section className={styles.storySection}>
-        <div className="container">
-          <div className={styles.storyGrid}>
-            {/* Left Column: Narrative Copy */}
-            <div className={styles.storyLeft}>
-              <AnimateIn direction="left" delay={1}>
-                <h2 className={styles.storyLead}>
-                  Switching to an electric vehicle opens up new possibilities. Choosing how to charge it should feel just as exciting.
-                </h2>
-              </AnimateIn>
-
-              <AnimateIn direction="left" delay={2}>
-                <p className={styles.storyParagraph}>
-                  BexaVolt’s story centres on a simple idea: make home EV charging easier to understand and easier to fit into everyday Australian life.
-                </p>
-              </AnimateIn>
-
-              <AnimateIn direction="left" delay={3}>
-                <p className={styles.storyParagraph}>
-                  We bring together smart charging technology, distinctive design and straightforward guidance to help customers choose with confidence. From the first enquiry, our focus is on understanding your vehicle, your property and what you need from your charging setup.
-                </p>
-              </AnimateIn>
-
-              {/* Callout Box */}
-              <AnimateIn direction="left" delay={4}>
-                <div className={styles.productCallout}>
-                  <div className={styles.calloutAccent} />
-                  <p className={styles.calloutText}>
-                    <strong>The Volt Ultra</strong> reflects that approach, pairing a refined finish with features that put charging information and control within reach.
-                  </p>
-                </div>
-              </AnimateIn>
-
-              <AnimateIn direction="left" delay={5}>
-                <p className={styles.storyClosing}>
-                  For us, the experience goes beyond the charger on the wall. It’s about helping you feel ready for the road ahead.
-                </p>
-              </AnimateIn>
-            </div>
-
-            {/* Right Column: Visual Feature Showcase */}
-            <div className={styles.storyRight}>
-              <AnimateIn direction="right" delay={2}>
-                <div className={styles.showcaseCard}>
-                  <div className={styles.cardImageWrap}>
-                    <img
-                      src="/ultra1.png"
-                      alt="BexaVolt Volt Ultra Smart EV Charger"
-                      className={styles.cardImg}
-                    />
-                    <div className={styles.cardOverlayGradient} />
-                  </div>
-
-                  <div className={styles.cardBadgeRow}>
-                    <div className={styles.trustBadge}>
-                      <span className={styles.trustBadgeDot} />
-                      <span>AUSTRALIAN OWNED</span>
-                    </div>
-                    <div className={styles.trustBadge}>
-                      <span className={styles.trustBadgeDot} />
-                      <span>2 YEAR WARRANTY</span>
-                    </div>
-                  </div>
-
-                  <div className={styles.cardQuote}>
-                    &ldquo;Charge at home. Go places.&rdquo;
-                  </div>
-                </div>
-              </AnimateIn>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. OUR MISSION */}
-      <section className={styles.missionSection} id="mission">
-        <div className="container">
-          <div className={styles.sectionHeaderCenter}>
-            <AnimateIn direction="up" delay={1}>
-              <span className={styles.sectionEyebrow}>OUR MISSION</span>
-            </AnimateIn>
-            <AnimateIn direction="up" delay={2}>
-              <h2 className={styles.sectionHeading}>
-                Make home charging a <span className={styles.titleHighlight}>confident next step.</span>
-              </h2>
-            </AnimateIn>
-            <AnimateIn direction="up" delay={3}>
-              <p className={styles.sectionSub}>
-                Our mission is to help Australians choose EV charging solutions that suit their homes and the way they drive.
-              </p>
-            </AnimateIn>
-            <AnimateIn direction="up" delay={4}>
-              <p className={styles.sectionLeadSub}>
-                We put that mission into practice through:
-              </p>
-            </AnimateIn>
-          </div>
-
-          <div className={styles.pillarsGrid}>
-            {/* Pillar 1 */}
-            <AnimateIn direction="up" delay={1}>
-              <div className={styles.pillarCard}>
-                <div className={styles.pillarNumber}>01</div>
-                <div className={styles.pillarIcon}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="12" y1="16" x2="12" y2="12"/>
-                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                  </svg>
-                </div>
-                <h3 className={styles.pillarTitle}>Clear advice</h3>
-                <p className={styles.pillarDesc}>
-                  Explain charging options in plain English, so customers can make informed decisions.
-                </p>
-              </div>
-            </AnimateIn>
-
-            {/* Pillar 2 */}
-            <AnimateIn direction="up" delay={2}>
-              <div className={styles.pillarCard}>
-                <div className={styles.pillarNumber}>02</div>
-                <div className={styles.pillarIcon}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                  </svg>
-                </div>
-                <h3 className={styles.pillarTitle}>Technology with a purpose</h3>
-                <p className={styles.pillarDesc}>
-                  Focus on features that support everyday convenience, charging control and solar integration where suitable.
-                </p>
-              </div>
-            </AnimateIn>
-
-            {/* Pillar 3 */}
-            <AnimateIn direction="up" delay={3}>
-              <div className={styles.pillarCard}>
-                <div className={styles.pillarNumber}>03</div>
-                <div className={styles.pillarIcon}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9 22 9 12 15 12 15 22"/>
-                  </svg>
-                </div>
-                <h3 className={styles.pillarTitle}>Design that belongs at home</h3>
-                <p className={styles.pillarDesc}>
-                  Bring thoughtful form and useful functionality together in a charger customers are proud to have in their driveway.
-                </p>
-              </div>
-            </AnimateIn>
-
-            {/* Pillar 4 */}
-            <AnimateIn direction="up" delay={4}>
-              <div className={styles.pillarCard}>
-                <div className={styles.pillarNumber}>04</div>
-                <div className={styles.pillarIcon}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                    <circle cx="8.5" cy="7.5" r="4"/>
-                    <polyline points="17 11 19 13 23 9"/>
-                  </svg>
-                </div>
-                <h3 className={styles.pillarTitle}>Guidance built around each customer</h3>
-                <p className={styles.pillarDesc}>
-                  Consider vehicle compatibility, property needs and electrical requirements, with installation assessed by a licensed electrician.
-                </p>
-              </div>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. OUR VISION */}
-      <section className={styles.visionSection}>
-        <div className="container">
-          <div className={styles.visionBox}>
-            <div className={styles.visionGlow} />
-            <AnimateIn direction="up" delay={1}>
-              <span className={styles.visionEyebrow}>OUR VISION</span>
-            </AnimateIn>
-
-            <AnimateIn direction="up" delay={2}>
-              <h2 className={styles.visionHeading}>
-                Home charging that feels like <span className={styles.titleHighlight}>second nature.</span>
-              </h2>
-            </AnimateIn>
-
-            <AnimateIn direction="up" delay={3}>
-              <p className={styles.visionText}>
-                We envision a future where more Australians can enjoy the convenience of charging where they live, with technology they understand and a setup that fits their lives.
+                Charge at home. Go places.
               </p>
             </AnimateIn>
 
             <AnimateIn direction="up" delay={4}>
-              <div className={styles.visionTaglineWrap}>
-                <span className={styles.brandTagline}>BexaVolt</span>
-                <span className={styles.brandDash}>—</span>
-                <span className={styles.brandMotto}>Charge at home. Go places.</span>
+              <div className={styles.heroIntroText}>
+                <p>
+                  Your next journey starts in your driveway. At BexaVolt, we help Australians make home EV charging part of everyday life, with smart technology, distinctive design and straightforward guidance.
+                </p>
+                <p>
+                  Whether you’re bringing home your first electric vehicle or upgrading your charging setup, we’ll help you explore a solution that suits your car, your property and the way you drive.
+                </p>
               </div>
             </AnimateIn>
 
             <AnimateIn direction="up" delay={5}>
-              <div className={styles.visionCtaRow}>
+              <div className={styles.heroActions}>
                 <Link href="/quote" className="btn-primary">
                   Get a Free Quote
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -253,19 +60,235 @@ export default function AboutPage() {
                 </Link>
               </div>
             </AnimateIn>
+          </div>
+        </div>
+      </section>
 
-            {/* Sales Hotline Banner */}
-            <AnimateIn direction="up" delay={6}>
-              <div className="sales-call-banner">
-                <span>Prefer to speak with an Australian EV specialist?</span>
-                <a href="tel:0272415565" title="Call Sales: 02 7241 5565">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                  <span>CALL SALES: <strong>02 7241 5565</strong></span>
-                </a>
+      {/* 2. DESIGNED TO STAND OUT SECTION */}
+      <section className={styles.featureSection}>
+        <div className="container">
+          <div className={styles.featureGrid}>
+            {/* Left Content */}
+            <div className={styles.featureLeft}>
+              <AnimateIn direction="left" delay={1}>
+                <span className={styles.subEyebrow}>SMART TECHNOLOGY &amp; DESIGN</span>
+              </AnimateIn>
+
+              <AnimateIn direction="left" delay={2}>
+                <h2 className={styles.featureHeading}>
+                  Designed to stand out. <br />
+                  <span className={styles.titleHighlight}>Built around your day.</span>
+                </h2>
+              </AnimateIn>
+
+              <AnimateIn direction="left" delay={3}>
+                <p className={styles.featureLead}>
+                  Home charging should look the part and fit your routine.
+                </p>
+              </AnimateIn>
+
+              <AnimateIn direction="left" delay={4}>
+                <p className={styles.featureDesc}>
+                  The BexaVolt Volt Ultra combines a premium brushed aluminium finish with an integrated colour touchscreen, solar integration, RFID access and connected charging features. From managing charging sessions to exploring how your solar generation can support your EV, Volt Ultra puts useful technology within easy reach.
+                </p>
+              </AnimateIn>
+
+              <AnimateIn direction="left" delay={5}>
+                <div className={styles.pillList}>
+                  <div className={styles.featurePill}>
+                    <span className={styles.pillCheck}>✓</span>
+                    Brushed Aluminium Finish
+                  </div>
+                  <div className={styles.featurePill}>
+                    <span className={styles.pillCheck}>✓</span>
+                    Integrated Colour Touchscreen
+                  </div>
+                  <div className={styles.featurePill}>
+                    <span className={styles.pillCheck}>✓</span>
+                    Solar Matching &amp; ECO Modes
+                  </div>
+                  <div className={styles.featurePill}>
+                    <span className={styles.pillCheck}>✓</span>
+                    RFID Access &amp; App Connectivity
+                  </div>
+                </div>
+              </AnimateIn>
+            </div>
+
+            {/* Right Visual Image */}
+            <div className={styles.featureRight}>
+              <AnimateIn direction="right" delay={2}>
+                <div className={styles.imageCard}>
+                  <div className={styles.imageCardInner}>
+                    <img
+                      src="/ultra1.png"
+                      alt="BexaVolt Volt Ultra Charger"
+                      className={styles.productImg}
+                    />
+                    <div className={styles.imgBadge}>
+                      <span className={styles.badgeDot} />
+                      <span>Volt Ultra Flagship</span>
+                    </div>
+                  </div>
+                </div>
+              </AnimateIn>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. HOME CHARGING, THE AUSTRALIAN WAY */}
+      <section className={styles.ausWaySection}>
+        <div className="container">
+          <div className={styles.ausHeader}>
+            <AnimateIn direction="up" delay={1}>
+              <span className={styles.subEyebrow}>LIFESTYLE &amp; RELIABILITY</span>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={2}>
+              <h2 className={styles.ausHeading}>
+                Home charging, <span className={styles.titleHighlight}>the Australian way</span>
+              </h2>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={3}>
+              <p className={styles.ausSubtitle}>
+                Early starts. School runs. Weekend escapes. Wherever life takes you, charging at home gives you the convenience of plugging in where you park.
+              </p>
+            </AnimateIn>
+          </div>
+
+          <div className={styles.ausCardsGrid}>
+            <AnimateIn direction="up" delay={1}>
+              <div className={styles.routineCard}>
+                <div className={styles.routineIcon}>🌅</div>
+                <h3>Early starts</h3>
+                <p>Wake up each morning to a full battery ready for the commute, charged overnight on low-cost off-peak tariffs.</p>
               </div>
             </AnimateIn>
+
+            <AnimateIn direction="up" delay={2}>
+              <div className={styles.routineCard}>
+                <div className={styles.routineIcon}>🎒</div>
+                <h3>School runs</h3>
+                <p>Effortless short hops and family transport without ever having to plan trips around public charging queues.</p>
+              </div>
+            </AnimateIn>
+
+            <AnimateIn direction="up" delay={3}>
+              <div className={styles.routineCard}>
+                <div className={styles.routineIcon}>🚙</div>
+                <h3>Weekend escapes</h3>
+                <p>Hit the open road across regional Australia with full confidence in your charging range and home setup.</p>
+              </div>
+            </AnimateIn>
+          </div>
+
+          <AnimateIn direction="up" delay={4}>
+            <div className={styles.adviceBanner}>
+              <div className={styles.adviceIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 11 2 2 4-4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div className={styles.adviceContent}>
+                <h4>Professional Guidance &amp; Licensed Assessment</h4>
+                <p>
+                  We help you understand your options, from vehicle compatibility and available electrical supply to the site details needed for a tailored quote. A licensed electrician assesses installation requirements, so your setup starts with the right advice.
+                </p>
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* 4. YOUR DRIVEWAY. YOUR NEXT STEP. */}
+      <section className={styles.drivewaySection}>
+        <div className="container">
+          <div className={styles.drivewayBox}>
+            <div className={styles.drivewayBgGlow} />
+
+            <AnimateIn direction="up" delay={1}>
+              <span className={styles.drivewayEyebrow}>GET STARTED</span>
+            </AnimateIn>
+
+            <AnimateIn direction="up" delay={2}>
+              <h2 className={styles.drivewayHeading}>
+                Your driveway. <span className={styles.titleHighlight}>Your next step.</span>
+              </h2>
+            </AnimateIn>
+
+            <AnimateIn direction="up" delay={3}>
+              <p className={styles.drivewayText}>
+                Tell us what you drive and where you park. Let’s explore a BexaVolt charging solution for your home.
+              </p>
+            </AnimateIn>
+
+            <AnimateIn direction="up" delay={4}>
+              <div className={styles.drivewayBtnRow}>
+                <Link href="/quote" className="btn-primary">
+                  Start Online Quote
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </Link>
+                <Link href="/our-story" className="btn-secondary">
+                  Read Our Story
+                </Link>
+              </div>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. READY TO PLUG IN? CONTACT & SALES BLOCK */}
+      <section className={styles.contactSection}>
+        <div className="container">
+          <div className={styles.contactCard}>
+            <div className={styles.contactLeft}>
+              <h3 className={styles.contactTitle}>Ready to plug in? Give us a call.</h3>
+              <p className={styles.contactSubtitle}>
+                Our Australian EV charging specialists are here to answer questions, check vehicle compatibility, and arrange electrical site assessments.
+              </p>
+
+              <div className={styles.contactPoints}>
+                <a href="tel:0272415565" className={styles.contactPhoneLink} title="Call 02 7241 5565">
+                  <div className={styles.phoneIconWrap}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className={styles.contactLabel}>Call Sales:</span>
+                    <strong className={styles.contactValuePhone}>02 7241 5565</strong>
+                  </div>
+                </a>
+
+                <a href="mailto:Sales@BexaVolt.com.au" className={styles.contactEmailLink} title="Email Sales">
+                  <div className={styles.emailIconWrap}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                      <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className={styles.contactLabel}>Email:</span>
+                    <strong className={styles.contactValueEmail}>Sales@BexaVolt.com.au</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div className={styles.contactRight}>
+              <div className={styles.brandMottoCard}>
+                <div className={styles.brandBadge}>BexaVolt</div>
+                <p className={styles.brandMottoText}>
+                  At home in your driveway. Ready for your next journey.
+                </p>
+                <div className={styles.footnote}>
+                  Features vary by configuration. Charging output depends on your vehicle, electrical supply and installation.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
