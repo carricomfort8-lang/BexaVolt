@@ -583,12 +583,12 @@ export default function VoltMiniProductPage() {
                 Volt Mini comes backed standard with an industry-leading 2-year warranty. 
                 Enjoy comprehensive coverage and local assistance from BexaVolt's expert engineers.
               </p>
-              <a href="#warranty-details" className={styles.warrantyLink}>
+              <Link href="/warranty" className={styles.warrantyLink}>
                 Learn more about warranty
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

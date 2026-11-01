@@ -466,10 +466,10 @@ export default function VoltPulseProductPage() {
                 Volt Pulse is covered by our comprehensive 2-year replacement warranty — giving you 
                 complete confidence in your home charging investment.
               </p>
-              <a href="#warranty-details" className={styles.warrantyLink}>
+              <Link href="/warranty" className={styles.warrantyLink}>
                 Learn more about warranty
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

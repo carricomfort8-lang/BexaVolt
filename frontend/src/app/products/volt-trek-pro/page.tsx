@@ -558,12 +558,12 @@ export default function VoltTrekProProductPage() {
               <p className={styles.warrantyDesc}>
                 Volt Trek Pro is backed standard by our comprehensive 2-year adventure warranty, built to handle remote use conditions.
               </p>
-              <a href="#warranty-details" className={styles.warrantyLink}>
+              <Link href="/warranty" className={styles.warrantyLink}>
                 Learn about the Trek warranty
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
