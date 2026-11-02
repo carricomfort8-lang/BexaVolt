@@ -196,6 +196,57 @@
   margin-bottom: 0.5rem;
 }
 
+.chargerCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.chargerBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(127, 225, 35, 0.15);
+  color: #7FE123;
+  border: 1px solid rgba(127, 225, 35, 0.3);
+}
+
+.cardPriceTag {
+  margin-top: 1rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(127, 225, 35, 0.1);
+  border: 1px solid rgba(127, 225, 35, 0.25);
+  border-radius: 6px;
+  color: #7FE123;
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+
+.cardPriceSub {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #7FE123;
+}
+
+.installerText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.installerSub {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
 .chargerCard p {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);

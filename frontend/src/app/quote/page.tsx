@@ -65,12 +65,18 @@ function SearchableSelect({ value, onChange }: { value: string, onChange: (val: 
 
 function QuoteWizard() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const queryCharger = searchParams?.get("charger");
+  const queryPower = searchParams?.get("power");
+  const queryInstaller = searchParams?.get("installer");
+
   // We'll use local state for the step so it instantly updates without routing delays.
   const [step, setStep] = useState(1);
   const [brand, setBrand] = useState("");
-  const [charger, setCharger] = useState("pulse");
-  const [power, setPower] = useState("7kw");
-  const [installer, setInstaller] = useState("bexavolt");
+  const [charger, setCharger] = useState(queryCharger === "pulse" ? "pulse" : "ultra");
+  const [power, setPower] = useState(queryPower === "22kw" ? "22kw" : "7kw");
+  const [installer, setInstaller] = useState(queryInstaller === "own" ? "own" : "bexavolt");
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -84,11 +90,21 @@ function QuoteWizard() {
     policy: false,
   });
 
-  // Basic pricing logic for demonstration
-  const basePrice = charger === "ultra" 
-    ? (power === "22kw" ? 969 : 899) 
-    : (power === "22kw" ? 1499 : 1099);
-  const installPrice = installer === "bexavolt" ? 500 : 0;
+  // Accurate pricing logic:
+  // Volt Ultra:
+  // 7kW Device with installation: $1,799.00 ($899 device + $900 installation)
+  // 22kW Device with installation: $1,899.00 ($969 device + $930 installation)
+  // Hardware only: 7kW - $899, 22kW - $969
+  let basePrice = 899;
+  let installPrice = 0;
+
+  if (charger === "ultra") {
+    basePrice = power === "22kw" ? 969 : 899;
+    installPrice = installer === "bexavolt" ? (power === "22kw" ? 930 : 900) : 0;
+  } else {
+    basePrice = power === "22kw" ? 1499 : 1099;
+    installPrice = installer === "bexavolt" ? 500 : 0;
+  }
   const estimate = basePrice + installPrice;
 
   const handleNext = () => {
@@ -232,24 +248,40 @@ function QuoteWizard() {
                       className={`${styles.chargerCard} ${charger === "ultra" ? styles.chargerCardActive : ""}`}
                       onClick={() => setCharger("ultra")}
                     >
-                      <h4>Volt Ultra</h4>
-                      <p>The pinnacle of home charging.</p>
+                      <div className={styles.chargerCardHeader}>
+                        <h4>Volt Ultra</h4>
+                        <span className={styles.chargerBadge}>Flagship</span>
+                      </div>
+                      <p>The pinnacle of home charging with 3.5" touchscreen &amp; solar integration.</p>
                       <ul className={styles.featureList}>
                         <li><span className={styles.featureIcon}>✓</span> Up to 22kW charging</li>
-                        <li><span className={styles.featureIcon}>✓</span> 4.3" touchscreen</li>
+                        <li><span className={styles.featureIcon}>✓</span> RFID &amp; 4G LTE Backup</li>
                       </ul>
+                      <div className={styles.cardPriceTag}>
+                        {installer === "bexavolt"
+                          ? (power === "22kw" ? "$1,899 with installation" : "$1,799 with installation")
+                          : (power === "22kw" ? "$969 device only" : "$899 device only")}
+                      </div>
                     </div>
                     {/* Pulse */}
                     <div 
                       className={`${styles.chargerCard} ${charger === "pulse" ? styles.chargerCardActive : ""}`}
                       onClick={() => setCharger("pulse")}
                     >
-                      <h4>Volt Pulse</h4>
-                      <p>Power at full speed.</p>
+                      <div className={styles.chargerCardHeader}>
+                        <h4>Volt Pulse</h4>
+                        <span className={styles.chargerBadge}>Popular</span>
+                      </div>
+                      <p>Power at full speed with dynamic load balancing.</p>
                       <ul className={styles.featureList}>
                         <li><span className={styles.featureIcon}>✓</span> Up to 7.4kW charging</li>
                         <li><span className={styles.featureIcon}>✓</span> Dynamic load balancing</li>
                       </ul>
+                      <div className={styles.cardPriceTag}>
+                        {installer === "bexavolt"
+                          ? (power === "22kw" ? "$1,999 with installation" : "$1,599 with installation")
+                          : (power === "22kw" ? "$1,499 device only" : "$1,099 device only")}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -262,14 +294,24 @@ function QuoteWizard() {
                       onClick={() => setPower("7kw")}
                     >
                       <h4>7kW Single Phase</h4>
-                      <p>Ideal for homes with a single-phase power supply.</p>
+                      <p>Ideal for homes with single-phase power supply.</p>
+                      {charger === "ultra" && (
+                        <div className={styles.cardPriceSub}>
+                          {installer === "bexavolt" ? "$1,799 with installation" : "$899 device only"}
+                        </div>
+                      )}
                     </div>
                     <div 
                       className={`${styles.optionCard} ${power === "22kw" ? styles.optionCardActive : ""}`}
                       onClick={() => setPower("22kw")}
                     >
                       <h4>22kW Three Phase</h4>
-                      <p>Ideal for homes with a three-phase power supply.</p>
+                      <p>Ideal for homes with three-phase power supply.</p>
+                      {charger === "ultra" && (
+                        <div className={styles.cardPriceSub}>
+                          {installer === "bexavolt" ? "$1,899 with installation" : "$969 device only"}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -294,7 +336,10 @@ function QuoteWizard() {
                             <path d="M54 54L62 62M62 54L54 62" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
                           </svg>
                         </div>
-                        <h4>No, I have my own licensed electrician</h4>
+                        <div className={styles.installerText}>
+                          <h4>No, I have my own licensed electrician</h4>
+                          <span className={styles.installerSub}>Device hardware only (No installation fee)</span>
+                        </div>
                       </div>
                       <div 
                         className={`${styles.optionCard} ${styles.installerCard} ${installer === "bexavolt" ? styles.optionCardActive : ""}`}
@@ -313,7 +358,10 @@ function QuoteWizard() {
                             <path d="M53 58L57 62L64 54" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <h4>Yes, I'd like to use your installer</h4>
+                        <div className={styles.installerText}>
+                          <h4>Yes, I'd like to use your installer</h4>
+                          <span className={styles.installerSub}>Certified standard installation Australia-wide included</span>
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -462,8 +510,12 @@ function QuoteWizard() {
       {(step === 2 || step === 3) && (
         <div className={styles.estimateBanner}>
           <div className={styles.estimatePrice}>
-            <span className={styles.estimateLabel}>Estimated Price</span>
-            <span className={styles.estimateValue}>${estimate.toLocaleString()}</span>
+            <span className={styles.estimateLabel}>
+              {charger === "ultra" 
+                ? `${power === "22kw" ? "22kW" : "7kW"} Ultra ${installer === "bexavolt" ? "With Installation" : "Device Only"}`
+                : "Estimated Price"}
+            </span>
+            <span className={styles.estimateValue}>${estimate.toLocaleString()} AUD</span>
           </div>
           <button className={styles.btnPrimary} onClick={step === 2 ? handleNext : () => document.getElementById("quote-form")?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))} disabled={step === 3 && isSubmitting}>
             {step === 2 ? "Continue to Details" : isSubmitting ? "Sending..." : "Submit Quote"}
