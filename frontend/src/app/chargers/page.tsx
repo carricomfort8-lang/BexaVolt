@@ -10,7 +10,7 @@ import styles from './page.module.css';
 export interface Charger {
   id: string;
   name: string;
-  category: 'home' | 'portable' | 'solar' | 'commercial';
+  category: 'home' | 'portable' | 'commercial';
   categoryLabel: string;
   badge?: string;
   tagline: string;
@@ -32,6 +32,7 @@ export interface Charger {
   };
 }
 
+// Exactly the chargers listed in BexaVolt's Mega Menus (Chargers, For Home, Business)
 const ALL_CHARGERS: Charger[] = [
   {
     id: 'volt-ultra',
@@ -98,7 +99,7 @@ const ALL_CHARGERS: Charger[] = [
     categoryLabel: 'Ultra-Portable Charger',
     badge: 'BESTSELLER',
     tagline: 'Power Anywhere, Charge Everywhere.',
-    description: 'Ultra-portable EV charger available with standard 10A domestic or 15A caravan plug. Heavy-duty 5M cable and travel carry bag included.',
+    description: 'Ultra-portable EV charger available with standard 10A domestic ($499) or 15A caravan plug ($599). Heavy-duty 5M cable and travel carry bag included.',
     power: '1.8kW / 3.6kW',
     phase: 'single',
     phaseLabel: 'Single Phase (Domestic / Caravan)',
@@ -117,35 +118,6 @@ const ALL_CHARGERS: Charger[] = [
       maxPower: '3.6kW',
       mounting: 'Portable / Boot Kit',
       rating: 'IP55 Rated',
-      warranty: '2 Years',
-    },
-  },
-  {
-    id: 'volt-orbit',
-    name: 'Volt Orbit',
-    category: 'solar',
-    categoryLabel: 'Solar-Optimised Wallbox',
-    badge: 'SOLAR SMART',
-    tagline: 'Smart solar-integrated charging.',
-    description: 'Harness 100% self-generated rooftop solar energy to charge your vehicle with zero reliance on the electrical grid.',
-    power: '7.4kW / 22kW',
-    phase: 'both',
-    phaseLabel: 'Single & Three Phase',
-    priceFrom: '$1,299',
-    priceSub: '$1,299 (7kW) / $1,699 (22kW)',
-    image: '/voltorbit_hero.png',
-    href: '/products/volt-orbit',
-    solarReady: true,
-    features: [
-      'Direct Rooftop Solar Diverter Control',
-      'Zero Grid Draw Pure Solar Mode',
-      'Cloud Energy Analytics & RFID Access',
-      'IP65 Rated For Outdoor Installation',
-    ],
-    specs: {
-      maxPower: '22kW',
-      mounting: 'Wall Mounted',
-      rating: 'IP65 Rated',
       warranty: '2 Years',
     },
   },
@@ -174,35 +146,6 @@ const ALL_CHARGERS: Charger[] = [
     specs: {
       maxPower: '22kW',
       mounting: 'Wall / Post',
-      rating: 'IP65 Weatherproof',
-      warranty: '2 Years',
-    },
-  },
-  {
-    id: 'volt-smart',
-    name: 'Volt Smart',
-    category: 'home',
-    categoryLabel: 'Connected Smart Charger',
-    badge: 'CONNECTED',
-    tagline: 'Intelligent home charging.',
-    description: 'Wi-Fi & Bluetooth connected smart charger with automated off-peak tariff scheduling to dramatically reduce electricity running costs.',
-    power: '7.4kW / 22kW',
-    phase: 'both',
-    phaseLabel: 'Single & Three Phase',
-    priceFrom: '$999',
-    priceSub: '$999 (7kW) / $1,399 (22kW)',
-    image: '/2ndimagevoltmini.png',
-    href: '/products/volt-smart',
-    solarReady: true,
-    features: [
-      'Off-Peak Tariff Automated Scheduling',
-      'Smartphone Companion App with Live Diagnostics',
-      'Detailed Session History & Cost Tracking',
-      'Over-the-Air Wireless Firmware Updates',
-    ],
-    specs: {
-      maxPower: '22kW',
-      mounting: 'Wall Mounted',
       rating: 'IP65 Weatherproof',
       warranty: '2 Years',
     },
@@ -242,7 +185,7 @@ const ALL_CHARGERS: Charger[] = [
     category: 'home',
     categoryLabel: 'High-Capacity Wallbox',
     badge: 'FASTEST HOME',
-    tagline: 'Maximum home power, minimum charge time.',
+    tagline: 'Three-phase power for maximum home speed.',
     description: 'Full 22kW high-output charging station designed for properties with three-phase power supply and large-battery vehicles.',
     power: '22kW',
     phase: 'three',
@@ -271,7 +214,7 @@ const ALL_CHARGERS: Charger[] = [
     category: 'commercial',
     categoryLabel: 'Commercial & Fleet',
     badge: 'COMMERCIAL',
-    tagline: 'Commercial-grade charging power.',
+    tagline: 'Ultra-fast commercial AC charging.',
     description: 'OCPP 1.6J/2.0.1 compliant enterprise AC station with RFID user management, automated billing integration, and fleet telematics.',
     power: '22kW',
     phase: 'three',
@@ -294,69 +237,11 @@ const ALL_CHARGERS: Charger[] = [
       warranty: '2 Years',
     },
   },
-  {
-    id: 'volt-flex',
-    name: 'Volt Flex',
-    category: 'portable',
-    categoryLabel: 'Interchangeable Portable',
-    badge: 'VERSATILE',
-    tagline: 'Adapt to any power source.',
-    description: 'Heavy-duty multi-tail portable charging station. Swap easily between 10A standard household, 15A caravan, and 32A three-phase tails.',
-    power: 'Up to 22kW',
-    phase: 'both',
-    phaseLabel: 'Single & Three Phase Adaptable',
-    priceFrom: '$899',
-    priceSub: '$899 (Single Tail) / $1,199 (Multi-Tail Kit)',
-    image: '/volitmini_hero.png',
-    href: '/products/volt-flex',
-    solarReady: false,
-    features: [
-      'Interchangeable Australian Plug Tail System',
-      'Auto-Detects Supply Amperage For Maximum Safety',
-      'Wall Mount Bracket & Heavy-Duty Carry Case',
-      'Industrial-Grade Ingress Protected Enclosure',
-    ],
-    specs: {
-      maxPower: '22kW',
-      mounting: 'Portable / Wall Bracket',
-      rating: 'IP66 Rated',
-      warranty: '2 Years',
-    },
-  },
-  {
-    id: 'volt-trek-pro',
-    name: 'Volt Trek Pro',
-    category: 'portable',
-    categoryLabel: 'Rugged Off-Road Portable',
-    badge: 'OFF-ROAD',
-    tagline: 'Power where roads end.',
-    description: 'Military-grade portable charger built for remote touring, camping, and overland 4WD expeditions with portable solar panel support.',
-    power: 'Up to 7.4kW',
-    phase: 'single',
-    phaseLabel: 'Rugged Single Phase',
-    priceFrom: '$1,299',
-    priceSub: '$1,299 (Complete Adventure Kit)',
-    image: '/3rdsec.png',
-    href: '/products/volt-trek-pro',
-    solarReady: true,
-    features: [
-      'IP68 Submersion-Proof Rugged Housing',
-      'Direct Folding Solar Array MPPT Input',
-      'Shock-Resistant Heavy-Duty Rubberised Body',
-      'Wide Operating Temperature Range (-30°C to +55°C)',
-    ],
-    specs: {
-      maxPower: '7.4kW',
-      mounting: 'Overland Portable',
-      rating: 'IP68 Waterproof',
-      warranty: '2 Years',
-    },
-  },
 ];
 
 export default function ChargersArchivePage() {
   const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'home' | 'portable' | 'solar' | 'commercial'>('all');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'home' | 'portable' | 'commercial'>('all');
   const [selectedPhase, setSelectedPhase] = useState<'all' | 'single' | 'three'>('all');
 
   // Filter logic
@@ -431,7 +316,7 @@ export default function ChargersArchivePage() {
                     type="text"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search by model, feature (e.g. Ultra, Solar, Portable, 22kW)..."
+                    placeholder="Search by model, feature (e.g. Ultra, Pulse, Portable, 22kW)..."
                     className={styles.searchInput}
                   />
                 </div>
@@ -448,19 +333,13 @@ export default function ChargersArchivePage() {
                     onClick={() => setSelectedCategory('home')}
                     className={`${styles.filterTab} ${selectedCategory === 'home' ? styles.filterTabActive : ''}`}
                   >
-                    Home Wallboxes (6)
+                    Home Wallboxes (5)
                   </button>
                   <button
                     onClick={() => setSelectedCategory('portable')}
                     className={`${styles.filterTab} ${selectedCategory === 'portable' ? styles.filterTabActive : ''}`}
                   >
-                    Portable &amp; Travel (3)
-                  </button>
-                  <button
-                    onClick={() => setSelectedCategory('solar')}
-                    className={`${styles.filterTab} ${selectedCategory === 'solar' ? styles.filterTabActive : ''}`}
-                  >
-                    Solar-Optimised (1)
+                    Portable &amp; Travel (1)
                   </button>
                   <button
                     onClick={() => setSelectedCategory('commercial')}
@@ -617,9 +496,9 @@ export default function ChargersArchivePage() {
         <div className="container">
           <div className={styles.compareHeader}>
             <span className={styles.compareEyebrow}>QUICK REFERENCE</span>
-            <h2 className={styles.compareTitle}>Compare All Chargers Side-by-Side</h2>
+            <h2 className={styles.compareTitle}>Compare Chargers Side-by-Side</h2>
             <p className={styles.compareSub}>
-              Review key electrical specifications, mounting compatibility, and starting rates across the entire BexaVolt fleet.
+              Review key electrical specifications, mounting compatibility, and starting rates across the official BexaVolt catalogue.
             </p>
           </div>
 
