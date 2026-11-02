@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
   {
     key: 'products',
     label: 'Chargers',
-    href: '#products',
+    href: '/chargers',
     hasMega: true,
     isProductsMega: true,
     megaData: {
@@ -52,7 +52,7 @@ const navItems: NavItem[] = [
         titlePart2: 'BexaVolt Products',
         sub: 'Smart charging solutions for every lifestyle.',
         btnText: 'View All Products',
-        btnHref: '#products',
+        btnHref: '/chargers',
         img: '/img23-removebg-preview.png'
       }
     }
@@ -261,7 +261,7 @@ const Navbar = () => {
                               </Link>
                             ))}
                           </div>
-                          <Link href="#compare-wall-mount" className={styles.comparePillBtn}>
+                          <Link href="/chargers#compare" className={styles.comparePillBtn}>
                             Compare Wall-Mount Chargers
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
                           </Link>
@@ -281,8 +281,8 @@ const Navbar = () => {
                               </Link>
                             ))}
                           </div>
-                          <Link href="#compare-portable" className={styles.comparePillBtn}>
-                            Compare Portable Chargers
+                          <Link href="/chargers#compare" className={styles.comparePillBtn}>
+                            Compare All Chargers
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M9 18L15 12L9 6"/></svg>
                           </Link>
 
