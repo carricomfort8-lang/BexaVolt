@@ -418,23 +418,6 @@ const Navbar = () => {
               </svg>
             </Link>
 
-            {/* Globe Icon */}
-            <button className={styles.iconBtn} aria-label="Language">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-            </button>
-
-            {/* Shopping Bag Icon with Count "0" */}
-            <button className={styles.iconBtn} aria-label="Cart">
-              <div className={styles.cartIconWrapper}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                </svg>
-                <span className={styles.cartBadge}>0</span>
-              </div>
-            </button>
-
             {/* Hamburger (Mobile Menu Toggle) */}
             <button
               className={styles.hamburger}
