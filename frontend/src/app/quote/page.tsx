@@ -174,40 +174,38 @@ function QuoteWizard() {
 
         {/* Step 1: Guide */}
         {step === 1 && (
-          <div>
-            <div className={styles.guideContent}>
-              <h2>Get an EV Charger and Installation Quote</h2>
-              <p>Get a clear estimate for your home EV charger installation with BexaVolt’s quick and easy online estimator. Whether you need a high-quality standard charging station or an advanced optimised solution, our nationwide service makes EV charging accessible to homes across Australia.</p>
-              <p>Simply complete the form and submit your details. Our team will review your requirements and confirm your installation price within 48 hours.</p>
+          <div className={styles.guideContent}>
+            <h2>Get an EV Charger and Installation Quote</h2>
+            <p>Get a clear estimate for your home EV charger installation with BexaVolt’s quick and easy online estimator. Whether you need a high-quality standard charging station or an advanced optimised solution, our nationwide service makes EV charging accessible to homes across Australia.</p>
+            <p>Simply complete the form and submit your details. Our team will review your requirements and confirm your installation price within 48 hours.</p>
 
-              <h3>A beginner’s guide to home EV chargers.</h3>
-              
-              <p><strong>Choosing the Right EV Charger</strong><br/>
-              Choosing an EV charger depends on your vehicle, your home’s electrical capacity and how you plan to charge.</p>
-
-              <p><strong>1. What charging speed do I need?</strong><br/>
-              Most EVs are charged at home overnight. As a general guide:</p>
-              <ul>
-                <li>A 7 kW charger can add approximately 40 km of driving range per hour.</li>
-                <li>A 22 kW charger can add up to approximately 120 km of driving range per hour.</li>
-              </ul>
-
-              <p><strong>2. Which charging plug does my vehicle use?</strong><br/>
-              Modern EVs have ports for both AC and DC charging. Before selecting a charger, confirm it is compatible with your vehicle’s connection type.</p>
-
-              <p><strong>3. Who can install my EV charger?</strong><br/>
-              An EV charging station must be installed by a qualified and licensed electrician with EV charger installation experience.</p>
-
-              <p><strong>4. How much will installation cost?</strong><br/>
-              Installation costs depend on your property. Important considerations include:</p>
-              <ul>
-                <li>The distance between the parking area and the switchboard</li>
-                <li>The available capacity of your electrical system</li>
-                <li>Whether trenching or other groundwork is required</li>
-                <li>Whether the charger will be wall-mounted or installed on a pedestal</li>
-              </ul>
-            </div>
+            <h3>A beginner’s guide to home EV chargers.</h3>
             
+            <p><strong>Choosing the Right EV Charger</strong><br/>
+            Choosing an EV charger depends on your vehicle, your home’s electrical capacity and how you plan to charge.</p>
+
+            <p><strong>1. What charging speed do I need?</strong><br/>
+            Most EVs are charged at home overnight. As a general guide:</p>
+            <ul>
+              <li>A 7 kW charger can add approximately 40 km of driving range per hour.</li>
+              <li>A 22 kW charger can add up to approximately 120 km of driving range per hour.</li>
+            </ul>
+
+            <p><strong>2. Which charging plug does my vehicle use?</strong><br/>
+            Modern EVs have ports for both AC and DC charging. Before selecting a charger, confirm it is compatible with your vehicle’s connection type.</p>
+
+            <p><strong>3. Who can install my EV charger?</strong><br/>
+            An EV charging station must be installed by a qualified and licensed electrician with EV charger installation experience.</p>
+
+            <p><strong>4. How much will installation cost?</strong><br/>
+            Installation costs depend on your property. Important considerations include:</p>
+            <ul>
+              <li>The distance between the parking area and the switchboard</li>
+              <li>The available capacity of your electrical system</li>
+              <li>Whether trenching or other groundwork is required</li>
+              <li>Whether the charger will be wall-mounted or installed on a pedestal</li>
+            </ul>
+
             <div className={styles.actionButtons}>
               <button onClick={handleNext} className={styles.btnPrimary}>Start Quote</button>
             </div>

@@ -76,6 +76,7 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 3rem;
+  margin-bottom: 5rem;
 }
 
 .guideContent h2 {
@@ -358,8 +359,12 @@
   gap: 1rem;
   margin-top: 2.5rem;
   margin-bottom: 4rem;
-  padding-bottom: 2rem;
   justify-content: flex-start;
+}
+
+.guideContent .actionButtons {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .spaceBetween {
@@ -410,6 +415,10 @@
 }
 
 @media (max-width: 768px) {
+  .guideContent {
+    padding: 2rem 1.25rem;
+    margin-bottom: 3rem;
+  }
   .formGrid, .cardsGrid {
     grid-template-columns: 1fr;
   }
