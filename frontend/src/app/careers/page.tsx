@@ -128,7 +128,7 @@ export default function CareersPage() {
       </section>
 
       {/* 3. APPLICATION FORM */}
-      <section className={styles.formSection}>
+      <section id="apply" className={styles.formSection}>
         <div className="container">
           <div className={styles.formWrap}>
             <div className={styles.formHeader}>

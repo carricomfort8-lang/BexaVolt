@@ -101,11 +101,11 @@ const navItems: NavItem[] = [
   {
     key: 'installers',
     label: 'Installers',
-    href: '#installers',
+    href: '/careers',
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'Partner Portal', desc: 'Manage bookings & jobs', img: '/img23-removebg-preview.png', href: '#installers' },
+        { name: 'Partner Portal', desc: 'Manage bookings & jobs', img: '/img23-removebg-preview.png', href: '/careers' },
       ],
       rightCard: {
         titlePart1: 'Installer',
@@ -113,7 +113,7 @@ const navItems: NavItem[] = [
         tagline: 'Certified. Supported. Scalable.',
         sub: "Join Australia's leading EV installer network.",
         btnText: 'Apply to Partner',
-        btnHref: '#installers',
+        btnHref: '/careers',
         img: '/img23-removebg-preview.png'
       }
     }
