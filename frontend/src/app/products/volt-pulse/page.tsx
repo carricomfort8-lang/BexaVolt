@@ -9,9 +9,18 @@ import styles from './page.module.css';
 
 export default function VoltPulseProductPage() {
   const [phase, setPhase] = useState<'single' | 'three'>('single');
+  const [packageType, setPackageType] = useState<'installed' | 'hardware'>('installed');
 
-  const price = phase === 'single' ? '$1,099' : '$1,499';
-  const power = phase === 'single' ? '7.4kW' : '22kW';
+  // Both Volt Ultra and Volt Pulse are same price:
+  // 7KW Device with installation - $1,799.00
+  // 22kW Device with installation - $1,899.00
+  // Hardware only: 7kW - $899.00 / 22kW - $969.00
+  const finalPrice = packageType === 'installed'
+    ? (phase === 'single' ? 1799 : 1899)
+    : (phase === 'single' ? 899 : 969);
+
+  const priceDisplay = `$${finalPrice.toLocaleString()}`;
+  const power = phase === 'single' ? '7kW' : '22kW';
 
   return (
     <div className={styles.page}>
@@ -65,38 +74,76 @@ export default function VoltPulseProductPage() {
                 </div>
               </AnimateIn>
               <AnimateIn direction="left" delay={6}>
-                <div className={styles.phaseContainer}>
-                  <span className={styles.selectorLabel}>Select Charging Options</span>
-                  <div className={styles.phaseSelector}>
-                    <button
-                      onClick={() => setPhase('single')}
-                      className={`${styles.phaseBtn} ${phase === 'single' ? styles.phaseBtnActive : ''}`}
-                    >
-                      7.4kW - Single Phase
-                    </button>
-                    <button
-                      onClick={() => setPhase('three')}
-                      className={`${styles.phaseBtn} ${phase === 'three' ? styles.phaseBtnActive : ''}`}
-                    >
-                      22kW - Three Phase
-                    </button>
+                <div className={styles.optionsWrapper}>
+                  <div className={styles.phaseContainer}>
+                    <span className={styles.selectorLabel}>Select Package</span>
+                    <div className={styles.phaseSelector}>
+                      <button
+                        onClick={() => setPackageType('installed')}
+                        className={`${styles.phaseBtn} ${packageType === 'installed' ? styles.phaseBtnActive : ''}`}
+                      >
+                        Device with Installation
+                      </button>
+                      <button
+                        onClick={() => setPackageType('hardware')}
+                        className={`${styles.phaseBtn} ${packageType === 'hardware' ? styles.phaseBtnActive : ''}`}
+                      >
+                        Device Only
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className={styles.phaseContainer}>
+                    <span className={styles.selectorLabel}>Select Power Phase</span>
+                    <div className={styles.phaseSelector}>
+                      <button
+                        onClick={() => setPhase('single')}
+                        className={`${styles.phaseBtn} ${phase === 'single' ? styles.phaseBtnActive : ''}`}
+                      >
+                        7kW - Single Phase
+                      </button>
+                      <button
+                        onClick={() => setPhase('three')}
+                        className={`${styles.phaseBtn} ${phase === 'three' ? styles.phaseBtnActive : ''}`}
+                      >
+                        22kW - Three Phase
+                      </button>
+                    </div>
                   </div>
                 </div>
               </AnimateIn>
               <AnimateIn direction="left" delay={6}>
-                <div className={styles.priceLabel}>
-                  {price}<span>AUD</span>
+                <div className={styles.priceBlock}>
+                  <div className={styles.priceLabel}>
+                    {priceDisplay}<span>AUD</span>
+                  </div>
+                  <div className={styles.priceCaption}>
+                    {packageType === 'installed' 
+                      ? `✓ ${power} Device with standard installation included`
+                      : `Hardware unit only — installation by your own licensed electrician`}
+                  </div>
+                  <div className={styles.priceAltText}>
+                    {packageType === 'installed' 
+                      ? `Device only without installation: $899 (7kW) / $969 (22kW)`
+                      : `With standard installation included: $1,799 (7kW) / $1,899 (22kW)`}
+                  </div>
                 </div>
                 <div className={styles.heroActions}>
-                  <Link href="/quote" className={styles.btnPrimary}>
-                    Buy Charger Only
+                  <Link 
+                    href={`/quote?charger=pulse&power=${phase === 'single' ? '7kw' : '22kw'}&installer=${packageType === 'installed' ? 'bexavolt' : 'own'}`} 
+                    className={styles.btnPrimary}
+                  >
+                    {packageType === 'installed' ? 'Get Fully-Installed Quote' : 'Buy Pulse Only'}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </Link>
-                  <Link href="/quote" className={styles.btnSecondary}>
-                    Get Fully-Installed Quote
+                  <Link 
+                    href={`/quote?charger=pulse&power=${phase === 'single' ? '7kw' : '22kw'}&installer=${packageType === 'installed' ? 'own' : 'bexavolt'}`} 
+                    className={styles.btnSecondary}
+                  >
+                    {packageType === 'installed' ? 'Quote Device Only ($899 / $969)' : 'Quote With Installation ($1,799 / $1,899)'}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
@@ -480,17 +527,19 @@ export default function VoltPulseProductPage() {
         <div className="container">
           <h3>POWER YOUR EV AT FULL SPEED</h3>
           <h2>Ready to go full Pulse?</h2>
-          <p>Get a standalone Volt Pulse or book a complete professional home installation today.</p>
+          <p>
+            Choose 7kW with installation ($1,799.00) or 22kW with installation ($1,899.00), or purchase the standalone hardware ($899 / $969).
+          </p>
           <div className={styles.bottomCtaActions}>
-            <Link href="/quote" className={styles.btnPrimary}>
-              Buy Charger Only
+            <Link href="/quote?charger=pulse&installer=bexavolt" className={styles.btnPrimary}>
+              Get Fully-Installed Quote ($1,799+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </Link>
-            <Link href="/quote" className={styles.btnSecondary}>
-              Get Fully-Installed Quote
+            <Link href="/quote?charger=pulse&installer=own" className={styles.btnSecondary}>
+              Buy Pulse Device Only ($899+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>

@@ -91,14 +91,14 @@ function QuoteWizard() {
   });
 
   // Accurate pricing logic:
-  // Volt Ultra:
+  // Both Volt Ultra and Volt Pulse are same price:
   // 7kW Device with installation: $1,799.00 ($899 device + $900 installation)
   // 22kW Device with installation: $1,899.00 ($969 device + $930 installation)
   // Hardware only: 7kW - $899, 22kW - $969
   let basePrice = 899;
   let installPrice = 0;
 
-  if (charger === "ultra") {
+  if (charger === "ultra" || charger === "pulse") {
     basePrice = power === "22kw" ? 969 : 899;
     installPrice = installer === "bexavolt" ? (power === "22kw" ? 930 : 900) : 0;
   } else {
@@ -279,8 +279,8 @@ function QuoteWizard() {
                       </ul>
                       <div className={styles.cardPriceTag}>
                         {installer === "bexavolt"
-                          ? (power === "22kw" ? "$1,999 with installation" : "$1,599 with installation")
-                          : (power === "22kw" ? "$1,499 device only" : "$1,099 device only")}
+                          ? (power === "22kw" ? "$1,899 with installation" : "$1,799 with installation")
+                          : (power === "22kw" ? "$969 device only" : "$899 device only")}
                       </div>
                     </div>
                   </div>
@@ -295,11 +295,9 @@ function QuoteWizard() {
                     >
                       <h4>7kW Single Phase</h4>
                       <p>Ideal for homes with single-phase power supply.</p>
-                      {charger === "ultra" && (
-                        <div className={styles.cardPriceSub}>
-                          {installer === "bexavolt" ? "$1,799 with installation" : "$899 device only"}
-                        </div>
-                      )}
+                      <div className={styles.cardPriceSub}>
+                        {installer === "bexavolt" ? "$1,799 with installation" : "$899 device only"}
+                      </div>
                     </div>
                     <div 
                       className={`${styles.optionCard} ${power === "22kw" ? styles.optionCardActive : ""}`}
@@ -307,11 +305,9 @@ function QuoteWizard() {
                     >
                       <h4>22kW Three Phase</h4>
                       <p>Ideal for homes with three-phase power supply.</p>
-                      {charger === "ultra" && (
-                        <div className={styles.cardPriceSub}>
-                          {installer === "bexavolt" ? "$1,899 with installation" : "$969 device only"}
-                        </div>
-                      )}
+                      <div className={styles.cardPriceSub}>
+                        {installer === "bexavolt" ? "$1,899 with installation" : "$969 device only"}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -511,9 +507,7 @@ function QuoteWizard() {
         <div className={styles.estimateBanner}>
           <div className={styles.estimatePrice}>
             <span className={styles.estimateLabel}>
-              {charger === "ultra" 
-                ? `${power === "22kw" ? "22kW" : "7kW"} Ultra ${installer === "bexavolt" ? "With Installation" : "Device Only"}`
-                : "Estimated Price"}
+              {`${power === "22kw" ? "22kW" : "7kW"} ${charger === "pulse" ? "Volt Pulse" : "Volt Ultra"} ${installer === "bexavolt" ? "With Installation" : "Device Only"}`}
             </span>
             <span className={styles.estimateValue}>${estimate.toLocaleString()} AUD</span>
           </div>
