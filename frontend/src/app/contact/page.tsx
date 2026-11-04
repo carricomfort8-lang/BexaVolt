@@ -62,6 +62,28 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
+
+            <div className={styles.infoBlock}>
+              <div className={styles.infoIcon}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A3E635" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <div className={styles.infoText}>
+                <span className={styles.infoLabel}>INSTAGRAM</span>
+                <a 
+                  href="https://www.instagram.com/bexavolt/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.infoValueSales}
+                  style={{ fontSize: '1rem', textDecoration: 'none' }}
+                >
+                  @bexavolt
+                </a>
+              </div>
+            </div>
             
             <div className={styles.carImageWrap}>
               <img src="/img23-removebg-preview.png" alt="EV Charging" className={styles.carImage} />
