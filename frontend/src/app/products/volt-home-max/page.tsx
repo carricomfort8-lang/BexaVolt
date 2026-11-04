@@ -9,7 +9,7 @@ import styles from './page.module.css';
 
 export default function VoltHomeMaxProductPage() {
   const [phase, setPhase] = useState<'single' | 'three'>('single');
-  const [packageType, setPackageType] = useState<'installed' | 'hardware'>('installed');
+  const [packageType, setPackageType] = useState<'installed' | 'hardware'>('hardware');
   const [connector, setConnector] = useState<'tethered' | 'socket'>('tethered');
 
   // Matched pricing with Volt Ultra:
@@ -80,16 +80,16 @@ export default function VoltHomeMaxProductPage() {
                     <span className={styles.selectorLabel}>Select Package</span>
                     <div className={styles.phaseSelector}>
                       <button
-                        onClick={() => setPackageType('installed')}
-                        className={`${styles.phaseBtn} ${packageType === 'installed' ? styles.phaseBtnActive : ''}`}
-                      >
-                        Device with Installation
-                      </button>
-                      <button
                         onClick={() => setPackageType('hardware')}
                         className={`${styles.phaseBtn} ${packageType === 'hardware' ? styles.phaseBtnActive : ''}`}
                       >
                         Device Only
+                      </button>
+                      <button
+                        onClick={() => setPackageType('installed')}
+                        className={`${styles.phaseBtn} ${packageType === 'installed' ? styles.phaseBtnActive : ''}`}
+                      >
+                        Device with Installation
                       </button>
                     </div>
                   </div>
@@ -529,15 +529,15 @@ export default function VoltHomeMaxProductPage() {
             Choose 7kW with installation ($1,799.00) or 22kW with installation ($1,899.00), or purchase the standalone hardware ($899 / $969).
           </p>
           <div className={styles.bottomCtaActions}>
-            <Link href="/quote?charger=ultra&installer=bexavolt" className={styles.btnPrimary}>
-              Get Fully-Installed Quote ($1,799+)
+            <Link href="/quote?charger=ultra&installer=own" className={styles.btnPrimary}>
+              Buy Max Device Only ($899+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </Link>
-            <Link href="/quote?charger=ultra&installer=own" className={styles.btnSecondary}>
-              Buy Max Device Only ($899+)
+            <Link href="/quote?charger=ultra&installer=bexavolt" className={styles.btnSecondary}>
+              Get Fully-Installed Quote ($1,799+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>

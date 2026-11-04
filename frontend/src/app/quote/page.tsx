@@ -76,7 +76,7 @@ function QuoteWizard() {
   const [brand, setBrand] = useState("");
   const [charger, setCharger] = useState(queryCharger === "pulse" || queryCharger === "home-pro" ? "pulse" : "ultra");
   const [power, setPower] = useState(queryPower === "22kw" ? "22kw" : "7kw");
-  const [installer, setInstaller] = useState(queryInstaller === "own" ? "own" : "bexavolt");
+  const [installer, setInstaller] = useState(queryInstaller === "bexavolt" ? "bexavolt" : "own");
 
   const [formData, setFormData] = useState({
     firstName: "",
