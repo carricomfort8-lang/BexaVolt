@@ -631,8 +631,8 @@ export default function ChargersArchivePage() {
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
               </div>
-              <h4>Direct Australian Support</h4>
-              <p>Call our Sydney-based helpline on 02 7241 5565 for technical assistance, advice, and direct orders.</p>
+              <h4>Australian Call Centre</h4>
+              <p>Australian-based call centre help available. Call 02 7241 5565 for technical assistance, advice, and orders.</p>
             </div>
           </div>
         </div>
@@ -641,12 +641,12 @@ export default function ChargersArchivePage() {
       {/* 5. SALES CALL BANNER */}
       <div className="container" style={{ marginBottom: '4rem' }}>
         <div className="sales-call-banner">
-          <span>Need help choosing the right charger for your vehicle and home?</span>
-          <a href="tel:0272415565" title="Call Sales: 02 7241 5565">
+          <span>Australian-based call centre help available • Need help choosing the right charger for your vehicle and home?</span>
+          <a href="tel:0272415565" title="Call Australian Call Centre: 02 7241 5565">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
-            <span>CALL SALES: <strong>02 7241 5565</strong></span>
+            <span>CALL CENTRE: <strong>02 7241 5565</strong></span>
           </a>
         </div>
       </div>

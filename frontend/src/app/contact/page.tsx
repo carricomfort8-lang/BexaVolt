@@ -28,10 +28,13 @@ export default function ContactPage() {
             <div className={styles.infoBlock}>
               <div className={styles.infoIcon}>📞</div>
               <div className={styles.infoText}>
-                <span className={styles.infoLabel}>SALES & SUPPORT HOTLINE</span>
-                <a href="tel:0272415565" className={styles.infoValueSales}>
+                <span className={styles.infoLabel}>AUSTRALIAN-BASED CALL CENTRE</span>
+                <a href="tel:0272415565" className={styles.infoValueSales} title="Call Australian Call Centre: 02 7241 5565">
                   <strong>02 7241 5565</strong>
                 </a>
+                <span className={styles.infoValueLight} style={{ display: 'block', fontSize: '0.85rem', color: '#a1a1aa', marginTop: '0.25rem' }}>
+                  Australian-based call centre help available for orders, advice & technical support.
+                </span>
               </div>
             </div>
             
