@@ -7,11 +7,20 @@ import Footer from '@/components/Footer';
 import AnimateIn from '@/components/AnimateIn';
 import styles from './page.module.css';
 
-export default function VoltPulseProductPage() {
+export default function VoltHomeProProductPage() {
   const [phase, setPhase] = useState<'single' | 'three'>('single');
+  const [packageType, setPackageType] = useState<'installed' | 'hardware'>('installed');
 
-  const price = phase === 'single' ? '$1,099' : '$1,499';
-  const power = phase === 'single' ? '7.4kW' : '22kW';
+  // Matched pricing with Volt Pulse:
+  // 7KW Device with installation - $1,799.00
+  // 22kW Device with installation - $1,899.00
+  // Hardware only: 7kW - $899.00 / 22kW - $969.00
+  const finalPrice = packageType === 'installed'
+    ? (phase === 'single' ? 1799 : 1899)
+    : (phase === 'single' ? 899 : 969);
+
+  const priceDisplay = `$${finalPrice.toLocaleString()}`;
+  const power = phase === 'single' ? '7kW' : '22kW';
 
   return (
     <div className={styles.page}>
@@ -27,7 +36,7 @@ export default function VoltPulseProductPage() {
               </AnimateIn>
               <AnimateIn direction="left" delay={2}>
                 <h1 className={styles.heroTitle}>
-                  Volt <span className={styles.titleHighlight}>Pulse</span>
+                  VoltHome <span className={styles.titleHighlight}>Pro</span>
                 </h1>
               </AnimateIn>
               <AnimateIn direction="left" delay={3}>
@@ -44,7 +53,7 @@ export default function VoltPulseProductPage() {
                 <div className={styles.checklist}>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Up to 22kW maximum output charging</span>
+                    <span>Up to {power} maximum output charging</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
@@ -52,7 +61,7 @@ export default function VoltPulseProductPage() {
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Built-in CT clamp dynamic load balancing (Upgradable options)</span>
+                    <span>Built-in CT clamp dynamic load balancing</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
@@ -65,38 +74,76 @@ export default function VoltPulseProductPage() {
                 </div>
               </AnimateIn>
               <AnimateIn direction="left" delay={6}>
-                <div className={styles.phaseContainer}>
-                  <span className={styles.selectorLabel}>Select Charging Options</span>
-                  <div className={styles.phaseSelector}>
-                    <button
-                      onClick={() => setPhase('single')}
-                      className={`${styles.phaseBtn} ${phase === 'single' ? styles.phaseBtnActive : ''}`}
-                    >
-                      7.4kW - Single Phase
-                    </button>
-                    <button
-                      onClick={() => setPhase('three')}
-                      className={`${styles.phaseBtn} ${phase === 'three' ? styles.phaseBtnActive : ''}`}
-                    >
-                      22kW - Three Phase
-                    </button>
+                <div className={styles.optionsWrapper}>
+                  <div className={styles.phaseContainer}>
+                    <span className={styles.selectorLabel}>Select Package</span>
+                    <div className={styles.phaseSelector}>
+                      <button
+                        onClick={() => setPackageType('installed')}
+                        className={`${styles.phaseBtn} ${packageType === 'installed' ? styles.phaseBtnActive : ''}`}
+                      >
+                        Device with Installation
+                      </button>
+                      <button
+                        onClick={() => setPackageType('hardware')}
+                        className={`${styles.phaseBtn} ${packageType === 'hardware' ? styles.phaseBtnActive : ''}`}
+                      >
+                        Device Only
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className={styles.phaseContainer}>
+                    <span className={styles.selectorLabel}>Select Power Phase</span>
+                    <div className={styles.phaseSelector}>
+                      <button
+                        onClick={() => setPhase('single')}
+                        className={`${styles.phaseBtn} ${phase === 'single' ? styles.phaseBtnActive : ''}`}
+                      >
+                        7kW - Single Phase
+                      </button>
+                      <button
+                        onClick={() => setPhase('three')}
+                        className={`${styles.phaseBtn} ${phase === 'three' ? styles.phaseBtnActive : ''}`}
+                      >
+                        22kW - Three Phase
+                      </button>
+                    </div>
                   </div>
                 </div>
               </AnimateIn>
               <AnimateIn direction="left" delay={6}>
-                <div className={styles.priceLabel}>
-                  {price}<span>AUD</span>
+                <div className={styles.priceBlock}>
+                  <div className={styles.priceLabel}>
+                    {priceDisplay}<span>AUD</span>
+                  </div>
+                  <div className={styles.priceCaption}>
+                    {packageType === 'installed' 
+                      ? `✓ ${power} Device with standard installation included`
+                      : `Hardware unit only — installation by your own licensed electrician`}
+                  </div>
+                  <div className={styles.priceAltText}>
+                    {packageType === 'installed' 
+                      ? `Device only without installation: $899 (7kW) / $969 (22kW)`
+                      : `With standard installation included: $1,799 (7kW) / $1,899 (22kW)`}
+                  </div>
                 </div>
                 <div className={styles.heroActions}>
-                  <Link href="/quote" className={styles.btnPrimary}>
-                    Buy Charger Only
+                  <Link 
+                    href={`/quote?charger=pulse&power=${phase === 'single' ? '7kw' : '22kw'}&installer=${packageType === 'installed' ? 'bexavolt' : 'own'}`} 
+                    className={styles.btnPrimary}
+                  >
+                    {packageType === 'installed' ? 'Get Fully-Installed Quote' : 'Buy Pro Only'}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </Link>
-                  <Link href="/quote" className={styles.btnSecondary}>
-                    Get Fully-Installed Quote
+                  <Link 
+                    href={`/quote?charger=pulse&power=${phase === 'single' ? '7kw' : '22kw'}&installer=${packageType === 'installed' ? 'own' : 'bexavolt'}`} 
+                    className={styles.btnSecondary}
+                  >
+                    {packageType === 'installed' ? 'Quote Device Only ($899 / $969)' : 'Quote With Installation ($1,799 / $1,899)'}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
@@ -201,7 +248,7 @@ export default function VoltPulseProductPage() {
                   <div className={styles.featureRowIcon}><span>04</span></div>
                   <div className={styles.featureRowText}>
                     <h4>Premium Brushed Enclosure</h4>
-                    <p>Aerospace-inspired brushed aluminum housing with IK10 impact and IP66 weather certification.</p>
+                    <p>Aircraft-grade aluminium front bezel with deep graphite housing — built to withstand harsh Australian conditions.</p>
                   </div>
                 </div>
               </div>
@@ -210,10 +257,10 @@ export default function VoltPulseProductPage() {
         </div>
       </section>
 
-      {/* 4. UTILITY SHOWCASE */}
-      <section className={styles.sectionPadding}>
+      {/* 4. SPEED BREAKDOWN */}
+      <section className={`${styles.sectionPadding} ${styles.bgDark}`}>
         <div className="container">
-          <div className={styles.splitGrid}>
+          <div className={styles.splitGridReverse}>
             <div className={styles.splitTextCol}>
               <h3 className={styles.sectionTag}>FULL-SPEED CHARGING</h3>
               <h2 className={styles.sectionTitle}>The fastest way<br />to power your EV.</h2>
@@ -232,15 +279,15 @@ export default function VoltPulseProductPage() {
                 <div className={styles.featureRow}>
                   <div className={styles.featureRowIcon}>✓</div>
                   <div className={styles.featureRowText}>
-                    <h4>Ethernet &amp; Wi-Fi Redundancy</h4>
-                    <p>Both LAN and wireless options ensure your charger stays reliably connected to the BexaVolt cloud.</p>
+                    <h4>7.4kW single-phase standard</h4>
+                    <p>Add up to 40km of range per hour on standard 240V residential single-phase power connections.</p>
                   </div>
                 </div>
                 <div className={styles.featureRow}>
                   <div className={styles.featureRowIcon}>✓</div>
                   <div className={styles.featureRowText}>
-                    <h4>Works with all Type 2 EVs</h4>
-                    <p>Fully compliant with all Type 2 electric vehicles sold across Australia and New Zealand.</p>
+                    <h4>Universal Type 2 compatibility</h4>
+                    <p>Seamlessly works with every current EV sold in Australia, including Tesla, BYD, MG, Hyundai, and Kia.</p>
                   </div>
                 </div>
               </div>
@@ -252,189 +299,119 @@ export default function VoltPulseProductPage() {
         </div>
       </section>
 
-      {/* 5. PHONE APP SECTION */}
-      <section className={styles.sectionPadding}>
+      {/* 5. TECH SPECS TABLE */}
+      <section className={styles.specsTableSection}>
         <div className="container">
-          <div className={styles.splitGrid}>
-            <div className={styles.appShowcaseCol}>
-              <div className={styles.appMockupPhone}>
-                <div className={styles.phoneNotch} />
-                <div className={styles.appHeader}>
-                  <span className={styles.appName}>BEXAVOLT</span>
-                  <span className={styles.appStatus}>● Full Speed</span>
-                </div>
-                <div className={styles.appCircleProgress}>
-                  <span className={styles.appCircleVal}>{power}</span>
-                  <span className={styles.appCircleLabel}>PULSE CHARGING</span>
-                </div>
-                <div className={styles.appStatRow}>
-                  <div className={styles.appStatItem}>
-                    <span>Delivered</span>
-                    <strong>24.8 kWh</strong>
-                  </div>
-                  <div className={styles.appStatItem}>
-                    <span>Range Added</span>
-                    <strong>+187 km</strong>
-                  </div>
-                </div>
-                <div className={styles.appChartBlock}>
-                  <div className={styles.appChartBars}>
-                    <div className={styles.appChartBar} style={{ height: '40%' }} />
-                    <div className={styles.appChartBar} style={{ height: '55%' }} />
-                    <div className={styles.appChartBar} style={{ height: '75%' }} />
-                    <div className={styles.appChartBar} style={{ height: '85%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '95%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '98%' }} />
-                    <div className={`${styles.appChartBar} ${styles.appChartBarActive}`} style={{ height: '100%' }} />
-                  </div>
-                  <span className={styles.appChartLabel}>Maximum Power Delivery Curve</span>
-                </div>
-              </div>
+          <div className={styles.sectionHeaderCenter}>
+            <span className={styles.sectionTag}>FULL TECHNICAL SPECIFICATIONS</span>
+            <h2 className={styles.sectionTitleCenter}>Everything under the hood.</h2>
+            <p className={styles.sectionSubCenter}>Detailed engineering specifications for the BexaVolt VoltHome Pro.</p>
+          </div>
+          <div className={styles.specsTable}>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Charging Power Output</span>
+              <span className={styles.specVal}>7kW (Single-Phase) / 22kW (Three-Phase)</span>
             </div>
-            <div className={styles.splitTextCol}>
-              <h3 className={styles.sectionTag}>REAL-TIME POWER CONTROLS</h3>
-              <h2 className={styles.sectionTitle}>Max output data<br />in real time.</h2>
-              <p className={styles.sectionDesc}>
-                Track the exact kilowatts flowing into your EV, set custom power limits, 
-                monitor real-time grid load, and get instant push notifications for session events.
-              </p>
-              <div className={styles.featuresList}>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>📲</div>
-                  <div className={styles.featureRowText}>
-                    <h4>Live Power Monitoring</h4>
-                    <p>Track kW output, session duration, range added, and energy cost in real-time from the app.</p>
-                  </div>
-                </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>📲</div>
-                  <div className={styles.featureRowText}>
-                    <h4>Power Limit Controls</h4>
-                    <p>Set custom maximum power caps — useful for managing grid costs or shared electrical circuits.</p>
-                  </div>
-                </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>📲</div>
-                  <div className={styles.featureRowText}>
-                    <h4>Session Alerts</h4>
-                    <p>Receive instant push notifications when charging begins, completes, or if a fault is detected.</p>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.badgeWrapper}>
-                <svg width="120" height="40" viewBox="0 0 120 40" style={{ cursor: 'pointer', borderRadius: '5px' }}>
-                  <rect width="120" height="40" fill="#000" rx="6" stroke="#222" />
-                  <path d="M15 12c.5-1 1-2.5 1-4a3.8 3.8 0 0 0-2.5 3c-.5.8-1 2.2-1 3.5a3 3 0 0 0 2.5-2.5z M19 28c-.5 1.5-1.5 3-2.5 3s-1.2-1-2.2-1-1.5 1-2.3 1-1.8-1.5-2.5-3a12 12 0 0 1 0-7c.8-1.5 2-2.5 3-2.5s1.5.5 2.2.5.8-.5 2.2-.5 2.2 1 2.8 2.5" fill="#fff" />
-                  <text x="35" y="18" fill="#fff" fontSize="8" fontWeight="600" fontFamily="sans-serif">Download on the</text>
-                  <text x="35" y="30" fill="#fff" fontSize="11" fontWeight="bold" fontFamily="sans-serif">App Store</text>
-                </svg>
-                <svg width="120" height="40" viewBox="0 0 120 40" style={{ cursor: 'pointer', borderRadius: '5px' }}>
-                  <rect width="120" height="40" fill="#000" rx="6" stroke="#222" />
-                  <polygon points="12,10 12,30 25,20" fill="#A3E635" />
-                  <text x="35" y="18" fill="#fff" fontSize="7" fontWeight="600" fontFamily="sans-serif">GET IT ON</text>
-                  <text x="35" y="30" fill="#fff" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Google Play</text>
-                </svg>
-              </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Input Voltage</span>
+              <span className={styles.specVal}>230V AC (1P) / 400V AC (3P) ± 10%, 50/60 Hz</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Max Output Current</span>
+              <span className={styles.specVal}>32A per phase continuous</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Connector Type</span>
+              <span className={styles.specVal}>Integrated 5m Type 2 Tethered Cable</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Dynamic Load Balancing</span>
+              <span className={styles.specVal}>External CT Clamp (included with installation)</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Connectivity</span>
+              <span className={styles.specVal}>Wi-Fi 802.11 b/g/n (2.4GHz), Bluetooth 5.0, RJ45 Ethernet</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>OCPP Compliance</span>
+              <span className={styles.specVal}>OCPP 1.6J JSON, upgradable to OCPP 2.0.1</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Enclosure Protection</span>
+              <span className={styles.specVal}>IP66 Weatherproof / IK10 Impact Resistance</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Operating Temperature</span>
+              <span className={styles.specVal}>-30°C to +55°C (with thermal derating protection)</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Electrical Safety</span>
+              <span className={styles.specVal}>Built-in 6mA DC RCD + Type A 30mA AC equivalent protection</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Australian Certification</span>
+              <span className={styles.specVal}>RCM / AS/NZS 3820, AS/NZS 60335.1, Clean Energy Council approved</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Warranty</span>
+              <span className={styles.specVal}>2 Years Comprehensive Replacement Warranty</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. TECHNICAL SPECIFICATIONS */}
-      <section className={styles.specsSection}>
-        <div className={styles.specsBanner}>
-          <div className="container">
-            <h2 className={styles.specsBannerTitle}>TECHNICAL SPECIFICATIONS</h2>
-            <div className={styles.specsBannerLine} />
+      {/* 6. INSTALLATION HIGHLIGHT */}
+      <section className={`${styles.sectionPadding} ${styles.bgDark}`}>
+        <div className="container">
+          <div className={styles.sectionHeaderCenter}>
+            <span className={styles.sectionTag}>NATIONWIDE INSTALLATION</span>
+            <h2 className={styles.sectionTitleCenter}>Installed by certified professionals.</h2>
+            <p className={styles.sectionSubCenter}>
+              From quote to commissioning — our certified electrician network handles everything.
+            </p>
           </div>
-        </div>
-        <div className={styles.specsTableWrap}>
-          <div className="container">
-            <div className={styles.specsTable}>
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Charging Power</span>
-                  <span className={styles.specItemVal}>Up to {power} (32A)</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Input / Output Voltage</span>
-                  <span className={styles.specItemVal}>{phase === 'single' ? '230V AC, 50Hz' : '400V AC, 50Hz'}</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Connector Type</span>
-                  <span className={styles.specItemVal}>Type 2 Tethered (IEC 62196-2)</span>
-                </div>
-              </div>
-              <div className={styles.specsColDivider} />
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Cable Length</span>
-                  <span className={styles.specItemVal}>5m Heavy-Duty (Integrated)</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Connectivity</span>
-                  <span className={styles.specItemVal}>Wi-Fi (2.4/5GHz), Ethernet (RJ45), Bluetooth</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>App Compatibility</span>
-                  <span className={styles.specItemVal}>iOS &amp; Android (Pulse Power V2)</span>
-                </div>
-              </div>
-              <div className={styles.specsColDivider} />
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Safety Features</span>
-                  <span className={styles.specItemVal}>PEN Fault Detection, Overcurrent, Overheat, Leakage, Dynamic CT Load Balancing</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Protection Rating</span>
-                  <span className={styles.specItemVal}>IP66 Weatherproof / IK10 Impact Rated</span>
-                </div>
-              </div>
-              <div className={styles.specsColDivider} />
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Operating Temperature</span>
-                  <span className={styles.specItemVal}>-30°C to 55°C</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Dimensions (H x W x D)</span>
-                  <span className={styles.specItemVal}>300 x 190 x 100 mm</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Weight</span>
-                  <span className={styles.specItemVal}>{phase === 'single' ? '3.2 kg' : '4.1 kg'}</span>
-                </div>
-              </div>
+          <div className={styles.installGrid}>
+            <div className={styles.installCard}>
+              <div className={styles.installStep}>01</div>
+              <h4>Site Assessment</h4>
+              <p>We review your switchboard capacity and garage layout to specify the optimal setup.</p>
+            </div>
+            <div className={styles.installCard}>
+              <div className={styles.installStep}>02</div>
+              <h4>Certified Installation</h4>
+              <p>A licensed, EV-qualified electrician installs the unit, wiring, and dedicated safety breakers.</p>
+            </div>
+            <div className={styles.installCard}>
+              <div className={styles.installStep}>03</div>
+              <h4>Testing &amp; Compliance</h4>
+              <p>Full testing under load, verification of CT balancing, and submission of the electrical compliance certificate.</p>
+            </div>
+            <div className={styles.installCard}>
+              <div className={styles.installStep}>04</div>
+              <h4>App Handover</h4>
+              <p>We walk you through the BexaVolt mobile app, setup off-peak scheduling, and verify live telemetry.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. BOTTOM PILLARS GRID */}
+      {/* 7. WHY CHOOSE BEXAVOLT */}
       <section className={styles.sectionPadding}>
         <div className="container">
           <div className={styles.pillarsGrid}>
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
-              <h4>Max Speed Output</h4>
-              <p>Up to 22kW on three-phase delivers 100km of range per hour of charging.</p>
+              <h4>Australian Standards</h4>
+              <p>Engineered and certified specifically for Australia's electrical grid and environmental extremes.</p>
             </div>
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
               </div>
-              <h4>Smart App Control</h4>
-              <p>Full live power data, session controls, and push alerts from the BexaVolt app.</p>
-            </div>
-            <div className={styles.pillarCard}>
-              <div className={styles.pillarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 5.64l1.42-1.42M23 22H1L12 12z"/></svg>
-              </div>
-              <h4>IP66 &amp; IK10</h4>
-              <p>Built to withstand Australia's harshest outdoor conditions year-round.</p>
+              <h4>Off-Peak Smart Charging</h4>
+              <p>Set custom charge windows via the app to charge only when your electricity tariffs are lowest.</p>
             </div>
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
@@ -479,18 +456,20 @@ export default function VoltPulseProductPage() {
       <section className={styles.bottomCtaSection}>
         <div className="container">
           <h3>POWER YOUR EV AT FULL SPEED</h3>
-          <h2>Ready to go full Pulse?</h2>
-          <p>Get a standalone VoltHome Pro or book a complete professional home installation today.</p>
+          <h2>Ready to go full Pro?</h2>
+          <p>
+            Choose 7kW with installation ($1,799.00) or 22kW with installation ($1,899.00), or purchase the standalone hardware ($899 / $969).
+          </p>
           <div className={styles.bottomCtaActions}>
-            <Link href="/quote" className={styles.btnPrimary}>
-              Buy Charger Only
+            <Link href="/quote?charger=pulse&installer=bexavolt" className={styles.btnPrimary}>
+              Get Fully-Installed Quote ($1,799+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </Link>
-            <Link href="/quote" className={styles.btnSecondary}>
-              Get Fully-Installed Quote
+            <Link href="/quote?charger=pulse&installer=own" className={styles.btnSecondary}>
+              Buy Pro Device Only ($899+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>

@@ -60,20 +60,20 @@ const navItems: NavItem[] = [
   {
     key: 'home',
     label: 'For Home',
-    href: '/',
+    href: '/chargers?category=home',
     hasMega: true,
     megaData: {
       leftItems: [
-        { name: 'VoltHome Pro', desc: 'EV ready. Future ready.', img: '/img23-removebg-preview.png', href: '/products/volt-home-pro' },
-        { name: 'VoltHome Max', desc: 'Three-phase power', img: '/img23-removebg-preview.png', href: '/products/volt-home-max' },
+        { name: 'VoltHome Pro', desc: 'EV ready. Future ready.', img: '/img23-removebg-preview.png', href: '/products/volt-pulse' },
+        { name: 'VoltHome Max', desc: 'Three-phase smart power', img: '/img23-removebg-preview.png', href: '/products/volt-ultra' },
       ],
       rightCard: {
         titlePart1: 'Home',
         titlePart2: 'charging',
         tagline: 'Smart. Safe. Sustainable.',
         sub: 'Power your home, power your future.',
-        btnText: 'Explore Volt Mini',
-        btnHref: '/products/volt-mini',
+        btnText: 'View Home Chargers',
+        btnHref: '/chargers',
         img: '/img23-removebg-preview.png'
       }
     }

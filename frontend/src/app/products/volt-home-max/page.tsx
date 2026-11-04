@@ -7,14 +7,21 @@ import Footer from '@/components/Footer';
 import AnimateIn from '@/components/AnimateIn';
 import styles from './page.module.css';
 
-export default function VoltUltraProductPage() {
+export default function VoltHomeMaxProductPage() {
   const [phase, setPhase] = useState<'single' | 'three'>('single');
+  const [packageType, setPackageType] = useState<'installed' | 'hardware'>('installed');
   const [connector, setConnector] = useState<'tethered' | 'socket'>('tethered');
 
-  const basePrice = phase === 'single' ? 1799 : 2299;
-  const finalPrice = connector === 'tethered' ? basePrice : basePrice - 100;
+  // Matched pricing with Volt Ultra:
+  // 7KW Device with installation - $1,799.00
+  // 22kW Device with installation - $1,899.00
+  // Hardware only: 7kW - $899.00 / 22kW - $969.00
+  const finalPrice = packageType === 'installed'
+    ? (phase === 'single' ? 1799 : 1899)
+    : (phase === 'single' ? 899 : 969);
+
   const priceDisplay = `$${finalPrice.toLocaleString()}`;
-  const power = phase === 'single' ? '7.4kW' : '22kW';
+  const power = phase === 'single' ? '7kW' : '22kW';
 
   return (
     <div className={styles.page}>
@@ -30,7 +37,7 @@ export default function VoltUltraProductPage() {
               </AnimateIn>
               <AnimateIn direction="left" delay={2}>
                 <h1 className={styles.heroTitle}>
-                  Volt <span className={styles.titleHighlight}>Ultra</span>
+                  VoltHome <span className={styles.titleHighlight}>Max</span>
                 </h1>
               </AnimateIn>
               <AnimateIn direction="left" delay={3}>
@@ -51,7 +58,11 @@ export default function VoltUltraProductPage() {
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>Built-in 4.3" colour touchscreen display</span>
+                    <span>Built-in 3.5" colour touchscreen display</span>
+                  </div>
+                  <div className={styles.checkItem}>
+                    <span className={styles.checkIcon}>✓</span>
+                    <span>Solar integration with Eco/Eco+/Fast modes</span>
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
@@ -59,12 +70,30 @@ export default function VoltUltraProductPage() {
                   </div>
                   <div className={styles.checkItem}>
                     <span className={styles.checkIcon}>✓</span>
-                    <span>IP65 &amp; IK10 aerospace-grade aluminum enclosure</span>
+                    <span>IP67 &amp; IK10 aerospace-grade aluminum enclosure</span>
                   </div>
                 </div>
               </AnimateIn>
               <AnimateIn direction="left" delay={6}>
                 <div className={styles.optionsWrapper}>
+                  <div className={styles.phaseContainer}>
+                    <span className={styles.selectorLabel}>Select Package</span>
+                    <div className={styles.phaseSelector}>
+                      <button
+                        onClick={() => setPackageType('installed')}
+                        className={`${styles.phaseBtn} ${packageType === 'installed' ? styles.phaseBtnActive : ''}`}
+                      >
+                        Device with Installation
+                      </button>
+                      <button
+                        onClick={() => setPackageType('hardware')}
+                        className={`${styles.phaseBtn} ${packageType === 'hardware' ? styles.phaseBtnActive : ''}`}
+                      >
+                        Device Only
+                      </button>
+                    </div>
+                  </div>
+
                   <div className={styles.phaseContainer}>
                     <span className={styles.selectorLabel}>Select Power Phase</span>
                     <div className={styles.phaseSelector}>
@@ -72,7 +101,7 @@ export default function VoltUltraProductPage() {
                         onClick={() => setPhase('single')}
                         className={`${styles.phaseBtn} ${phase === 'single' ? styles.phaseBtnActive : ''}`}
                       >
-                        7.4kW - Single Phase
+                        7kW - Single Phase
                       </button>
                       <button
                         onClick={() => setPhase('three')}
@@ -102,19 +131,37 @@ export default function VoltUltraProductPage() {
                 </div>
               </AnimateIn>
               <AnimateIn direction="left" delay={6}>
-                <div className={styles.priceLabel}>
-                  {priceDisplay}<span>AUD</span>
+                <div className={styles.priceBlock}>
+                  <div className={styles.priceLabel}>
+                    {priceDisplay}<span>AUD</span>
+                  </div>
+                  <div className={styles.priceCaption}>
+                    {packageType === 'installed' 
+                      ? `✓ ${power} Device with standard installation included`
+                      : `Hardware unit only — installation by your own licensed electrician`}
+                  </div>
+                  <div className={styles.priceAltText}>
+                    {packageType === 'installed' 
+                      ? `Device only without installation: $899 (7kW) / $969 (22kW)`
+                      : `With standard installation included: $1,799 (7kW) / $1,899 (22kW)`}
+                  </div>
                 </div>
                 <div className={styles.heroActions}>
-                  <Link href="/quote" className={styles.btnPrimary}>
-                    Buy Ultra Only
+                  <Link 
+                    href={`/quote?charger=ultra&power=${phase === 'single' ? '7kw' : '22kw'}&installer=${packageType === 'installed' ? 'bexavolt' : 'own'}`} 
+                    className={styles.btnPrimary}
+                  >
+                    {packageType === 'installed' ? 'Get Fully-Installed Quote' : 'Buy Max Only'}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                   </Link>
-                  <Link href="/quote" className={styles.btnSecondary}>
-                    Get Fully-Installed Quote
+                  <Link 
+                    href={`/quote?charger=ultra&power=${phase === 'single' ? '7kw' : '22kw'}&installer=${packageType === 'installed' ? 'own' : 'bexavolt'}`} 
+                    className={styles.btnSecondary}
+                  >
+                    {packageType === 'installed' ? 'Quote Device Only ($899 / $969)' : 'Quote With Installation ($1,799 / $1,899)'}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
@@ -144,42 +191,42 @@ export default function VoltUltraProductPage() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               </div>
               <div className={styles.specsBarText}>
-                <h4>Colour Touchscreen</h4>
-                <p>3.5" integrated display</p>
+                <h4>3.5" Touchscreen</h4>
+                <p>Full colour interactive UI</p>
               </div>
             </div>
             <div className={styles.specsBarItem}>
               <div className={styles.specsBarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 5.64l1.42-1.42M23 22H1L12 12z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
               </div>
               <div className={styles.specsBarText}>
                 <h4>Solar Ready</h4>
-                <p>Eco / Eco+ / Fast modes</p>
+                <p>Eco, Eco+ &amp; Fast modes</p>
               </div>
             </div>
             <div className={styles.specsBarItem}>
               <div className={styles.specsBarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
               </div>
               <div className={styles.specsBarText}>
                 <h4>RFID + 4G LTE</h4>
-                <p>Always connected</p>
+                <p>Multi-channel connectivity</p>
               </div>
             </div>
             <div className={styles.specsBarItem}>
               <div className={styles.specsBarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12A10 10 0 1 1 12 2v10z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div className={styles.specsBarText}>
                 <h4>IP67 &amp; IK10</h4>
-                <p>Ultimate protection</p>
+                <p>Aerospace aluminum shell</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. PERFORMANCE SHOWCASE */}
+      {/* 3. SHOWCASE - THE ULTIMATE CHARGER */}
       <section className={styles.sectionPadding}>
         <div className="container">
           <div className={styles.splitGrid}>
@@ -187,80 +234,112 @@ export default function VoltUltraProductPage() {
               <img src="/ultra2.png" alt="VoltHome Max In Action" className={styles.showcaseStaticCharger} />
             </div>
             <div className={styles.splitTextCol}>
-              <h3 className={styles.sectionTag}>EVERY PREMIUM FEATURE. ONE UNIT.</h3>
-              <h2 className={styles.sectionTitle}>The ultimate charger.<br />For every home.</h2>
-              <p className={styles.sectionDesc}>
-                VoltHome Max brings together every advanced BexaVolt technology into a single premium unit — 
-                with a built-in colour display, solar integration, RFID, 4G backup, and maximum power delivery.
-              </p>
+              <AnimateIn direction="right" delay={1}>
+                <h3 className={styles.sectionTag}>THE COMPLETE PACKAGE</h3>
+              </AnimateIn>
+              <AnimateIn direction="right" delay={2}>
+                <h2 className={styles.sectionTitle}>
+                  Every feature.<br />
+                  <span className={styles.sectionTitleHighlight}>Zero compromises.</span>
+                </h2>
+              </AnimateIn>
+              <AnimateIn direction="right" delay={3}>
+                <p className={styles.sectionDesc}>
+                  VoltHome Max brings together every advanced BexaVolt technology into a single premium unit — 
+                  giving discerning EV owners the most refined, capable charging experience available in Australia.
+                </p>
+              </AnimateIn>
               <div className={styles.featuresList}>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}><span>01</span></div>
-                  <div className={styles.featureRowText}>
-                    <h4>Integrated 3.5" Colour Touchscreen</h4>
-                    <p>View live charge rate, session cost, solar capture, and error diagnostics right on the unit — no phone needed.</p>
+                <AnimateIn direction="right" delay={4}>
+                  <div className={styles.featureRow}>
+                    <div className={styles.featureRowIcon}><span>01</span></div>
+                    <div className={styles.featureRowText}>
+                      <h4>3.5" Vibrant Colour Touchscreen</h4>
+                      <p>View real-time kW speeds, voltage, power factor, session cost, and change modes directly on the wall.</p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}><span>02</span></div>
-                  <div className={styles.featureRowText}>
-                    <h4>Full Solar Integration</h4>
-                    <p>Dynamic solar surplus matching in Eco, Eco+, or Fast mode. Charge from the sun for $0.00 per session.</p>
+                </AnimateIn>
+                <AnimateIn direction="right" delay={5}>
+                  <div className={styles.featureRow}>
+                    <div className={styles.featureRowIcon}><span>02</span></div>
+                    <div className={styles.featureRowText}>
+                      <h4>Solar Divert Charging</h4>
+                      <p>Match your vehicle's charge rate to rooftop solar generation in real time with CT clamp integration.</p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}><span>03</span></div>
-                  <div className={styles.featureRowText}>
-                    <h4>RFID Security with Access Log</h4>
-                    <p>Restrict use with RFID tap cards. Full access log visible from the BexaVolt app dashboard.</p>
+                </AnimateIn>
+                <AnimateIn direction="right" delay={6}>
+                  <div className={styles.featureRow}>
+                    <div className={styles.featureRowIcon}><span>03</span></div>
+                    <div className={styles.featureRowText}>
+                      <h4>Always Connected via 4G LTE</h4>
+                      <p>Built-in cellular eSIM ensures seamless connectivity and OTA firmware updates even where home Wi-Fi drops out.</p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}><span>04</span></div>
-                  <div className={styles.featureRowText}>
-                    <h4>4G LTE + Ethernet Failover</h4>
-                    <p>Maintains live cloud connectivity even if your home Wi-Fi drops, using a built-in 4G LTE eSIM.</p>
+                </AnimateIn>
+                <AnimateIn direction="right" delay={7}>
+                  <div className={styles.featureRow}>
+                    <div className={styles.featureRowIcon}><span>04</span></div>
+                    <div className={styles.featureRowText}>
+                      <h4>Brushed Aerospace Aluminum</h4>
+                      <p>Precision CNC machined finish resists UV discoloration, coastal salt mist, and extreme Australian heat.</p>
+                    </div>
                   </div>
-                </div>
+                </AnimateIn>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. UTILITY SHOWCASE */}
-      <section className={styles.sectionPadding}>
+      {/* 4. SPEED & COMPATIBILITY */}
+      <section className={`${styles.sectionPadding} ${styles.bgDark}`}>
         <div className="container">
-          <div className={styles.splitGrid}>
+          <div className={styles.splitGridReverse}>
             <div className={styles.splitTextCol}>
-              <h3 className={styles.sectionTag}>ZERO COMPROMISE CHARGING</h3>
-              <h2 className={styles.sectionTitle}>No trade-offs.<br />Just perfection.</h2>
-              <p className={styles.sectionDesc}>
-                Ultra owners enjoy the complete BexaVolt experience — from solar-free overnight scheduling 
-                to RFID-protected daytime access, all visible on the on-unit display.
-              </p>
+              <AnimateIn direction="left" delay={1}>
+                <h3 className={styles.sectionTag}>SPEED &amp; EFFICIENCY</h3>
+              </AnimateIn>
+              <AnimateIn direction="left" delay={2}>
+                <h2 className={styles.sectionTitle}>
+                  Up to 22kW charging.<br />
+                  <span className={styles.sectionTitleHighlight}>120km added per hour.</span>
+                </h2>
+              </AnimateIn>
+              <AnimateIn direction="left" delay={3}>
+                <p className={styles.sectionDesc}>
+                  On three-phase power, the VoltHome Max adds up to 120km of driving range every hour — 
+                  charging typical vehicles from 10% to 80% in under 3 hours.
+                </p>
+              </AnimateIn>
               <div className={styles.featuresList}>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>✓</div>
-                  <div className={styles.featureRowText}>
-                    <h4>Complete Solar Independence</h4>
-                    <p>Works with all solar inverter brands. Full export matching with real-time surplus data on your display.</p>
+                <AnimateIn direction="left" delay={4}>
+                  <div className={styles.featureRow}>
+                    <div className={styles.featureRowIcon}>✓</div>
+                    <div className={styles.featureRowText}>
+                      <h4>Single &amp; Three-Phase Compatible</h4>
+                      <p>Operates seamlessly on residential 240V (up to 7.4kW / 32A) or 415V three-phase (up to 22kW / 32A).</p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>✓</div>
-                  <div className={styles.featureRowText}>
-                    <h4>5m Ultra-Flex Tethered Cable</h4>
-                    <p>The longest standard tethered cable in the range, reaching even the furthest EV charge port position.</p>
+                </AnimateIn>
+                <AnimateIn direction="left" delay={5}>
+                  <div className={styles.featureRow}>
+                    <div className={styles.featureRowIcon}>✓</div>
+                    <div className={styles.featureRowText}>
+                      <h4>Universal Type 2 Support</h4>
+                      <p>Compatible with all Australian EVs: Tesla, BYD, MG, Hyundai, Kia, Polestar, BMW, Mercedes, Porsche and more.</p>
+                    </div>
                   </div>
-                </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>✓</div>
-                  <div className={styles.featureRowText}>
-                    <h4>Universal Type 2 Compatibility</h4>
-                    <p>Compatible with every Type 2 EV sold in Australia including Tesla, BYD, Kia, Rivian, and BMW.</p>
+                </AnimateIn>
+                <AnimateIn direction="left" delay={6}>
+                  <div className={styles.featureRow}>
+                    <div className={styles.featureRowIcon}>✓</div>
+                    <div className={styles.featureRowText}>
+                      <h4>Dynamic Load Balancing</h4>
+                      <p>Continuously monitors household energy consumption to dynamically adapt charging rate and protect main supply.</p>
+                    </div>
                   </div>
-                </div>
+                </AnimateIn>
               </div>
             </div>
             <div className={styles.imageShowcaseWrap}>
@@ -270,130 +349,48 @@ export default function VoltUltraProductPage() {
         </div>
       </section>
 
-      {/* 5. PHONE APP SECTION */}
+      {/* 5. APP SHOWCASE */}
       <section className={styles.sectionPadding}>
         <div className="container">
-          <div className={styles.splitGrid}>
-            <div className={styles.appShowcaseCol}>
+          <div className={styles.appShowcaseGrid}>
+            <div className={styles.appShowcaseVisual}>
               <img src="/ultra4.png" alt="VoltHome Max App" className={styles.appShowcaseImage} />
             </div>
-            <div className={styles.splitTextCol}>
-              <h3 className={styles.sectionTag}>FULL SYSTEM VISIBILITY</h3>
-              <h2 className={styles.sectionTitle}>Your entire charging<br />ecosystem. One app.</h2>
+            <div className={styles.appShowcaseText}>
+              <span className={styles.sectionTag}>COMMAND CENTER</span>
+              <h2 className={styles.sectionTitle}>Total control on your phone.</h2>
               <p className={styles.sectionDesc}>
-                The BexaVoltHome Max app experience gives you access to every feature — from solar routing 
-                reports to RFID access logs, on-unit screen control, and monthly carbon savings.
+                The BexaVolt app gives you access to every feature — from solar routing 
+                and off-peak scheduling to detailed session cost analytics and multi-user access permissions.
               </p>
-              <div className={styles.featuresList}>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>📲</div>
-                  <div className={styles.featureRowText}>
-                    <h4>Live Solar + Grid Dashboard</h4>
-                    <p>See exactly how much solar is powering your EV vs. grid draw, updated every second.</p>
+              <div className={styles.appPillsGrid}>
+                <div className={styles.appPill}>
+                  <span className={styles.appPillIcon}>⚡</span>
+                  <div>
+                    <strong>Scheduled Charging</strong>
+                    <p>Automate charging during cheapest off-peak electricity windows</p>
                   </div>
                 </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>📲</div>
-                  <div className={styles.featureRowText}>
-                    <h4>RFID Access Logs</h4>
-                    <p>Review who accessed the charger and when — ideal for shared households or fleet charging.</p>
+                <div className={styles.appPill}>
+                  <span className={styles.appPillIcon}>☀️</span>
+                  <div>
+                    <strong>Solar Divert Control</strong>
+                    <p>Set solar thresholds and prioritize excess generation</p>
                   </div>
                 </div>
-                <div className={styles.featureRow}>
-                  <div className={styles.featureRowIcon}>📲</div>
-                  <div className={styles.featureRowText}>
-                    <h4>Monthly Savings Reports</h4>
-                    <p>Detailed breakdowns of energy costs saved versus standard grid tariff, updated monthly.</p>
+                <div className={styles.appPill}>
+                  <span className={styles.appPillIcon}>📊</span>
+                  <div>
+                    <strong>Cost &amp; kWh History</strong>
+                    <p>Track every session cost with exact electricity tariff inputs</p>
                   </div>
                 </div>
-              </div>
-              <div className={styles.badgeWrapper}>
-                <svg width="120" height="40" viewBox="0 0 120 40" style={{ cursor: 'pointer', borderRadius: '5px' }}>
-                  <rect width="120" height="40" fill="#000" rx="6" stroke="#222" />
-                  <path d="M15 12c.5-1 1-2.5 1-4a3.8 3.8 0 0 0-2.5 3c-.5.8-1 2.2-1 3.5a3 3 0 0 0 2.5-2.5z M19 28c-.5 1.5-1.5 3-2.5 3s-1.2-1-2.2-1-1.5 1-2.3 1-1.8-1.5-2.5-3a12 12 0 0 1 0-7c.8-1.5 2-2.5 3-2.5s1.5.5 2.2.5.8-.5 2.2-.5 2.2 1 2.8 2.5" fill="#fff" />
-                  <text x="35" y="18" fill="#fff" fontSize="8" fontWeight="600" fontFamily="sans-serif">Download on the</text>
-                  <text x="35" y="30" fill="#fff" fontSize="11" fontWeight="bold" fontFamily="sans-serif">App Store</text>
-                </svg>
-                <svg width="120" height="40" viewBox="0 0 120 40" style={{ cursor: 'pointer', borderRadius: '5px' }}>
-                  <rect width="120" height="40" fill="#000" rx="6" stroke="#222" />
-                  <polygon points="12,10 12,30 25,20" fill="#A3E635" />
-                  <text x="35" y="18" fill="#fff" fontSize="7" fontWeight="600" fontFamily="sans-serif">GET IT ON</text>
-                  <text x="35" y="30" fill="#fff" fontSize="11" fontWeight="bold" fontFamily="sans-serif">Google Play</text>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. TECHNICAL SPECIFICATIONS */}
-      <section className={styles.specsSection}>
-        <div className={styles.specsBanner}>
-          <div className="container">
-            <h2 className={styles.specsBannerTitle}>TECHNICAL SPECIFICATIONS</h2>
-            <div className={styles.specsBannerLine} />
-          </div>
-        </div>
-        <div className={styles.specsTableWrap}>
-          <div className="container">
-            <div className={styles.specsTable}>
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Charging Power</span>
-                  <span className={styles.specItemVal}>Up to {power} (32A)</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Input / Output Voltage</span>
-                  <span className={styles.specItemVal}>{phase === 'single' ? '230V AC, 50Hz' : '400V AC, 50Hz'}</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Connector Type</span>
-                  <span className={styles.specItemVal}>{connector === 'tethered' ? '5m Ultra-Flex Tethered Cable' : 'Type 2 Universal Socket'}</span>
-                </div>
-              </div>
-              <div className={styles.specsColDivider} />
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Connectivity</span>
-                  <span className={styles.specItemVal}>Wi-Fi (2.4/5GHz), Ethernet (RJ45), Bluetooth, 4G LTE eSIM</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Display</span>
-                  <span className={styles.specItemVal}>3.5" Colour Touchscreen LCD</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>App Compatibility</span>
-                  <span className={styles.specItemVal}>iOS &amp; Android (Ultra Command V3)</span>
-                </div>
-              </div>
-              <div className={styles.specsColDivider} />
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Safety Features</span>
-                  <span className={styles.specItemVal}>PEN Fault, Overcurrent, Overheat, Leakage, CT Load Balancing, RFID Lock, OTA Updates</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Protection Rating</span>
-                  <span className={styles.specItemVal}>IP67 Submersion-Proof / IK10 Impact Rated</span>
-                </div>
-              </div>
-              <div className={styles.specsColDivider} />
-              <div className={styles.specsCol}>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Operating Temperature</span>
-                  <span className={styles.specItemVal}>-35°C to 60°C</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Dimensions (H x W x D)</span>
-                  <span className={styles.specItemVal}>340 x 210 x 120 mm</span>
-                </div>
-                <div className={styles.specItem}>
-                  <span className={styles.specItemLabel}>Weight</span>
-                  <span className={styles.specItemVal}>
-                    {phase === 'single'
-                      ? (connector === 'tethered' ? '4.6 kg' : '3.2 kg')
-                      : (connector === 'tethered' ? '5.8 kg' : '4.1 kg')}
-                  </span>
+                <div className={styles.appPill}>
+                  <span className={styles.appPillIcon}>🔒</span>
+                  <div>
+                    <strong>Remote Lock &amp; RFID</strong>
+                    <p>Authorize family members or lock the unit when you're away</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -401,44 +398,102 @@ export default function VoltUltraProductPage() {
         </div>
       </section>
 
-      {/* 7. BOTTOM PILLARS GRID */}
+      {/* 6. TECHNICAL SPECIFICATIONS TABLE */}
+      <section className={`${styles.sectionPadding} ${styles.bgDark}`}>
+        <div className="container">
+          <div className={styles.sectionHeaderCenter}>
+            <span className={styles.sectionTag}>FULL TECHNICAL SPECIFICATIONS</span>
+            <h2 className={styles.sectionTitleCenter}>Engineered to perfection.</h2>
+            <p className={styles.sectionSubCenter}>Detailed engineering specifications for the BexaVolt VoltHome Max.</p>
+          </div>
+          <div className={styles.specsTable}>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Power Output</span>
+              <span className={styles.specVal}>7.4kW (1-Phase / 32A) or 22kW (3-Phase / 32A)</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Input Voltage</span>
+              <span className={styles.specVal}>230V AC (1P) / 400V AC (3P) ± 15%, 50/60 Hz</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Display</span>
+              <span className={styles.specVal}>3.5" full-colour capacitive touchscreen (480x320)</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Cable / Socket</span>
+              <span className={styles.specVal}>5m Type 2 Tethered Cable or Universal Type 2 Socket</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Connectivity</span>
+              <span className={styles.specVal}>Wi-Fi 2.4GHz, Bluetooth 5.0, 4G LTE eSIM, RJ45 Ethernet</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Access Control</span>
+              <span className={styles.specVal}>RFID card (2 included), Mobile App, Auto-start (Plug &amp; Charge)</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Solar Integration</span>
+              <span className={styles.specVal}>CT clamp support with Eco, Eco+ and Fast charging modes</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>OCPP Support</span>
+              <span className={styles.specVal}>OCPP 1.6J JSON, upgradable to OCPP 2.0.1</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Enclosure</span>
+              <span className={styles.specVal}>Aerospace-grade 6000-series brushed aluminium, IP67 / IK10</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Safety Features</span>
+              <span className={styles.specVal}>Built-in 6mA DC + Type A 30mA AC RCD, PEN fault, Overvoltage, Surge</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Operating Temp</span>
+              <span className={styles.specVal}>-30°C to +55°C</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Certifications</span>
+              <span className={styles.specVal}>RCM, AS/NZS 3820, IEC 61851-1, IEC 61851-21-2, CE</span>
+            </div>
+            <div className={styles.specRow}>
+              <span className={styles.specKey}>Warranty</span>
+              <span className={styles.specVal}>2 Years Comprehensive Warranty</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. WHY CHOOSE BEXAVOLT */}
       <section className={styles.sectionPadding}>
         <div className="container">
           <div className={styles.pillarsGrid}>
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 5.64l1.42-1.42M23 22H1L12 12z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
-              <h4>Solar Integration</h4>
-              <p>Maximise free solar charging with real-time surplus routing and dedicated Eco modes.</p>
+              <h4>Built for Australia</h4>
+              <p>Engineered and tested for extreme Australian sun, heat and coastal conditions.</p>
             </div>
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               </div>
-              <h4>On-Unit Display</h4>
-              <p>Check live data, session history, and charge modes directly on the built-in touchscreen.</p>
+              <h4>Solar Divert Included</h4>
+              <p>Harness 100% free rooftop solar energy directly into your vehicle battery.</p>
             </div>
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12A10 10 0 1 1 12 2v10z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
               </div>
-              <h4>IP67 &amp; IK10</h4>
-              <p>Full submersion protection and the highest impact rating in the BexaVolt product range.</p>
-            </div>
-            <div className={styles.pillarCard}>
-              <div className={styles.pillarIcon}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-              <h4>RFID + 4G LTE</h4>
-              <p>Tap-card access control plus built-in 4G cellular keeps the unit always online.</p>
+              <h4>Nationwide Installers</h4>
+              <p>Clean, certified installation by experienced EV technicians in every state.</p>
             </div>
             <div className={styles.pillarCard}>
               <div className={styles.pillarIcon}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </div>
               <h4>Premium Support</h4>
-              <p>Ultra owners receive priority access to our dedicated engineering support team Australia-wide.</p>
+              <p>Max owners receive priority access to our dedicated engineering support team Australia-wide.</p>
             </div>
           </div>
         </div>
@@ -457,7 +512,7 @@ export default function VoltUltraProductPage() {
                 coverage in the BexaVolt lineup, including priority support and next-business-day swap.
               </p>
               <Link href="/warranty" className={styles.warrantyLink}>
-                Learn about the Max warranty
+                Learn about the warranty
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </Link>
             </div>
@@ -469,18 +524,20 @@ export default function VoltUltraProductPage() {
       <section className={styles.bottomCtaSection}>
         <div className="container">
           <h3>EXPERIENCE THE PINNACLE OF HOME CHARGING</h3>
-          <h2>Ready to go Ultra?</h2>
-          <p>Get a standalone VoltHome Max or arrange a complete professional home installation today.</p>
+          <h2>Ready to go Max?</h2>
+          <p>
+            Choose 7kW with installation ($1,799.00) or 22kW with installation ($1,899.00), or purchase the standalone hardware ($899 / $969).
+          </p>
           <div className={styles.bottomCtaActions}>
-            <Link href="/quote" className={styles.btnPrimary}>
-              Buy Ultra Only
+            <Link href="/quote?charger=ultra&installer=bexavolt" className={styles.btnPrimary}>
+              Get Fully-Installed Quote ($1,799+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </Link>
-            <Link href="/quote" className={styles.btnSecondary}>
-              Get Fully-Installed Quote
+            <Link href="/quote?charger=ultra&installer=own" className={styles.btnSecondary}>
+              Buy Max Device Only ($899+)
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>

@@ -74,7 +74,7 @@ function QuoteWizard() {
   // We'll use local state for the step so it instantly updates without routing delays.
   const [step, setStep] = useState(1);
   const [brand, setBrand] = useState("");
-  const [charger, setCharger] = useState(queryCharger === "pulse" ? "pulse" : "ultra");
+  const [charger, setCharger] = useState(queryCharger === "pulse" || queryCharger === "home-pro" ? "pulse" : "ultra");
   const [power, setPower] = useState(queryPower === "22kw" ? "22kw" : "7kw");
   const [installer, setInstaller] = useState(queryInstaller === "own" ? "own" : "bexavolt");
 
