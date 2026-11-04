@@ -30,6 +30,10 @@ export interface Charger {
     rating: string;
     warranty: string;
   };
+  compareVariants?: {
+    label: string;
+    price: string;
+  }[];
 }
 
 // Exactly the chargers listed in BexaVolt's Mega Menus (Chargers, For Home, Business)
@@ -62,6 +66,10 @@ const ALL_CHARGERS: Charger[] = [
       rating: 'IP67 / IK10',
       warranty: '2 Years',
     },
+    compareVariants: [
+      { label: 'Single phase - 7 kW', price: '$899' },
+      { label: 'Three phase - 22 kW', price: '$969' },
+    ],
   },
   {
     id: 'volt-pulse',
@@ -91,6 +99,10 @@ const ALL_CHARGERS: Charger[] = [
       rating: 'IP65 Weatherproof',
       warranty: '2 Years',
     },
+    compareVariants: [
+      { label: 'Single phase - 7 kW', price: '$899' },
+      { label: 'Three phase - 22 kW', price: '$969' },
+    ],
   },
   {
     id: 'volt-go',
@@ -120,6 +132,10 @@ const ALL_CHARGERS: Charger[] = [
       rating: 'IP55 Rated',
       warranty: '2 Years',
     },
+    compareVariants: [
+      { label: 'Domestic', price: '$499' },
+      { label: 'Caravan', price: '$599' },
+    ],
   },
   {
     id: 'volt-mini',
@@ -149,6 +165,10 @@ const ALL_CHARGERS: Charger[] = [
       rating: 'IP65 Weatherproof',
       warranty: '2 Years',
     },
+    compareVariants: [
+      { label: 'Single phase - 7 kW', price: '$799' },
+      { label: 'Three phase - 22 kW', price: '$1,199' },
+    ],
   },
   {
     id: 'volt-home-pro',
@@ -178,6 +198,10 @@ const ALL_CHARGERS: Charger[] = [
       rating: 'IP65 Rated',
       warranty: '2 Years',
     },
+    compareVariants: [
+      { label: 'Single phase - 7 kW', price: '$899' },
+      { label: 'Three phase - 22 kW', price: '$969' },
+    ],
   },
   {
     id: 'volt-home-max',
@@ -207,6 +231,10 @@ const ALL_CHARGERS: Charger[] = [
       rating: 'IP67 / IK10',
       warranty: '2 Years',
     },
+    compareVariants: [
+      { label: 'Single phase - 7 kW', price: '$899' },
+      { label: 'Three phase - 22 kW', price: '$969' },
+    ],
   },
   {
     id: 'volt-business-ultra',
@@ -236,6 +264,9 @@ const ALL_CHARGERS: Charger[] = [
       rating: 'IP67 / IK10',
       warranty: '2 Years',
     },
+    compareVariants: [
+      { label: 'Three phase - 22 kW', price: '$1,799' },
+    ],
   },
 ];
 
@@ -512,7 +543,7 @@ export default function ChargersArchivePage() {
                   <th>Phase Support</th>
                   <th>Solar Ready</th>
                   <th>Ingress Rating</th>
-                  <th>Starting Price</th>
+                  <th>Base Price / Variants</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -531,7 +562,20 @@ export default function ChargersArchivePage() {
                       )}
                     </td>
                     <td>{item.specs.rating}</td>
-                    <td><strong style={{ color: '#A3E635' }}>{item.priceFrom} AUD</strong></td>
+                    <td>
+                      {item.compareVariants && item.compareVariants.length > 0 ? (
+                        <div className={styles.comparePriceStack}>
+                          {item.compareVariants.map((v, idx) => (
+                            <div key={idx} className={styles.variantPriceRow}>
+                              <span className={styles.variantText}>{v.label} - </span>
+                              <strong className={styles.variantPriceHighlight}>{v.price}</strong>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <strong style={{ color: '#A3E635' }}>{item.priceFrom} AUD</strong>
+                      )}
+                    </td>
                     <td>
                       <Link href={item.href} className={styles.tableLink}>
                         View Model →

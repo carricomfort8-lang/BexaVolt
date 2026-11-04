@@ -587,6 +587,28 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+.comparePriceStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.variantPriceRow {
+  font-size: 0.88rem;
+  white-space: nowrap;
+  color: #d4d4d8;
+  line-height: 1.4;
+}
+
+.variantText {
+  color: #e4e4e7;
+}
+
+.variantPriceHighlight {
+  color: #A3E635;
+  font-weight: 700;
+}
+
 .compareTable tr:hover td {
   background: rgba(163, 230, 53, 0.03);
 }
