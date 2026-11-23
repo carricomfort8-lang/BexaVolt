@@ -36,12 +36,12 @@ export default function ContactPage() {
           access_key: "3c2f5201-0d5e-4c92-ac58-aad730226066",
           subject: `New Website Enquiry: ${formData.enquiryType || 'General'} - ${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
           from_name: "BexaVolt Contact Form",
-          Name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
-          Email: formData.email,
-          Phone: formData.phone,
-          Enquiry_Type: formData.enquiryType,
-          State_Territory: formData.state,
-          Message: formData.message,
+          name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
+          email: formData.email,
+          phone: formData.phone,
+          enquiry_type: formData.enquiryType,
+          state_territory: formData.state,
+          message: formData.message,
         }),
       });
 
