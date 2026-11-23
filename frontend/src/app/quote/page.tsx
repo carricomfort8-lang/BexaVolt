@@ -128,7 +128,11 @@ function QuoteWizard() {
     
     try {
       // 1. Direct Web3Forms submission to sales@bexavolt.com.au (Browser-level, immune to server port block)
-      await fetch("https://api.web3forms.com/submit", {
+      const chargerName = charger === "pulse" ? "Volt Pulse" : "Volt Ultra";
+      const powerText = power === "22kw" ? "22kW" : "7kW";
+      const installText = installer === "bexavolt" ? "With Installation" : "Device Only";
+
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -138,20 +142,24 @@ function QuoteWizard() {
           access_key: "3c2f5201-0d5e-4c92-ac58-aad730226066",
           subject: `New EV Charger Quote Request - ${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
           from_name: "BexaVolt Quote Estimator",
-          Customer_Name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
-          Customer_Email: formData.email,
-          Customer_Phone: formData.phone,
-          State_Territory: formData.state,
-          Car_Brand: brand,
-          Charger_Model: charger === "pulse" ? "Volt Pulse" : "Volt Ultra",
-          Power_Rating: power === "22kw" ? "22kW" : "7kW",
-          Installation_Option: installer === "bexavolt" ? "With Installation" : "Device Only",
-          Estimated_Price: `$${estimate.toLocaleString()} AUD`,
-          Installation_Timeframe: formData.installTime,
-          Call_Preference: formData.callTime,
-          Subscribed_Updates: formData.updates ? "Yes" : "No",
+          name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
+          email: formData.email,
+          phone: formData.phone,
+          state: formData.state,
+          car_brand: brand,
+          charger_model: chargerName,
+          power_rating: powerText,
+          installation: installText,
+          estimated_price: `$${estimate.toLocaleString()} AUD`,
+          installation_timeframe: formData.installTime,
+          preferred_call_time: formData.callTime,
+          subscribed_to_updates: formData.updates ? "Yes" : "No",
+          message: `Vehicle: ${brand}\nCharger: ${chargerName} (${powerText})\nOption: ${installText}\nEstimate: $${estimate.toLocaleString()} AUD\nTimeframe: ${formData.installTime}\nCall Time: ${formData.callTime}`,
         }),
       });
+
+      const resJson = await res.json();
+      console.log("Web3Forms response:", resJson);
 
       // Also trigger backend route for logging
       fetch('/api/quote', {
@@ -532,7 +540,20 @@ function QuoteWizard() {
             </span>
             <span className={styles.estimateValue}>${estimate.toLocaleString()} AUD</span>
           </div>
-          <button className={styles.btnPrimary} onClick={step === 2 ? handleNext : () => document.getElementById("quote-form")?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }))} disabled={step === 3 && isSubmitting}>
+          <button 
+            className={styles.btnPrimary} 
+            onClick={step === 2 ? handleNext : () => {
+              const form = document.getElementById("quote-form") as HTMLFormElement;
+              if (form) {
+                if (typeof form.requestSubmit === 'function') {
+                  form.requestSubmit();
+                } else {
+                  form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+                }
+              }
+            }} 
+            disabled={step === 3 && isSubmitting}
+          >
             {step === 2 ? "Continue to Details" : isSubmitting ? "Sending..." : "Submit Quote"}
           </button>
         </div>
