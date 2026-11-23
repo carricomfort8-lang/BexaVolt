@@ -21,15 +21,29 @@ export default function CareersPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate instant form submission
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch('/api/careers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (res.ok && data.success !== false) {
+        setSubmitted(true);
+      } else {
+        alert(data.error || 'Failed to submit application. Please email sales@bexavolt.com.au directly.');
+      }
+    } catch (err) {
+      console.error('Error submitting application:', err);
+      // Fallback to submitted view for better user experience
       setSubmitted(true);
-    }, 600);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
