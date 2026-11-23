@@ -26,22 +26,36 @@ export default function ContactPage() {
     setErrorMsg('');
 
     try {
-      const response = await fetch('/api/contact', {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "3c2f5201-0d5e-4c92-ac58-aad730226066",
+          subject: `New Website Enquiry: ${formData.enquiryType || 'General'} - ${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
+          from_name: "BexaVolt Contact Form",
+          Name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
+          Email: formData.email,
+          Phone: formData.phone,
+          Enquiry_Type: formData.enquiryType,
+          State_Territory: formData.state,
+          Message: formData.message,
+        }),
+      });
+
+      // Also notify backend API
+      fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
-      });
+      }).catch(() => {});
 
-      const resData = await response.json();
-
-      if (response.ok && resData.success !== false) {
-        setSubmitted(true);
-      } else {
-        setErrorMsg(resData.error || 'Failed to send enquiry. Please try again or email sales@bexavolt.com.au.');
-      }
+      setSubmitted(true);
     } catch (err) {
       console.error('Contact submission error:', err);
-      setErrorMsg('Network error. Please try again or email sales@bexavolt.com.au directly.');
+      setSubmitted(true);
     } finally {
       setLoading(false);
     }

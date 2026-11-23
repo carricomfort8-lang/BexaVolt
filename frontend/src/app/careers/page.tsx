@@ -26,20 +26,37 @@ export default function CareersPage() {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/careers', {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "3c2f5201-0d5e-4c92-ac58-aad730226066",
+          subject: `New Job Application: ${formData.role || 'Installer'} - ${formData.fullName}`.trim(),
+          from_name: "BexaVolt Careers",
+          Applicant_Name: formData.fullName,
+          Applicant_Email: formData.email,
+          Applicant_Phone: formData.phone,
+          Role_Applied: formData.role,
+          State_Territory: formData.state,
+          Experience: formData.experience,
+          Resume_Link: formData.resumeLink,
+          Notes: formData.notes,
+        }),
+      });
+
+      // Also notify backend API
+      fetch('/api/careers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if (res.ok && data.success !== false) {
-        setSubmitted(true);
-      } else {
-        alert(data.error || 'Failed to submit application. Please email sales@bexavolt.com.au directly.');
-      }
+      }).catch(() => {});
+
+      setSubmitted(true);
     } catch (err) {
       console.error('Error submitting application:', err);
-      // Fallback to submitted view for better user experience
       setSubmitted(true);
     } finally {
       setLoading(false);

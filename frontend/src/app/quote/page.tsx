@@ -127,18 +127,38 @@ function QuoteWizard() {
     setIsSubmitting(true);
     
     try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 6000);
-
-      const response = await fetch('/api/quote', {
-        method: 'POST',
+      // 1. Direct Web3Forms submission to sales@bexavolt.com.au (Browser-level, immune to server port block)
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify({ brand, charger, power, installer, ...formData, estimate }),
-        signal: controller.signal,
+        body: JSON.stringify({
+          access_key: "3c2f5201-0d5e-4c92-ac58-aad730226066",
+          subject: `New EV Charger Quote Request - ${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
+          from_name: "BexaVolt Quote Estimator",
+          Customer_Name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
+          Customer_Email: formData.email,
+          Customer_Phone: formData.phone,
+          State_Territory: formData.state,
+          Car_Brand: brand,
+          Charger_Model: charger === "pulse" ? "Volt Pulse" : "Volt Ultra",
+          Power_Rating: power === "22kw" ? "22kW" : "7kW",
+          Installation_Option: installer === "bexavolt" ? "With Installation" : "Device Only",
+          Estimated_Price: `$${estimate.toLocaleString()} AUD`,
+          Installation_Timeframe: formData.installTime,
+          Call_Preference: formData.callTime,
+          Subscribed_Updates: formData.updates ? "Yes" : "No",
+        }),
       });
-      clearTimeout(timer);
+
+      // Also trigger backend route for logging
+      fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ brand, charger, power, installer, ...formData, estimate }),
+      }).catch(() => {});
 
       alert("Thank you! Your quote request has been received. Our team will review your requirements and be in touch.");
     } catch (error) {
